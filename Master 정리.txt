@@ -1,0 +1,12 @@
+1. ControlMode{CIM, Master} 도입
+2. 네트워크 관련 기능
+3. TagReader 관련 기능
+4. 축 상태 가져오는거 다시 보기
+5. 와치독
+6. Port StatusUpdateStart()를 가져오는데 Line에 하나 가져와서 Line에 있는 컨베이어 상태 돌리기 => IO 및 서보 상태 관련 Thread를 Line으로 가져가기
+7. 과부하 관련 기능
+8. IsAxisPositionInside() T-Axis가 Load / Unload 위치에서 범위 이내에 있는지 확인
+9. CMD_SetOverLoadValue() 과부하 기준 값 설정
+10. CMD_SetOverLoadClear() 과부하 검출 값 클리어
+11. Home 관련해서 다시 보기
+12. 839~ 다시보기 (IO관련해서 어떻게 가져오는지 찾아보기)
