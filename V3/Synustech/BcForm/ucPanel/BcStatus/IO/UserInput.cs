@@ -1,0 +1,483 @@
+﻿using Org.BouncyCastle.Asn1.Cms.Ecc;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
+using static Synustech.G_Var;
+
+namespace Synustech.ucPanel.BcStatus
+{
+    public partial class UserInput : UserControl
+    {
+        private float initialPanelWidth;
+        private float initialPanelHeight;
+
+        private float initialFontSize_lblInputName;
+        private Size initialSize_____lblInputName;
+        private Point initialLocation_lblInputName;
+
+        private float initialFontSize_dgInput;
+        private Size initialSize_____dgInput;
+        private Point initialLocation_dgInput;
+
+        private bool isResizing = false;
+
+        bool IsMasterDG;
+
+        private System.Windows.Forms.Timer monitoringTimer;
+
+        public UserInput()
+        {
+            InitializeComponent();
+            IsMasterDG = false;
+
+
+            initialPanelWidth = this.Width;
+            initialPanelHeight = this.Height;
+
+            initialFontSize_dgInput = dgInput.Font.Size;
+            initialSize_____dgInput = dgInput.Size;
+            initialLocation_dgInput = dgInput.Location;
+
+            initialFontSize_lblInputName = lblInputName.Font.Size;
+            initialSize_____lblInputName = lblInputName.Size;
+            initialLocation_lblInputName = lblInputName.Location;
+
+            this.Resize += Panel_Resize;
+        }
+        public void IsMaster()
+        {
+            IsMasterDG = true;
+        }
+        public void IsConv()
+        {
+            IsMasterDG = false;
+        }
+        private void Panel_Resize(object sender, EventArgs e)
+        {
+            // 이미 크기 조정 중이면 중복 처리 방지
+            if (isResizing)
+                return;
+            try
+            {
+                isResizing = true;
+
+                if (initialPanelWidth == 0 || initialPanelHeight == 0)
+                {
+                    return; // 초기 패널 크기가 0인 경우 아무 것도 하지 않음
+                }
+
+                // Panel 크기 비율 계산
+                float widthRatio = (float)this.Width / initialPanelWidth;
+                float heightRatio = (float)this.Height / initialPanelHeight;
+                float ratio = Math.Min(widthRatio, heightRatio);
+
+                // 라벨 폰트 사이즈 조절
+                AdjustFontSize(lblInputName, initialFontSize_lblInputName, ratio);
+                //AdjustFontSizeDG(dgInput, initialFontSize_dgInput, ratio);
+
+
+                // 라벨 크기 및 위치 조절
+                AdjustLabel(lblInputName, initialSize_____lblInputName, initialLocation_lblInputName, widthRatio, heightRatio);
+                //AdjustDataGirdView(dgInput, initialSize_____dgInput, initialLocation_dgInput, widthRatio, heightRatio);
+                AdjustDG(dgInput, initialFontSize_dgInput, initialLocation_dgInput,initialSize_____dgInput ,ratio);
+            }
+            finally
+            {
+                isResizing = false; // 크기 조정 완료
+            }
+        }
+
+        private void AdjustFontSize(System.Windows.Forms.Label label, float initialFontSize, float ratio)
+        {
+            // 새로운 폰트 크기를 계산하고 유효한지 확인
+            float newFontSize = (initialFontSize * ratio);
+            if (newFontSize > 0 && newFontSize <= float.MaxValue)
+            {
+                label.Font = new Font(label.Font.FontFamily, newFontSize, label.Font.Style);
+            }
+            else
+            {
+                // 기본값으로 폰트 크기 설정 또는 경고 처리
+                MessageBox.Show("폰트 크기는 0보다 크고 MaxValue보다 작거나 같아야 합니다.");
+            }
+        }
+        private void AdjustFontSizeDG(System.Windows.Forms.DataGridView dg, float initialFontSize, float ratio)
+        {
+            // 새로운 폰트 크기를 계산하고 유효한지 확인
+            float newFontSize = (initialFontSize * ratio);
+            if (newFontSize > 0 && newFontSize <= float.MaxValue)
+            {
+                dg.Font = new Font(dg.Font.FontFamily, newFontSize, dg.Font.Style);
+            }
+            else
+            {
+                // 기본값으로 폰트 크기 설정 또는 경고 처리
+                MessageBox.Show("폰트 크기는 0보다 크고 MaxValue보다 작거나 같아야 합니다.");
+            }
+        }
+        private void AdjustLabel(System.Windows.Forms.Label label, Size initialSize, Point initialLocation, float widthRatio, float heightRatio)
+        {
+            try
+            {
+                // 라벨의 크기 조정
+                label.Width = (int)(initialSize.Width * widthRatio);
+                label.Height = (int)(initialSize.Height * heightRatio);
+
+                // 라벨의 위치 조정
+                label.Location = new Point((int)(initialLocation.X * widthRatio), (int)(initialLocation.Y * heightRatio));
+            }
+            catch (Exception ex)
+            {
+                // 예외가 발생하면 로그를 남기거나 디버깅을 위한 조치를 취합니다.
+                MessageBox.Show($"라벨 크기 조정 중 오류가 발생했습니다: {ex.Message}");
+            }
+        }
+        private void AdjustDataGirdView(System.Windows.Forms.DataGridView dg, Size initialSize, Point initialLocation, float widthRatio, float heightRatio)
+        {
+            try
+            {
+                // 라벨의 크기 조정
+                dg.Width = (int)(initialSize.Width * widthRatio);
+                dg.Height = (int)(initialSize.Height * heightRatio);
+
+                // 라벨의 위치 조정
+                dg.Location = new Point((int)(initialLocation.X * widthRatio), (int)(initialLocation.Y * heightRatio));
+            }
+            catch (Exception ex)
+            {
+                // 예외가 발생하면 로그를 남기거나 디버깅을 위한 조치를 취합니다.
+                MessageBox.Show($"라벨 크기 조정 중 오류가 발생했습니다: {ex.Message}");
+            }
+        }
+        private void AdjustDG(DataGridView dg, float initialFontSize, Point initialLocation, Size initialSize, float ratio)
+        {
+            dg.Font = new Font(dg.Font.FontFamily, initialFontSize * ratio, dg.Font.Style);
+            dg.Width = (int)(initialSize.Width * ratio);
+            dg.Height = (int)(initialSize.Height * ratio);
+            dg.Location = new Point((int)(initialLocation.X * ratio), (int)(initialLocation.Y * ratio));
+        }
+        private void Init()
+        {
+            foreach (DataGridViewColumn column in dgInput.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                column.ReadOnly = true;
+            }
+        }
+        private string MyInput(MyInput input)
+        {
+            // 예: 입력 타입에 따른 문자열을 반환
+            return input.ToString();
+        }
+        private string LongInput(LongInput input)
+        {
+            // 예: 입력 타입에 따른 문자열을 반환
+            return input.ToString();
+        }
+        private string TurnInput(TurnInput input)
+        {
+            // 예: 입력 타입에 따른 문자열을 반환
+            return input.ToString();
+        }
+        private string TurnInput2(TurnInput2 input)
+        {
+            // 예: 입력 타입에 따른 문자열을 반환
+            return input.ToString();
+        }
+        private string Master(Master input)
+        {
+            // 예: 입력 타입에 따른 문자열을 반환
+            return input.ToString();
+        }
+        private string OHTPIO_in(OHTPIO_in input)
+        {
+            // 예: 입력 타입에 따른 문자열을 반환
+            return input.ToString();
+        }
+        private string AGVPIO_in(AGVPIO_in input)
+        {
+            // 예: 입력 타입에 따른 문자열을 반환
+            return input.ToString();
+        }
+        //public void DataGridUpdate()
+        //{
+        //    int inScrollRowIndex = dgInput.FirstDisplayedScrollingRowIndex;
+        //    int i = 0;
+        //    dgInput.Rows.Clear(); //Clear 진행
+
+        //    foreach (var conveyor in conveyors)
+        //    {
+        //        if (conveyor.Axis == -1) { }
+        //        else if(conveyor.type == "Turn" && conveyor.Axis != -1)
+        //        {
+        //            conveyor.AddrUpdate();
+        //            foreach (var bit in conveyor.bits)
+        //            {
+        //                MyInput inputType = (MyInput)bit;// 열거형 값을 정수로 변환하여 증가시킴
+        //                G_Var.wmxlib_io.GetInBit(conveyor.addr, bit, ref G_Var.byInput[0]);
+        //                string inputStatus = (G_Var.byInput[0] == 1) ? "OFF" : "ON";
+        //                int rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, MyInput(inputType), inputStatus);
+        //                UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], inputStatus);
+        //            }
+        //            foreach(var bit in conveyor.bitsTurn)
+        //            {
+        //                TurnInput inputTurn = (TurnInput)bit;
+        //                G_Var.wmxlib_io.GetInBit(conveyor.addrTurn, bit, ref G_Var.byInput[0]);
+        //                string inputStatus = (G_Var.byInput[0] == 1) ? "ON" : "OFF";
+        //                int rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, TurnInput(inputTurn), inputStatus);
+        //                UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], inputStatus);
+        //            }
+        //            TurnInput2 inputTurn2 = (TurnInput2)conveyor.bitTurn;
+        //            G_Var.wmxlib_io.GetInBit(conveyor.addr, conveyor.bitTurn, ref G_Var.byInput[0]);
+        //            string inputStatus1 = (G_Var.byInput[0] == 1) ? "ON" : "OFF";
+        //            int rowIndexInput1 = dgInput.Rows.Add(i++, conveyor.ID, TurnInput2(inputTurn2), inputStatus1);
+        //            UpdateCellStyle(dgInput.Rows[rowIndexInput1].Cells[3], inputStatus1);
+        //        }
+        //        else
+        //        {
+        //            conveyor.AddrUpdate();
+        //            foreach (var bit in conveyor.bits)
+        //            {
+        //                MyInput inputType = (MyInput)bit;// 열거형 값을 정수로 변환하여 증가시킴
+        //                G_Var.wmxlib_io.GetInBit(conveyor.addr, bit, ref G_Var.byInput[0]);
+        //                string inputStatus = (G_Var.byInput[0] == 1) ? "OFF" : "ON";
+        //                int rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, MyInput(inputType), inputStatus);
+        //                UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], inputStatus);
+        //            }
+        //        }
+        //    }
+        //    if (inScrollRowIndex >= 0 && inScrollRowIndex < dgInput.Rows.Count)
+        //    {
+        //        dgInput.FirstDisplayedScrollingRowIndex = inScrollRowIndex;
+        //    }
+        //}
+
+
+
+        //public void SetConvDginput()
+        //{
+        //    int inScrollRowIndex = dgInput.FirstDisplayedScrollingRowIndex;
+        //    dgInput.Rows.Clear();
+        //    int i = 1;
+        //    foreach (var conveyor in conveyors)
+        //    {
+        //        if (conveyor.type == "Turn")
+        //        {
+        //            int j = 0;
+        //            foreach (var bit in conveyor.bits)
+        //            {
+        //                MyInput inputType = (MyInput)bit;
+        //                string status = (conveyor.SCnvFoupDetect[j++] == SensorOnOff.On) ? "OFF" : "ON";
+        //                int rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, MyInput(inputType), status);
+        //                UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
+        //            }
+        //            int z = 0;
+        //            foreach (var bit in conveyor.bitsTurn)
+        //            {
+        //                TurnInput inputType = (TurnInput)bit;
+        //                string status = (conveyor.POS[z++] == SensorOnOff.On) ? "ON" : "OFF";
+        //                int rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, TurnInput(inputType), status);
+        //                UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
+        //            }
+        //            TurnInput2 inputType1 = (TurnInput2)conveyor.bitTurn;
+        //            string status1 = (conveyor.POS[z] == SensorOnOff.On) ? "ON" : "OFF";
+        //            int rowIndexInput1 = dgInput.Rows.Add(i++, conveyor.ID, TurnInput2(inputType1), status1);
+        //            UpdateCellStyle(dgInput.Rows[rowIndexInput1].Cells[3], status1);
+        //        }
+        //        else if (conveyor.type == "Normal")
+        //        {
+        //            int j = 0;
+        //            foreach (var bit in conveyor.bits)
+        //            {
+        //                MyInput inputType = (MyInput)bit;
+        //                string status = (conveyor.SCnvFoupDetect[j++] == SensorOnOff.On) ? "OFF" : "ON";
+        //                int rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, MyInput(inputType), status);
+        //                UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
+        //            }
+        //        }
+        //        else
+        //        {
+
+        //        }
+        //    }
+        //    if (inScrollRowIndex >= 0 && inScrollRowIndex < dgInput.Rows.Count)
+        //    {
+        //        dgInput.FirstDisplayedScrollingRowIndex = inScrollRowIndex;
+        //    }
+        //}
+        public void SetConvDginput()
+        {
+            int inScrollRowIndex = -1;
+            try
+            {
+                inScrollRowIndex = dgInput.FirstDisplayedScrollingRowIndex;
+            }
+            catch { }
+
+            dgInput.Rows.Clear();
+            int i = 1;
+
+            foreach (var conveyor in conveyors)
+            {
+                int rowIndexInput;
+
+                if (conveyor.type == "Turn")
+                {
+                    // conveyor.bits를 처리
+                    int j = 0;
+                    foreach (var bit in conveyor.bits)
+                    {
+                        MyInput inputType = (MyInput)bit;
+                        string status = (conveyor.SCnvFoupDetect[j++] == SensorOnOff.On) ? "OFF" : "ON";
+                        rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, MyInput(inputType), status);
+                        UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
+                    }
+
+                    // conveyor.bitsTurn를 처리
+                    int z = 0;
+                    foreach (var bit in conveyor.bitsTurn)
+                    {
+                        TurnInput inputType = (TurnInput)bit;
+                        string status = (conveyor.POS[z++] == SensorOnOff.On) ? "ON" : "OFF";
+                        rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, TurnInput(inputType), status);
+                        UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
+                    }
+
+                    // conveyor.bitTurn을 처리
+                    TurnInput2 inputType1 = (TurnInput2)conveyor.bitTurn;
+                    string status1 = (conveyor.POS[z] == SensorOnOff.On) ? "ON" : "OFF";
+                    rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, TurnInput2(inputType1), status1);
+                    UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status1);
+                }
+                else if (conveyor.type == "Long")
+                {
+                    int j = 0;
+                    foreach (var bit in conveyor.bits)
+                    {
+                        LongInput inputType = (LongInput)bit;
+                        string status = (conveyor.LCnvFoupDetect[j++] == SensorOnOff.On) ? "OFF" : "ON";
+                        rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, LongInput(inputType), status);
+                        UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
+                    }
+                }
+                else if (conveyor.type == "Normal")
+                {
+                    // conveyor.bits를 처리
+                    int j = 0;
+                    foreach (var bit in conveyor.bits)
+                    {
+                        MyInput inputType = (MyInput)bit;
+                        string status = (conveyor.SCnvFoupDetect[j++] == SensorOnOff.On) ? "OFF" : "ON";
+                        rowIndexInput = dgInput.Rows.Add(i++, conveyor.ID, MyInput(inputType), status);
+                        UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
+                    }
+                }
+            }
+
+            // 열 너비 설정 (필요에 따라 조정)
+            dgInput.Columns[0].Width = 50; // 첫 번째 열 너비 설정
+            dgInput.Columns[1].Width = 100; // 두 번째 열 너비 설정
+            //dgInput.Columns[2].Width = 150; // 세 번째 열 너비 설정
+            //dgInput.Columns[3].Width = 100; // 네 번째 열 너비 설정
+
+            // 스크롤 위치 유지
+            if (inScrollRowIndex >= 0 && inScrollRowIndex < dgInput.Rows.Count)
+            {
+                dgInput.FirstDisplayedScrollingRowIndex = inScrollRowIndex;
+            }
+        }
+        public void MasterDataGridUpdate()
+        {
+            int inScrollRowIndex = dgInput.FirstDisplayedScrollingRowIndex;
+            dgInput.Rows.Clear();
+
+            int i = 1;
+            Master masterin = (Master)Safetyinbit;
+            string status = (G_Var.Safety == SensorOnOff.On) ? "ON" : "OFF";
+            int rowIndexInput = dgInput.Rows.Add(i++, "Master", Master(masterin), status);
+            UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
+
+            Master mainpowerin = (Master)MainPowerbit;
+            string MainPowerstatus = (G_Var.MainPower == SensorOnOff.On) ? "ON" : "OFF";
+            int rowIndexInputMainPower = dgInput.Rows.Add(i++, "Master", Master(mainpowerin), MainPowerstatus);
+            UpdateCellStyle(dgInput.Rows[rowIndexInputMainPower].Cells[3], MainPowerstatus);
+
+            Master EMOin = (Master)EMObit;
+            string EMOstatus = (G_Var.EMO == SensorOnOff.On) ? "ON" : "OFF";
+            int rowIndexInput1 = dgInput.Rows.Add(i++, "Master", Master(EMOin), EMOstatus);
+            UpdateCellStyle(dgInput.Rows[rowIndexInput1].Cells[3], EMOstatus);
+
+            Master EMS_1 = (Master)22;
+            string EMS_1status = (G_Var.EMS_1 == SensorOnOff.On) ? "ON" : "OFF";
+            int rowIndexInputEMS1 = dgInput.Rows.Add(i++,"Master", Master(EMS_1), EMS_1status);
+            UpdateCellStyle(dgInput.Rows[rowIndexInputEMS1].Cells[3], EMS_1status);
+
+            Master EMS_2 = (Master)38;
+            string EMS_2status = (G_Var.EMS_2 == SensorOnOff.On) ? "ON" : "OFF";
+            int rowIndexInputEMS2 = dgInput.Rows.Add(i++, "Master", Master(EMS_2), EMS_2status);
+            UpdateCellStyle(dgInput.Rows[rowIndexInputEMS2].Cells[3], EMS_2status);
+            int j = 0;
+            foreach(var bit in OHTINbits)
+            {
+                OHTPIO_in oht = (OHTPIO_in)bit;
+                string OHTstatus = (G_Var.OHTPIOin[j++] == SensorOnOff.On) ? "ON" : "OFF";
+                int rowIndexOHTIN = dgInput.Rows.Add(i++, "OHT_PIO",  oht, OHTstatus);
+                UpdateCellStyle(dgInput.Rows[rowIndexOHTIN].Cells[3], OHTstatus);
+            }
+            int z = 0;
+            foreach(var bit in AGVINbits)
+            {
+                AGVPIO_in agv = (AGVPIO_in)bit;
+                string AGVstatus = (G_Var.AGVPIOin[z++] == SensorOnOff.On) ? "ON" : "OFF";
+                int rowIndexAGVIN = dgInput.Rows.Add(i++, "AGV_PIO",  agv, AGVstatus);
+                UpdateCellStyle(dgInput.Rows[rowIndexAGVIN].Cells[3], AGVstatus);
+            }
+            if (inScrollRowIndex >= 0 && inScrollRowIndex < dgInput.Rows.Count)
+            {
+                dgInput.FirstDisplayedScrollingRowIndex = inScrollRowIndex;
+            }
+        }
+        private void UpdateCellStyle(DataGridViewCell cell, string status)
+        {
+            if (status == "ON")
+            {
+                cell.Style.BackColor = Color.FromArgb(0, 126, 249);
+                cell.Style.ForeColor = Color.White;
+            }
+            else // "OFF"
+            {
+                cell.Style.BackColor = Color.DarkGray;
+                cell.Style.ForeColor = Color.White;
+            }
+        }
+
+        private void IO_Update_Timer_Tick(object sender, EventArgs e)
+        {
+            if (IsMasterDG == true) 
+            { 
+                MasterDataGridUpdate(); 
+            }
+            else 
+            { 
+                SetConvDginput(); 
+            }
+        }
+
+        private void dgInput_SelectionChanged(object sender, EventArgs e)
+        {
+            dgInput.ClearSelection();
+        }
+
+        private void dgInput_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
+}

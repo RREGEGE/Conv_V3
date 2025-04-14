@@ -1,0 +1,32 @@
+<AlarmInfo>
+	<Type type="Interface">
+		<Alarm>
+			<Code>1000</Code>
+			<Content>RFID Error</Content>
+			<Solution>RFID register fafnds ofmcalhamhdfciahfoidoifajdsifjasoijfaoisjf ojdofihasofiadsoifndsufgishfamsudgfods amfxodsanfgsadlfhsamdf huadslmfadslfugsalugalmsuhfasfh;mahf;maihf;asmhf;ahf;kas;mfas</Solution>
+		</Alarm>
+		<Alarm>
+			<Code>1001</Code>
+			<Content>Off Sensor Error</Content>
+			<Solution>change</Solution>
+		</Alarm>
+		<Alarm>
+			<Code>1002</Code>
+			<Content>Interface Error</Content>
+			<Solution>몰라</Solution>
+		</Alarm>
+	</Type>
+	<Type type="Normal">
+		<Alarm>
+			<Code>1000</Code>
+			<Content>RFID Error</Content>
+			<Solution>RFID register</Solution>
+		</Alarm>
+		<Alarm>
+			<Code>1001</Code>
+			<Content>Off Sensor Error</Content>
+			<Solution>change</Solution>
+		</Alarm>
+		
+	</Type>
+</AlarmInfo>

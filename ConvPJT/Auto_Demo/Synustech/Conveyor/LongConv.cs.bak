@@ -1,0 +1,563 @@
+﻿using System;
+using System.Threading;
+
+namespace Synustech
+{
+    internal class LongConv : Conveyor
+    {
+        /// <summary>
+        /// Init동작 함수
+        /// </summary>
+        public override void Init()
+        {
+            CV_InitStep = InitStep.Step000_Direction_Check;
+            IsInitDone = false;
+            Thread InitThread = new Thread(() =>
+            {
+                Console.WriteLine(ID + ":" + "Init Start");
+                while (!IsInitDone)
+                {
+                    switch (CV_InitStep)
+                    {
+                        case InitStep.Step000_Direction_Check:
+                            {
+                                if (GetOperationDirection() == LineDirection.Input)
+                                {
+                                    CV_InitStep = InitStep.Step100_Inmode_Check_Foup;
+                                }
+
+                                else
+                                {
+                                    CV_InitStep = InitStep.Step300_Outmode_Check_Foup;
+                                }
+                            }
+                            break;
+
+                        case InitStep.Step100_Inmode_Check_Foup:
+                            {
+                                LCV_Inmode_CST_Check_Detect();
+                                LCnV_CST_Empty_Detect();
+                                if (LCnVCSTBoth)
+                                {
+                                    CV_InitStep = InitStep.Step2000_Init_Done;
+                                }
+                                else if (LCnvFoupDetect[0] == SensorOnOff.Off && LCnvFoupDetect[1] == SensorOnOff.On)
+                                {
+                                    StartConveyor(Init_Velocity);
+                                    CV_InitStep = InitStep.Step1000_Both_Stop;
+                                }
+                                else if (SCnvFoupDetect[0] == SensorOnOff.On && SCnvFoupDetect[1] == SensorOnOff.Off)
+                                {
+                                    if (nextconv != null)
+                                    {
+                                        if (nextconv.type == "Long")
+                                        {
+                                            if (nextconv.LCnvFoupDetect[0] == SensorOnOff.Off && nextconv.LCnvFoupDetect[1] == SensorOnOff.On)
+                                            {
+                                                StartConveyor(Init_Velocity);
+                                                CV_InitStep = InitStep.Step1100_Next_Both_Stop;
+                                            }
+                                            else if (nextconv.LCnvFoupDetect[0] == SensorOnOff.On)
+                                            {
+                                                portDirection = LineDirection.Output;
+                                                StartConveyor(Init_Velocity);
+                                                portDirection = LineDirection.Input;
+                                                CV_InitStep = InitStep.Step1100_Next_Both_Stop;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (nextconv.SCnvFoupDetect[0] == SensorOnOff.Off && nextconv.SCnvFoupDetect[1] == SensorOnOff.On)
+                                            {
+                                                StartConveyor(Init_Velocity);
+                                                CV_InitStep = InitStep.Step1100_Next_Both_Stop;
+                                            }
+                                            else if (nextconv.SCnvFoupDetect[0] == SensorOnOff.On)
+                                            {
+                                                portDirection = LineDirection.Output;
+                                                StartConveyor(Init_Velocity);
+                                                portDirection = LineDirection.Input;
+                                                CV_InitStep = InitStep.Step1100_Next_Both_Stop;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        portDirection = LineDirection.Output;
+                                        StartConveyor(Init_Velocity);
+                                        portDirection = LineDirection.Input;
+                                        CV_InitStep = InitStep.Step1000_Both_Stop;
+                                    }
+                                }
+                                else if (!SCnvCSTDetected)
+                                {
+                                    if (nextconv != null)
+                                    {
+                                        if (nextconv.type == "Long")
+                                        {
+                                            if (nextconv.LCnvFoupDetect[0] == SensorOnOff.Off && nextconv.LCnvFoupDetect[1] == SensorOnOff.On)
+                                            {
+                                                StartConveyor(Init_Velocity);
+                                                CV_InitStep = InitStep.Step1100_Next_Both_Stop;
+                                            }
+                                            else if (nextconv.LCnvFoupDetect[0] == SensorOnOff.On)
+                                            {
+                                                CV_InitStep = InitStep.Step2000_Init_Done;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (nextconv.SCnvFoupDetect[0] == SensorOnOff.Off && nextconv.SCnvFoupDetect[1] == SensorOnOff.On)
+                                            {
+                                                StartConveyor(Init_Velocity);
+                                                CV_InitStep = InitStep.Step1100_Next_Both_Stop;
+                                            }
+                                            else if (nextconv.SCnvFoupDetect[0] == SensorOnOff.On)
+                                            {
+                                                CV_InitStep = InitStep.Step2000_Init_Done;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+
+                        case InitStep.Step1000_Both_Stop:
+                            {
+                                CST_Check_Detect();
+                                if (SCnVCSTBoth)
+                                {
+                                    StopConveyor();
+                                    CV_InitStep = InitStep.Step2000_Init_Done;
+                                }
+                            }
+                            break;
+
+                        case InitStep.Step1100_Next_Both_Stop:
+                            {
+                                if (nextconv.type == "Long")
+                                {
+                                    if (nextconv.LCnvFoupDetect[0] == SensorOnOff.Off && nextconv.LCnvFoupDetect[1] == SensorOnOff.Off)
+                                    {
+                                        StopConveyor();
+                                        CV_InitStep = InitStep.Step2000_Init_Done;
+                                    }
+
+                                }
+                                else
+                                {
+                                    nextconv.CST_Check_Detect();
+                                    if (SCnVCSTBoth)
+                                    {
+                                        StopConveyor();
+                                        CV_InitStep = InitStep.Step2000_Init_Done;
+                                    }
+                                }
+                            }
+                            break;
+
+                        case InitStep.Step2000_Init_Done:
+                            {
+                                Thread.Sleep(1000);
+                                IsInitDone = true;
+                            }
+                            break;
+                    }
+                    Thread.Sleep(10);
+                }
+            });
+            InitThread.Start();
+        }
+        /// <summary>
+        /// Auto 공정 함수
+        /// </summary>
+        public override void Auto_Start_CV_Control()
+        {
+            mode = Mode.Auto;
+            NCV_AutoRunning = true;
+            InmodeConvCheck();
+            CV_AutoStep = AutoStep.Step000_Check_Direction;
+            Thread LocalThread = new Thread(() =>
+            {
+                Console.WriteLine(ID + ":" + "Auto Start");
+                while (G_Var.IsAutoRun && (NCV_AutoRunning || NCV_CycleRunning))
+                {
+                    switch (CV_AutoStep)
+                    {
+
+                        /// <summary>
+                        /// 1. 운영 방향과 운전 방향 확인
+                        /// </summary>
+                        case AutoStep.Step000_Check_Direction:
+                            {
+                                if (GetOperationDirection() == LineDirection.Input)
+                                {
+                                    CV_AutoStep = AutoStep.Step100_InMode_Check_CST_Load_Status;
+                                }
+
+                                else
+                                {
+                                    CV_AutoStep = AutoStep.Step300_OutMode_Check_CST_Load_Status;
+                                }
+                            }
+                            break;
+
+                        /// <summary>
+                        /// 1.현재 자재가 있는지 확인 (자재가 있으면 CSTDetected = true)
+                        /// 2.현재 스텝을 IDLE로 판단.
+                        /// </summary>
+                        case AutoStep.Step100_InMode_Check_CST_Load_Status: // 자재가 있고 앞 컨베이어에도 자재가 있는 경우 추가해야됨
+                            {
+                                LCnV_CST_Empty_Detect();
+                                // 자재가 있는 경우
+                                if (LCnvCSTDetected)
+                                {
+                                    Thread.Sleep(2000);
+                                    CV_AutoStep = AutoStep.Step210_InMode_Move_CV_Rolling_In;
+                                }
+                                // 자재가 없고 이전 컨베이어가 있는 경우
+                                else if (beforeconv != null && !LCnvCSTDetected)
+                                {
+                                    CV_AutoStep = AutoStep.Step500_InMode_Get_CST_Rolling;
+                                }
+                                Console.WriteLine(CV_AutoStep);
+                            }
+                            break;
+
+                        /// <summary>
+                        /// 1. 자재 ID를 읽을 준비를 하는 스텝, 추후 추가시 주석해제 수정 필요.
+                        /// </summary>
+                        //case NORMAL_CV_AutoStep.Step200_InMode_Start_CST_Pass_From_CV:
+                        //    {
+                        //        // 이전 컨베이어에서 자재를 받을 수 있는 상태 확인
+                        //        if (Carrier_CheckLP_ExistProduct(true))
+                        //        {
+                        //            // 자재 ID 읽기 준비
+                        //            CV_AutoStep = NORMAL_CV_AutoStep.Step210_InMode_Move_CV_Rolling;
+                        //        }
+                        //        else
+                        //        {
+                        //            
+                        //        }
+                        //    }
+                        //    break;
+
+                        /// <summary>
+                        /// 1. 컨베어구동 동작 진행
+                        /// </summary>
+                        case AutoStep.Step210_InMode_Move_CV_Rolling_In:
+                            {
+                                // 컨베이어 구동
+                                StartConveyor(AutoVelocity);
+                                if(beforeconv != null)
+                                {
+                                    // 이전 컨베이어 타입에 따라 분류
+                                    if(beforeconv.type == "Long")
+                                    {
+                                        beforeconv.LCnV_CST_Empty_Detect();
+                                        // 이전 컨베이어의 Foup 감지 센서가 모두 Off면 동작
+                                        if (beforeconv.LCnvCSTDetected)
+                                        {
+                                            CV_AutoStep = AutoStep.Step215_InMode_Move_CV_Slow;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        beforeconv.CST_Empty_Detect();
+                                        // 이전 컨베이어의 Foup 감지 센서가 모두 Off면 동작
+                                        if (beforeconv.SCnvCSTDetected)
+                                        {
+                                            CV_AutoStep = AutoStep.Step215_InMode_Move_CV_Slow;
+                                        }
+                                    }
+                                }
+                                // 이전 컨베이어가 없는 경우 (시작 컨베이어)
+                                else
+                                {
+                                    CV_AutoStep = AutoStep.Step220_InMode_Run_Condition_Check;
+                                }
+
+                            }
+                            break;
+
+                        /// <summary>
+                        /// 1. 앞 Conv에 Foup 존재 시 속도 줄임
+                        /// </summary
+                        case AutoStep.Step215_InMode_Move_CV_Slow:
+                            {
+                                if (LCnvFoupDetect[0] == SensorOnOff.On && LCnvFoupDetect[1] == SensorOnOff.Off && LCnvFoupDetect[2] == SensorOnOff.On)
+                                {
+                                    if (nextconv != null)
+                                    {
+                                        // 이전 컨베이어의 타입에 따라 분류
+                                        if (beforeconv.type == "Long")
+                                        {
+                                            // 다음 컨베이어에 타입에 따라 분류
+                                            if (nextconv.type == "Long")
+                                            {
+                                                nextconv.LCnV_CST_Empty_Detect();
+                                                // 다음 컨베이어에 Foup이 있다면 저속
+                                                if (nextconv.LCnvCSTDetected)
+                                                {
+                                                    StartConveyor(SlowVelocity);
+                                                }
+                                            }
+                                            else
+                                            {
+                                                nextconv.CST_Empty_Detect();
+                                                // 다음 컨베이어에 Foup이 있다면 저속
+                                                if (nextconv.SCnvCSTDetected)
+                                                {
+                                                    StartConveyor(SlowVelocity);
+                                                }
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            // 다음 컨베이어에 타입에 따라 분류
+                                            if (nextconv.type == "Long")
+                                            {
+                                                nextconv.LCnV_CST_Empty_Detect();
+                                                // 다음 컨베이어에 Foup이 있다면 저속
+                                                if (nextconv.LCnvCSTDetected)
+                                                {
+                                                    StartConveyor(SlowVelocity);
+                                                }
+                                            }
+                                            else
+                                            {
+                                                nextconv.CST_Empty_Detect();
+                                                // 다음 컨베이어에 Foup이 있다면 저속
+                                                if (nextconv.SCnvCSTDetected)
+                                                {
+                                                    StartConveyor(SlowVelocity);
+                                                }
+                                            }
+
+                                        }
+                                        CV_AutoStep = AutoStep.Step220_InMode_Run_Condition_Check;
+                                    }
+                                    // 다음 컨베이어가 없는 경우 (마지막 컨베이어인 경우)
+                                    else if (nextconv == null)
+                                    {
+                                        StartConveyor(SlowVelocity);
+                                        CV_AutoStep = AutoStep.Step220_InMode_Run_Condition_Check;
+                                    }
+                                    // 이전 컨베이어가 없는 경우 (시작 컨베이어)
+                                    else if (beforeconv == null)
+                                    {
+                                        CV_AutoStep = AutoStep.Step220_InMode_Run_Condition_Check;
+                                    }
+                                }
+                            }
+                            break;
+                        /// <summary>
+                        /// 1. Foup Detect센서가 모두 감지됐을 때 조건 확인
+                        /// </summary>
+                        case AutoStep.Step220_InMode_Run_Condition_Check:
+                            {
+                                LCV_Inmode_CST_Check_Detect();
+                                // 마지막 컨베이어가 아닌 경우
+                                if (nextconv != null && LCnVCSTBoth)
+                                {
+                                    // 다음 컨베이어가 Turn 컨베이어인 경우
+                                    if (nextconv.type == "Turn")
+                                    {
+                                        // 다음 컨베이어가 Load 상태가 아닐 경우 정지
+                                        if (nextconv.turnstatus != TurnStatus.Load)
+                                        {
+                                            StopConveyor();
+                                            CV_AutoStep = AutoStep.Step270_InMode_Move_CST_Pass_CV_to_TCV;
+                                        }
+                                        // Load 상태일 경우
+                                        else
+                                        {
+                                            CV_AutoStep = AutoStep.Step250_InMode_Move_CV_Rolling_Out;
+                                        }
+                                    }
+                                    // 다음 컨베이어가 Trun 컨베이어가 아닌 경우
+                                    else if (nextconv.type == "Normal")
+                                    {
+                                        nextconv.CST_Empty_Detect();
+                                        // 다음 컨베이어에 Foup이 없는 경우
+                                        if (!nextconv.SCnvCSTDetected)
+                                        {
+                                            CV_AutoStep = AutoStep.Step250_InMode_Move_CV_Rolling_Out;
+                                        }
+                                        // 다음 컨베이어에 Foup이 있는 경우 정지
+                                        else
+                                        {
+                                            StopConveyor();
+                                            CV_AutoStep = AutoStep.Step255_InMode_Wait_NextConv;
+                                        }
+                                    }
+                                    // 다음 컨베이어가 Long 컨베이어인 경우
+                                    else if (nextconv.type == "Long")
+                                    {
+                                        nextconv.LCnV_CST_Empty_Detect();
+                                        // 다음 컨베이어에 Foup이 없는 경우
+                                        if (!nextconv.LCnvCSTDetected)
+                                        {
+                                            CV_AutoStep = AutoStep.Step250_InMode_Move_CV_Rolling_Out;
+                                        }
+                                        // 다음 컨베이어에 Foup이 있는 경우 정지
+                                        else
+                                        {
+                                            StopConveyor();
+                                            CV_AutoStep = AutoStep.Step255_InMode_Wait_NextConv;
+                                        }
+                                    }
+                                }
+                                // 마지막 컨베이어인 경우 정지
+                                else if (nextconv == null && LCnVCSTBoth)
+                                {
+
+                                    StopConveyor();
+                                    CV_AutoStep = AutoStep.Step900_Final_CV_Wait;
+                                }
+                            }
+                            break;
+
+                        /// <summary>
+                        /// 1. Foup이 빠져나가면 Step 초기화
+                        /// </summary>
+                        case AutoStep.Step250_InMode_Move_CV_Rolling_Out:
+                            {
+                                // 마지막 Foup 감지 센서가 꺼진 경우 0.1초 후 정지 - 시간 조정
+                                if (!LCV_Inmode_LastFoup_Detect_Check())
+                                {
+                                    Thread.Sleep(100);
+                                    StopConveyor();
+                                    CV_AutoStep = AutoStep.Step000_Check_Direction;
+                                }
+                            }
+                            break;
+
+                        /// <summary>
+                        /// 1. Next Conveyor가 Foup을 Load하지 못하는 경우 대기
+                        /// </summary>
+                        case AutoStep.Step255_InMode_Wait_NextConv:
+                            {
+                                // 다음 컨베이어의 타입에 따라 분류
+                                if (nextconv.type == "Normal")
+                                {
+                                    nextconv.CST_Empty_Detect();
+                                    // 다음 컨베이어가 비어 있는 경우 2초 후 동작 - 시간 조정
+                                    if (!nextconv.SCnvCSTDetected)
+                                    {
+                                        Thread.Sleep(2000);
+                                        StartConveyor(AutoVelocity);
+                                        CV_AutoStep = AutoStep.Step250_InMode_Move_CV_Rolling_Out;
+                                    }
+                                }
+                                else if (nextconv.type == "Long")
+                                {
+                                    nextconv.LCnV_CST_Empty_Detect();
+                                    // 다음 컨베이어가 비어 있는 경우 2초 후 동작 - 시간 조정
+                                    if (!nextconv.LCnvCSTDetected)
+                                    {
+                                        Thread.Sleep(2000);
+                                        StartConveyor(AutoVelocity);
+                                        CV_AutoStep = AutoStep.Step250_InMode_Move_CV_Rolling_Out;
+                                    }
+                                }
+                                //Thread.Sleep(10);
+                            }
+                            break;
+
+                        /// <summary>
+                        /// 1. 앞 Turn Conveyor가 Busy인 경우 Load 상태가 될 때 까지 대기
+                        /// </summary>
+                        case AutoStep.Step270_InMode_Move_CST_Pass_CV_to_TCV:
+                            {
+                                // 다음 Turn 컨베이어가 Load 상태인 경우 2초 후 동작 - 시간 조정
+                                if (nextconv.turnstatus == TurnStatus.Load)
+                                {
+                                    Thread.Sleep(2000);
+                                    StartConveyor(AutoVelocity);
+                                    CV_AutoStep = AutoStep.Step250_InMode_Move_CV_Rolling_Out;
+                                }
+                            }
+                            break;
+
+                        /// <summary>
+                        /// 1. 물체가 감지되면 Step210으로 변경
+                        /// </summary>
+                        case AutoStep.Step275_InMode_Change_210:
+                            {
+                                LCnV_CST_Empty_Detect();
+                                if (LCnvCSTDetected)
+                                {
+                                    CV_AutoStep = AutoStep.Step210_InMode_Move_CV_Rolling_In;
+                                }
+                            }
+                            break;
+
+                        /// <summary>
+                        /// 1. 이전 Conveyor에 Foup이 적재되면 구동
+                        /// </summary>
+                        case AutoStep.Step500_InMode_Get_CST_Rolling:
+                            {
+                                // 이전 컨베이어의 타입이 Turn인 경우
+                                if (beforeconv.type == "Turn")
+                                {
+                                    // 이전 컨베이어의 상태가 Unload인 경우 동작
+                                    if (beforeconv.turnstatus == TurnStatus.Unload)
+                                    {
+                                        StartConveyor(AutoVelocity);
+                                        CV_AutoStep = AutoStep.Step275_InMode_Change_210;
+                                    }
+                                }
+                                // 이전 컨베이어의 타입이 Turn이 아닌 경우 이전 컨베이어의 AutoStep Check 후 동작
+                                else if (beforeconv.CV_AutoStep == AutoStep.Step220_InMode_Run_Condition_Check ||
+                                beforeconv.CV_AutoStep == AutoStep.Step255_InMode_Wait_NextConv)
+                                {
+                                    StartConveyor(AutoVelocity);
+                                    CV_AutoStep = AutoStep.Step275_InMode_Change_210;
+                                }
+                            }
+                            break;
+
+                        /// <summary>
+                        /// 1. 마지막 Conveyor인 경우 물체가 Unload 될 때 까지 대기
+                        /// </summary>
+                        case AutoStep.Step900_Final_CV_Wait:
+                            {
+                                LCnV_CST_Empty_Detect();
+                                // Foup이 없어진 경우 Auto Step 초기화
+                                if (!LCnvCSTDetected)
+                                {
+                                    CV_AutoStep = AutoStep.Step000_Check_Direction;
+                                }
+                                //Thread.Sleep(10);
+                            }
+                            break;
+
+                        default:
+                            break;
+
+                    }
+
+                    Thread.Sleep(10); // CPU 사용량 감소를 위한 대기
+                }
+                Console.WriteLine(ID + ":" + "Auto Stop");
+                StopConveyor();
+                mode = Mode.Manual;
+                NCV_AutoRunning = false;
+            });
+            LocalThread.Start();
+        }
+        private int Auto_CV_Get_StepNum()
+        {
+            return (int)CV_AutoStep;
+        }
+        public LongConv(string name) : base(name)
+        {
+            type = "Long";
+            bits.Add(2);
+            bits.Add(6);
+            bits.Add(3);
+        }
+    }
+}

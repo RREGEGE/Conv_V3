@@ -1,0 +1,86 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Synustech
+{
+    public class Line
+    {
+        public static int Linenum = 1;
+        public string ID;
+        public List<Conveyor> conveyors;
+        public Auto auto;
+        public InOutMode inoutmode = InOutMode.InMode;
+
+        public int ConvEA = 0;
+        public int CSTEA = 0;
+        public int AutoEA = 0;
+        public int IdleEA = 0;
+        public int ManualEA = 0;
+        public int ErrorEA = 0;
+        public int WarningEA = 0;
+
+        public Line()
+        {
+            conveyors = new List<Conveyor>();
+            ID = string.Format("Line{0}", Linenum);
+            Linenum++;
+        }
+        public int AutoCheck()
+        {
+            int count = 0;
+            foreach (Conveyor conveyor in conveyors)
+            {
+                if (conveyor.safety == Safety.OK && conveyor.alarmstatus == AlarmStatus.OK && conveyor.servo == ServoOnOff.On)
+                {
+                    conveyor.auto = Auto.Enable;
+                }
+                else
+                {
+                    conveyor.auto = Auto.Disable;
+                    count++;
+                }
+            }
+            return count;
+        }
+        public void StatusCheck()
+        {
+
+            int convEA = 0;
+            int autoEA = 0;
+            int idleEA = 0;
+            int manualEA = 0;
+            int errorEA = 0;
+            foreach (Conveyor conveyor in conveyors)
+            {
+                if (conveyor != null)
+                {
+                    convEA++;
+                    if ((conveyor.mode == Mode.Auto) && (conveyor.servo == ServoOnOff.On))
+                    {
+                        autoEA++;
+                    }
+                    else if ((conveyor.run == Conveyor.CnvRun.Run) && (conveyor.servo == ServoOnOff.On))
+                    {
+                        idleEA++;
+                    }
+                    else if ((conveyor.servo == ServoOnOff.On) && (conveyor.mode == Mode.Manual))
+                    {
+                        manualEA++;
+                    }
+                    else if ((conveyor.servo == ServoOnOff.On) && (conveyor.mode == Mode.Alarm))
+                    {
+                        errorEA++;
+                    }
+                }
+            }
+            ConvEA = convEA;
+            AutoEA = autoEA;
+            IdleEA = idleEA;
+            ManualEA = manualEA;
+            ErrorEA = errorEA;
+        }
+    }
+}

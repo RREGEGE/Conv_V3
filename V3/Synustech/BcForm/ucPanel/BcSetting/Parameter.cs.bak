@@ -1,0 +1,118 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static Synustech.G_Var;
+using WMX3ApiCLR;
+using System.Data.Common;
+
+namespace Synustech.BcForm.ucPanel.BcSetting
+{
+    public partial class Parameter : UserControl
+    {
+        public Parameter()
+        {
+            InitializeComponent();
+            string[] headers =
+            {
+                 "gearRatioNum",
+                 "gearRatioDen",
+                 "motorDirection",
+                 "absEncoderMode",
+                 "absEncoderHomeOffset",
+                 "inposWidth",
+                 "posSetWidth",
+                 "homeTypem_homeType",
+                 "homeDirectionm",
+                 "homeSlowVelocity",
+                 "homeSlowAcc",
+                 "homeSlowDec",
+                 "homeFastVelocity",
+                 "homeFastAcc",
+                 "homeFastDec",
+                 "homeShiftVelocity",
+                 "homeShiftAcc",
+                 "homeShiftDec",
+                 "homeShiftDistance",
+                 "limitSwitchTypem",
+                 "limitDirectionm",
+                 "limitSwitchTypem",
+                 "softLimitPosValue",
+                 "softLimitNegValue",
+                 "limitDec",
+                 "limitSlowDec",
+                 "invertPosLimit",
+                 "invertNegLimit",
+                 "linintplCalcMode",
+                 "quickStopDecel"
+
+            };
+
+            // 행 추가 및 행 머리글 텍스트 설정
+            foreach (string header in headers)
+            {
+                int rowIndex = dgParaView.Rows.Add(.ToString()); // 행 추가
+                dgParaView.Rows[rowIndex].HeaderCell.Value = header; // 행 머리글 텍스트 설정
+            }
+        }
+        public void InitialParameterGridView()
+        {
+            int i = 0;
+            foreach (Conveyor conveyor in conveyors)
+            {
+                string Header = "ID: " + conveyor.ID.ToString("D3") + "[" + conveyor.Axis.ToString("D3") + "]";
+                int ColumnIndex = dgParaView.Columns.Add(Header, Header.ToString());
+
+                dgParaView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+                i++;
+            }
+            dgParaView.Columns.Remove("None".ToString());
+        }
+        private void SetGridView()
+        {
+            for (int i = 0; i < conveyors.Count; i++)
+            {
+                dgParaView.Rows[0].Cells[i].Value = w_motion.m_axisParameter[i].m_gearRatioNum;
+                dgParaView.Rows[1].Cells[i].Value = w_motion.m_axisParameter[i].m_gearRatioDen;
+                dgParaView.Rows[2].Cells[i].Value = w_motion.m_axisParameter[i].m_motorDirection;
+                dgParaView.Rows[3].Cells[i].Value = w_motion.m_axisParameter[i].m_absEncoderMode;
+                dgParaView.Rows[4].Cells[i].Value = w_motion.m_axisParameter[i].m_absEncoderHomeOffset;
+                dgParaView.Rows[5].Cells[i].Value = w_motion.m_axisParameter[i].m_inposWidth;
+                dgParaView.Rows[6].Cells[i].Value = w_motion.m_axisParameter[i].m_posSetWidth;
+                dgParaView.Rows[7].Cells[i].Value = w_motion.m_axisParameter[i].m_homeType;
+                dgParaView.Rows[8].Cells[i].Value = w_motion.m_axisParameter[i].m_homeDirection;
+                dgParaView.Rows[9].Cells[i].Value = w_motion.m_axisParameter[i].m_homeSlowVelocity;
+                dgParaView.Rows[10].Cells[i].Value = w_motion.m_axisParameter[i].m_homeSlowAcc;
+                dgParaView.Rows[11].Cells[i].Value = w_motion.m_axisParameter[i].m_homeSlowDec;
+                dgParaView.Rows[12].Cells[i].Value = w_motion.m_axisParameter[i].m_homeFastVelocity;
+                dgParaView.Rows[13].Cells[i].Value = w_motion.m_axisParameter[i].m_homeFastAcc;
+                dgParaView.Rows[14].Cells[i].Value = w_motion.m_axisParameter[i].m_homeFastDec;
+                dgParaView.Rows[15].Cells[i].Value = w_motion.m_axisParameter[i].m_homeShiftVelocity;
+                dgParaView.Rows[16].Cells[i].Value = w_motion.m_axisParameter[i].m_homeShiftAcc;
+                dgParaView.Rows[17].Cells[i].Value = w_motion.m_axisParameter[i].m_homeShiftDec;
+                dgParaView.Rows[18].Cells[i].Value = w_motion.m_axisParameter[i].m_homeShiftDistance;
+                dgParaView.Rows[19].Cells[i].Value = w_motion.m_axisParameter[i].m_limitSwitchType;
+                dgParaView.Rows[20].Cells[i].Value = w_motion.m_axisParameter[i].m_limitDirection;
+                dgParaView.Rows[21].Cells[i].Value = w_motion.m_axisParameter[i].m_limitSwitchType;
+                dgParaView.Rows[22].Cells[i].Value = w_motion.m_axisParameter[i].m_softLimitPosValue;
+                dgParaView.Rows[23].Cells[i].Value = w_motion.m_axisParameter[i].m_softLimitNegValue;
+                dgParaView.Rows[24].Cells[i].Value = w_motion.m_axisParameter[i].m_limitDec;
+                dgParaView.Rows[25].Cells[i].Value = w_motion.m_axisParameter[i].m_limitSlowDec;
+                dgParaView.Rows[26].Cells[i].Value = w_motion.m_axisParameter[i].m_invertPosLimit;
+                dgParaView.Rows[27].Cells[i].Value = w_motion.m_axisParameter[i].m_invertNegLimit;
+                dgParaView.Rows[28].Cells[i].Value = w_motion.m_axisParameter[i].m_linintplCalcMode;
+                dgParaView.Rows[29].Cells[i].Value = w_motion.m_axisParameter[i].m_quickStopDecel;
+
+            }
+        }
+        private void tb_Base_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
+}

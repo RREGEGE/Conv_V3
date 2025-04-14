@@ -1,0 +1,597 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Threading;
+using wmx3Api;
+using WMX3ApiCLR;
+using System.IO;
+using System.Reflection;
+using Org.BouncyCastle.Tls;
+using System.Drawing.Drawing2D;
+using System.Drawing;
+using static Synustech.AlarmList;
+using System.Data;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Synustech
+{
+    public enum AlarmLevel
+    {
+        None,
+        Warning,
+        Error
+    }
+
+    //추후 알람리스트 분리 등 필요할 때 사용
+    //public enum AlarmType 
+    //{
+    //    Master,
+    //    Conveyor,
+
+    //    MAX_COUNT,
+    //}
+
+    public enum ConveyorAlarm : int
+    {
+        // Global 부분
+        MainPanel_EMO = 0x00,
+        Conveyor_E_Stop,
+        WMX_E_Stop,
+        Software_E_Stop,
+        Power_Off_Error,
+        Master_Mode_Change_Error,
+        //CNV 부분
+        Power_Off = 0x20,
+        Disconnection_EtherCAT_Error,
+        EtherCAT_Connecting_Fail,
+        Over_Current,
+        Over_Voltage,
+        Open_Temperature,
+        Oper_Motor_Winding,
+        Internal_Voltage_Bad,
+        Position_Limit,
+        Voltage_Low,
+        Current_limit,
+        Step_Drive_Error,
+        CST_Disappear = 0x30,
+        Unkown_CST_Detected,
+        IN_Step_Time_Over_Error,
+        OUT_Step_Time_Over_Error,
+        STEP1_Error_Detect,
+        Process_Run_Time_Over_Error,
+        //Turn 부분
+        Origin_Search_Fail = 0x40,
+        HomeSensor_Always_On,
+        Move_To_Home_Timeout,
+        Move_To_POS1_Timeout,
+        Move_To_POS2_Timeout,
+        Move_To_POS3_Timeout,
+        Soft_POT_detection_,
+        Soft_NOT_detection,
+        Command_exceeded_Soft_POT_,
+        Command_exceeded_Soft_NOT_,
+        No_Teaching_Value,
+        Sensor_not_detected,
+        Teaching_value_error,
+        //Interface 부분
+        Reading_CheckSum_Error = 0x50,
+        Reading_ID_Error,
+        Reading_Tag_not_recognized,
+        Reading_Tag_type_error,
+        Reading_Tag_Data_CheckSum_Error,
+        Reading_Tag_communication_error,
+        Reading_Antenna_Error,
+        Light_Curtain_Detect_Error,
+        Hoist_Detect_Error,
+        PIO1_Valid_Wait_Time_Out_Error,
+        PIO1_Busy_Wait_Time_Out_Error,
+        PIO1_Busy_ON_Time_Out_Error,
+        PIO1_Complete_Wait_Time_Out_Error,
+        PIO1,
+        PIO2_PIO_Ready_Wait_Time_Out_Error,
+        PIO2_PIO_Ready_Off_Time_Out_Error,
+        PIO2_Port_Error_On_While_Busy_Error,
+        PIO2_Port_Ready_Off_While_Busy_Error,
+        PIO2,
+
+        NormalConv = 0x80,
+        LongConv,
+        TurnConv,
+    }
+    // <summary>
+    public enum Safety
+    {
+        NG,
+        OK
+    }
+    public enum Mode
+    {
+        Manual,
+        Auto,
+        Alarm
+    }
+    public enum Status
+    {
+        Idle,
+        NG
+    }
+    public enum SensorOnOff
+    {
+        Off,
+        On
+    }
+    public enum ServoOnOff
+    {
+        Off,
+        On
+    }
+    public enum AlarmStatus
+    {
+        OK,
+        NG
+    }
+    public enum InOutMode
+    {
+        InMode,
+        OutMode
+    }
+    public enum Auto
+    {
+        Enable,
+        Disable
+    }
+    internal class G_Var
+    {
+        public static AlarmList m_ConveyorAlarmList = new AlarmList();
+
+        public static delAlarmHistory alarm;
+        public static delLine lineAdd;
+        public static delParam param;
+        // Alarm
+        //전체 알람을 저장할 테이블
+        public static AlarmList TotalLog = new AlarmList();
+
+        public static List<AlarmListParam> AlarmCodes = new List<AlarmListParam>();  // 알람 XML 을 읽어올 List 만들기
+
+        public static void AddAlarm(ref Conveyor conveyor, ConveyorAlarm conveyorAlarm)
+        {
+            int TransForm = (int)conveyorAlarm;
+            int ID = conveyor.ID;
+
+            conveyor.m_ConveyorAlarmList.AlarmOccur(TransForm, ID, conveyor.m_ConveyorAlarmList);
+            TotalLog.AlarmOccur(TransForm, ID, TotalLog);
+            //interlock(TransForm); // 인터락 기능 추가 시 사용 
+        }
+        public static void AddAlarm_Master(ConveyorAlarm masterAlarm)
+        {
+            int TransForm = (int)masterAlarm;
+            m_ConveyorAlarmList.AlarmOccur_Master(TransForm, m_ConveyorAlarmList);
+            TotalLog.AlarmOccur_Master(TransForm, TotalLog);
+        }
+        public static DataTable ConvertListToDataTable<T>(List<T> list)
+        {
+            // 새로운 DataTable 생성
+            DataTable dataTable = new DataTable(typeof(T).Name);
+
+            // 클래스의 모든 속성(Property) 가져오기
+            PropertyInfo[] properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            // DataTable에 열(Column) 추가
+            foreach (PropertyInfo property in properties)
+            {
+                // 속성 이름과 타입으로 DataColumn을 생성 후 추가
+                dataTable.Columns.Add(property.Name, Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType);
+            }
+
+            // 리스트의 각 객체를 DataTable의 행(Row)으로 추가
+            foreach (T item in list)
+            {
+                // 새로운 DataRow 생성
+                DataRow row = dataTable.NewRow();
+                foreach (PropertyInfo property in properties)
+                {
+                    // 속성 값을 DataRow의 해당 열에 설정
+                    row[property.Name] = property.GetValue(item) ?? DBNull.Value;
+                }
+
+                // DataTable에 DataRow 추가
+                //dataTable.Rows.Add(row);
+
+                // DataTable의 맨 앞에 DataRow 추가
+                dataTable.Rows.InsertAt(row, 0);
+            }
+
+            return dataTable;
+        }
+        // 파일 경로
+        public static string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+
+        public static string LineParamFilePath = @".\Conv\Setting\LineParam.xml";
+        //public static string LineFullPath = Path.GetFullPath(Path.Combine(solutionDirectory, LineParamFilePath));
+        //public static string LineFullPath = @"C:\Users\240604\Desktop\Auto_Demo\Setting\LineParam.xml";
+        public static string LineFullPath = @"C:\Users\170509\source\SemiCnvPJT\TEST\241114_UI_Update_Merge\Conv\Setting\LineParam.xml";
+
+        public static string RectParamFilePath = @".\Conv\Setting\RectParam.xml";
+        //public static string RectFullPath = Path.GetFullPath(Path.Combine(solutionDirectory, RectParamFilePath));
+        //public static string RectFullPath = @"C:\Users\240604\Desktop\Auto_Demo\Setting\RectParam.xml";
+        public static string RectFullPath = @"C:\Users\170509\source\SemiCnvPJT\TEST\241114_UI_Update_Merge\Conv\Setting\RectParam.xml";
+
+        public static string ConvParamFilePath = @".\Conv\Setting\ConvParam.xml";
+        //public static string ConvFullPath = Path.GetFullPath(Path.Combine(solutionDirectory, ConvParamFilePath));
+        //public static string ConvFullPath = @"C:\Users\240604\Desktop\Auto_Demo\Setting\ConvParam.xml";
+        public static string ConvFullPath = @"C:\Users\170509\source\SemiCnvPJT\TEST\241114_UI_Update_Merge\Conv\Setting\ConvParam.xml";
+
+        public static string LogFilePath = @".\Conv\Setting\LogParam.xml";
+        public static string LogFullPath = Path.GetFullPath(Path.Combine(solutionDirectory, LogFilePath));
+
+        public static string ProfileFilePath = @".\Conv\Setting\Profile.xml";
+        //public static string ProfileFullPath = Path.GetFullPath(Path.Combine(solutionDirectory,ProfileFilePath));
+        public static string ProfileFullPath = @"C:\Users\170509\source\SemiCnvPJT\TEST\241114_UI_Update_Merge\Conv\Setting\Profile.xml";
+
+        public static string ParamFilePath = @".\Conv\Setting\wmx_parameters.xml";
+        //public static string ParamFullPath = Path.GetFullPath(Path.Combine(solutionDirectory, ParamFilePath));
+        public static string ParamFullPath = @"C:\Users\170509\source\SemiCnvPJT\TEST\241114_UI_Update_Merge\Conv\Setting\wmx_parameters.xml";
+
+        public static string AlarmFilePath = @".\Conv\Setting\AlarmListParam.xml";
+        public static string AlarmFullPath = Path.GetFullPath(Path.Combine(solutionDirectory , AlarmFilePath));
+        //public static string AlarmFullPath = @"C:\Users\170509\source\SemiCnvPJT\TEST\241114_UI_Update_Merge\Conv\Setting\AlarmListParam.xml";
+
+        public static string AlarmHistoryFilePath = @".\Conv\Conv\AlarmHistory\AlarmHistory.xml";
+        public static string AlarmHistoryFullPath = Path.GetFullPath(Path.Combine(solutionDirectory, AlarmHistoryFilePath));
+        //public static string AlarmHistoryFullPath = @"C:\Users\170509\source\SemiCnvPJT\TEST\241114_UI_Update_Merge\Conv\AlarmHistory\AlarmHistory.xml";
+
+        public static WMXMotion w_motion;
+        public static CoreMotionStatus cmStatus = new CoreMotionStatus();
+        // Error 선언
+        public const int MASTER_ALAMR_BYTE_SIZE = 14;
+        public const int CONVEYOR_ALARM_BYTE_SIZE = 26;
+
+
+        // Thread 선언
+        public static AnyThread iOCheck = new AnyThread();
+        public static LampThread lampThread = new LampThread();
+        public static SafetyThread safetyThread = new SafetyThread();
+        public static RectThread rectThread = new RectThread();
+        public static ConvThread convThread = new ConvThread();
+        public static LineThread lineThread = new LineThread();
+
+        public static XMLControl _xml = new XMLControl();
+
+        public static bool IsMainForm;
+        public static bool bThreadEnd;
+        public static bool bIOThreadEnd;
+        public static bool AnalogData_Check;
+        public static bool bRun;
+        public static bool bOupIoRun;
+        public static bool IsCommunication;
+
+        public static bool CycleStop;
+        public static int TargetCycle;
+        public static int CurrentCycle;
+        public static bool IsInput;
+
+        public static bool bMouse;
+        public static bool StepDrection = false;
+
+        public static int nStep;
+
+        public static bool IsSafety = false;
+        public static bool IsAuto = false;
+        public static bool IsAutoRun = false;
+        public static bool IsCycleRun = false;
+        public static bool IsBuzzerSound = true;
+
+        public static int? selectedConvID;
+        public static bool auto;
+        public static int LIneNum = 1;
+
+        public static List<Conveyor> conveyors;              // 컨베이어 리스트
+        public static List<CustomRectangle> rectangles;      // 사각형 리스크
+        public static List<Line> lines;
+        public static CustomRectangle selectedRectangle;     // 선택된 사각형
+
+        //public static NormalConv Normal1;
+        //public static NormalConv Normal2;
+        //public static TurnConv Turn1;
+        //public static LongConv Long1;
+        //public static TurnConv Turn2;
+        //public static NormalConv Normal3;
+        //public static LongConv Long2;
+        //public static TurnConv Turn3;
+        //public static NormalConv Normal4;
+        //public static TurnConv Turn4;
+
+        public static byte[] byInput = new byte[255];
+        public static byte[] byOutput = new byte[255];
+
+        // Safety InPut
+        public static SensorOnOff Safety;
+        public static SensorOnOff MainPower;
+        public static SensorOnOff EMO;
+        public static SensorOnOff EMS_1;
+        public static SensorOnOff EMS_2;
+        public static SensorOnOff Mode_Change;
+        public static SensorOnOff[] OHTPIOin = new SensorOnOff[4];
+        public static SensorOnOff[] AGVPIOin = new SensorOnOff[3];
+        // Alarm 변수
+        public static bool SafetyAlarm = false;
+        public static bool MainPowerAlarm = false;
+        public static bool EMOAlarm = false;
+        public static bool EMSAlarm = false;
+        public static bool WMX_E_Stop = false;
+        public static bool Software_E_Stop = false;
+        public static bool Master_Mode_Change_Error = false;
+
+        public static int addrSafetyin = 0;
+        public static int addrOHTin = 2;
+        public static int addrAGVin = 3;
+        public static int addrEMS_1 = 22;
+        public static int addrEMS_2 = 38;
+
+        public static int Safetyinbit = 0;
+        public static int MainPowerbit = 1;
+        public static int ModeChangebit = 5;
+        public static int EMObit = 6;
+        public static List<int> OHTINbits = new List<int>() { 0, 1, 3, 6 };
+        public static List<int> AGVINbits = new List<int>() { 0, 1, 2 };
+
+        //Safety OutPut
+        public static SensorOnOff SafetyReset;
+        public static SensorOnOff[] Lamp_Buzz = new SensorOnOff[8];
+        public static SensorOnOff[] OHTpio = new SensorOnOff[7];
+        public static SensorOnOff[] AGVpio = new SensorOnOff[3];
+
+        public static int addrSafety = 0;
+        public static int addrLamp_Buzz = 1;
+        public static int addrOHTPIO = 2;
+        public static int addrAGVPIO = 3;
+
+        public static int bitSafety = 3;
+        public static int bitEMS = 2;
+
+        //public static bool EMS_1;
+        //public static bool EMS_2;
+
+        public static List<int> Lampbits = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7 };
+        public static List<int> OHTbits = new List<int>() { 0, 1, 2, 4, 5, 6, 7 };
+        public static List<int> AGVbits = new List<int>() { 0, 1, 2 };
+
+        public static bool Isauto = false;
+        public static bool IsManual = false;
+        public static bool IsAlarm = false;
+        // IO Group
+        public enum MyInput
+        {
+            Foup_Detect1 = 2,
+            Foup_Detect2,
+        }
+        public enum LongInput
+        {
+            Foup_Detect1 = 2,
+            Foup_Detect3,
+            Foup_Detect2 = 6,
+        }
+        public enum TurnInput
+        {
+            Home = 6,
+            POS1 = 2,
+            POS2,
+        }
+        public enum TurnInput2
+        {
+            POS3 = 6
+        }
+        public enum Master
+        {
+            Safety_On,
+            Main_Power,
+            Mode_Change = 5,
+            EMO = 6,
+            EMS_1 = 22,
+            EMS_2 = 38
+        }
+        public enum OHTPIO_in
+        {
+            OHT_PIO_Load_Req,
+            OHT_Unload_Req,
+            OHT_PIO_Ready = 3,
+            OHT_PIO_HOAVBL = 6
+        }
+        public enum AGVPIO_in
+        {
+            AGV_PIO_Load_Req,
+            AGV_PIO_Unload_Req,
+            AGV_PIO_Ready
+        }
+        public enum SafetyOut
+        {
+            SafetyReset = 3
+        }
+        public enum LampAndBuzz
+        {
+            Lamp_Red,
+            Lamp_Yellow,
+            Lamp_Green,
+            Lamp_Buzz,
+            Buzzer1,
+            Buzzer2,
+            Buzzer3,
+            Buzzer4,
+        }
+
+        public enum OHTPIO_out
+        {
+            OHT_PIO_Valid,
+            OHT_PIO_CS_0,
+            OHT_PIO_CS_2,
+
+            OHT_PIO_TR_Req = 4,
+            OHT_PIO_Busy,
+            OHT_PIO_Comp,
+            OHT_PIO_CONT
+        }
+        public enum AGVPIO_out
+        {
+            AGV_PIO_TR_Req,
+            AGV_PIO_Busy,
+            AGV_PIO_Comp
+        }
+
+        public static async Task  ConvInit()
+        {
+            int batchSize = 5;
+            for (int i = 0; i < conveyors.Count; i += batchSize)
+            {
+                var turnItems = new List<Conveyor>();
+                for (int j = i; j < i + batchSize && j < conveyors.Count; j++)
+                {
+                    if (conveyors[j].type == "Turn")
+                    {
+                        turnItems.Add(conveyors[j]);
+                    }
+                }
+                // type == "Turn"인 요소가 있다면 Turn_Init() 실행 및 대기
+                if (turnItems.Count > 0)
+                {
+                    foreach (var turnItem in turnItems)
+                    {
+                        turnItem.Turn_Init();
+                    }
+
+                    bool allTurnInitComplete;
+                    do
+                    {
+                        await Task.Delay(50);  // 50ms 간격으로 상태 확인
+                        allTurnInitComplete = turnItems.All(turnItem => turnItem.TCV_InitComp);
+                    } while (!allTurnInitComplete);  // 모든 Turn_InitComp가 true가 될 때까지 반복
+                }
+                // 모든 요소에 Init() 실행
+                for (int j = i; j < i + batchSize && j < conveyors.Count; j++)
+                {
+                    conveyors[j].Init();
+                }
+                // Init() 완료 대기
+                bool allInitComplete;
+                do
+                {
+                    await Task.Delay(100);  // 100ms 간격으로 상태 확인
+                    allInitComplete = true;
+
+                    for (int j = i; j < i + batchSize && j < conveyors.Count; j++)
+                    {
+                        if (!conveyors[j].InitComp)  // 모든 요소의 InitComp 상태 확인
+                        {
+                            allInitComplete = false;
+                            break;
+                        }
+                    }
+                } while (!allInitComplete);  // 모든 InitComp가 true가 될 때까지 반복
+            }
+            Console.WriteLine("Init Done");
+            // Auto 동작
+            foreach (var line in lines)
+            {
+                line.StartTime = DateTime.Now;
+                line.EndTime = null;
+                for (int i = 0; i < line.conveyors.Count; i++)
+                {
+                    if (line.conveyors[i].mode != Mode.Auto)
+                    {
+                        line.conveyors[i].NCV_CycleRunning = true;
+                        line.conveyors[i].Auto_Start_CV_Control();
+                    }
+                }
+            }
+        }
+    }
+    public class MyProfile
+    {
+        public double dVelocity;
+        public double dAcc;
+        public double dDec;
+        public double dJerkAccRatio;
+        public double dJerkDecRatio;
+    }
+
+    public class ServoMonitor
+    {
+        public bool bServoon;
+        public bool bAlarm;
+        public bool bPls;
+        public bool bNls;
+        public bool bOrgine;
+        public bool bHomedone;
+
+
+        public double dCmdpos;
+        public double dFedpos;
+        public double dCmdvel;
+        public double dFedvel;
+        public double dCmdtrq;
+        public double dFedtrq;
+    }
+
+    // Log 작성
+    public enum enLogType
+    {
+        Application,
+        Process
+
+    }
+    public enum enLogLevel
+    {
+        Normal,
+        Warning,
+        Error,
+    }
+    public enum enLogTitle
+    {
+        ButtonClick,
+        NcvAutoStep,
+        TcvAutoStep,
+        LcvAutoStep,
+        CycleStep
+    }
+
+    public enum LoginPassward
+    {
+        User,
+        Admin,
+        Maker,
+    }
+
+    public enum MotionStatus
+    {
+        ID,
+        Axis,
+        Step,
+        Home,
+        Busy,
+        Commend_Vel,
+        Actual_Vel,
+        Actual_Torque,
+    }
+
+
+
+
+    public delegate void delMenuBtnVisible(string buttonName, bool visible);
+    public delegate void delLoginlblIdChanged(string text);
+
+
+
+
+    public delegate void delMonitorLogView(object oSender, enLogType eType1, enLogLevel eLevel, enLogTitle eTitle1, string strLog);
+    public delegate void delMonitorRemove();
+    public delegate void delMonitorMain();
+    public delegate void delMonitorStatus();
+    public delegate void delMonitorMotion();
+    public delegate void delMonitorAlarm();
+    public delegate void delMonitorTeach();
+    public delegate void delMonitorChange();
+    public delegate void delAlarmHistory();
+
+    public delegate void delLine(List<Synustech.Line> lines);
+    public delegate void delParam();
+}

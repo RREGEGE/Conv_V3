@@ -1,0 +1,140 @@
+﻿using Microsoft.Office.Interop.Excel;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using WMX3ApiCLR;
+using static Synustech.G_Var;
+
+namespace Synustech
+{
+    public class AlarmList
+    {
+        int ID;
+
+        public AlarmList(int _ID)
+        {
+            ID = _ID;
+        }
+
+        public AlarmList()
+        {
+
+        }
+
+
+        /// <summary>
+        /// 알람을 저장하기 위한 List 인스턴스
+        /// </summary>
+        List<AlarmListParam> m_AlarmListParam = new List<AlarmListParam>();
+
+
+
+
+
+        /// <summary>
+        /// 발생한 알람을 저장하기 위한 Parameter 
+        /// </summary>
+        public class AlarmListParam
+        {
+            public string Time { get; set; }
+            public int Code { get; set; } = 0;
+            public string Unit { get; set; }
+            public AlarmLevel Level { get; set; }
+            public string Comment { get; set; }
+            public string AlarmSolution { get; set; }
+
+
+
+            public bool bClear;
+            public string ClearTime;
+
+
+            public AlarmListParam(int _AlarmCode, string _AlarmComment, AlarmLevel _eAlarmLevel, string _AlarmEquipment, int? _ID)
+            {
+                Time = DateTime.Now.ToString("MM.dd HH:mm:ss");
+                Code = _AlarmCode;
+                Comment = _AlarmComment;
+                Level = _eAlarmLevel;
+                Unit = _AlarmEquipment + _ID;
+
+            }
+
+            public AlarmListParam()
+            {
+
+            }
+        }
+
+
+
+
+        /// <summary>
+        /// 발생한 알람을 List에 저장
+        /// </summary>
+        /// <param name="_AlarmCode"></param>
+        /// <param name="_AlarmComment"></param>
+        /// <param name="_eAlarmLevel"></param>
+        /// <returns></returns>
+        public bool AlarmOccur(int _AlarmCode, int ID)
+        {
+            try
+            {
+                foreach (AlarmListParam OccurAlarm in AlarmCodes)
+                {
+                    if (OccurAlarm.Code == _AlarmCode)
+                    {
+                        AlarmListParam SettingCode = new AlarmListParam(OccurAlarm.Code, OccurAlarm.Comment, OccurAlarm.Level, OccurAlarm.Unit, ID);
+                        m_AlarmListParam.Add(SettingCode);
+
+
+                        break;
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+        public bool AlarmOccur_Master(int _AlarmCode)
+        {
+            try
+            {
+                foreach (AlarmListParam OccurAlarm in AlarmCodes)
+                {
+                    if (OccurAlarm.Code == _AlarmCode)
+                    {
+                        AlarmListParam SettingCode = new AlarmListParam(OccurAlarm.Code, OccurAlarm.Comment, OccurAlarm.Level, OccurAlarm.Unit, null);
+                        m_AlarmListParam.Add(SettingCode);
+
+
+                        break;
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        /// <summary>
+        /// List에 저장된 알람을 전체 삭제
+        /// </summary>
+        public void AlarmClear()
+        {
+            m_AlarmListParam.Clear();
+        }
+
+        // List의 알람을 Return 합니다.
+        public List<AlarmListParam> GetAlarmList()
+        {
+            return m_AlarmListParam;
+        }
+    }
+}

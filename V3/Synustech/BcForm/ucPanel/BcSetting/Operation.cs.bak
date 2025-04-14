@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Synustech.BcForm.ucPanel.BcSetting
+{
+    public partial class Operation : UserControl
+    {
+        public Operation()
+        {
+            InitializeComponent();
+            InitializeDataGridViewHeaders();
+        }
+        private void InitializeDataGridViewHeaders()
+        {
+            // RowHeaderVisible 설정
+            dgOperationView.RowHeadersVisible = true;
+
+            // 설정할 행 머리글 텍스트
+            string[] headers = {
+            "Loading Position",
+            "ULoading Position",
+            "T_Move_AutoRun_Speed[mm/s]",
+            "T_Move_AutoRun_Acc[mm/s]",
+            "T_Move_AutoRun_Dcc[mm/s]"
+            };
+
+            // 행 추가 및 행 머리글 텍스트 설정
+            foreach (string header in headers)
+            {
+                int rowIndex = dgOperationView.Rows.Add(); // 행 추가
+                dgOperationView.Rows[rowIndex].HeaderCell.Value = header; // 행 머리글 텍스트 설정
+            }
+            dgOperationView.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+        }
+    }
+}

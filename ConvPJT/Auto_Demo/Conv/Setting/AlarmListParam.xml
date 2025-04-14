@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<AlarmListParam>
+    <AlarmCode Code ="0"> <!-- <Hex>0x00</Hex> -->
+        <AlarmComment>MainPanel_E_Stop</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Master</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="1"> <!-- <Hex>0x01</Hex> -->
+        <AlarmComment>Conveyor_E_Stop</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Master</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="2"> <!-- <Hex>0x02</Hex> -->
+        <AlarmComment>WMX_E_Stop</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Master</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="3"> <!-- <Hex>0x03</Hex> -->
+        <AlarmComment>Software_E_Stop</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Master</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="4"> <!-- <Hex>0x04</Hex> -->
+        <AlarmComment>Power_Off_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Master</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="5"> <!-- <Hex>0x05</Hex> -->
+        <AlarmComment>Master_Mode_Change_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Master</AlarmType>
+    </AlarmCode>
+
+    <AlarmCode Code ="32"> <!-- <Hex>0x20</Hex> -->
+        <AlarmComment>Power_Off</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="33"> <!-- <Hex>0x21</Hex> -->
+        <AlarmComment>Disconnection_EtherCAT_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="34"> <!-- <Hex>0x22</Hex> -->
+        <AlarmComment>EtherCAT_Connecting_Fail</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="35"> <!-- <Hex>0x23</Hex> -->
+        <AlarmComment>Over_Current</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="36"> <!-- <Hex>0x24</Hex> -->
+        <AlarmComment>Over_Voltage</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="37"> <!-- <Hex>0x25</Hex> -->
+        <AlarmComment>Open_Temperature</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="38"> <!-- <Hex>0x26</Hex> -->
+        <AlarmComment>Oper_Motor_Winding</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="39"> <!-- <Hex>0x27</Hex> -->
+        <AlarmComment>Internal_Voltage_Bad</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="40"> <!-- <Hex>0x28</Hex> -->
+        <AlarmComment>Position_Limit</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="41"> <!-- <Hex>0x29</Hex> -->
+        <AlarmComment>Voltage_Low</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="42"> <!-- <Hex>0x2A</Hex> -->
+        <AlarmComment>Current_limit</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="43"> <!-- <Hex>0x2B</Hex> -->
+        <AlarmComment>Step_Drive_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+
+    <AlarmCode Code ="48"> <!-- <Hex>0x30</Hex> -->
+        <AlarmComment>CST_Disappear</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="49"> <!-- <Hex>0x31</Hex> -->
+        <AlarmComment>Unknown_CST_Detected</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="50"> <!-- <Hex>0x32</Hex> -->
+        <AlarmComment>IN_Step_Time_Over_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+        <Solution>Please check the step </Solution> 
+    </AlarmCode>
+    <AlarmCode Code ="51"> <!-- <Hex>0x33</Hex> -->
+        <AlarmComment>OUT_Step_Time_Over_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="52"> <!-- <Hex>0x34</Hex> -->
+        <AlarmComment>STEP1_Error_Detect</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="53"> <!-- <Hex>0x35</Hex> -->
+        <AlarmComment>Process_Run_Time_Over_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+
+    <AlarmCode Code ="64"> <!-- <Hex>0x40</Hex> -->
+        <AlarmComment>Origin_Search_Fail</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="65"> <!-- <Hex>0x41</Hex> -->
+        <AlarmComment>HomeSensor_Always_On</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="66"> <!-- <Hex>0x42</Hex> -->
+        <AlarmComment>Move_To_Home_Timeout</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="67"> <!-- <Hex>0x43</Hex> -->
+        <AlarmComment>Move_To_POS1_Timeout</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="68"> <!-- <Hex>0x44</Hex> -->
+        <AlarmComment>Move_To_POS2_Timeout</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="69"> <!-- <Hex>0x45</Hex> -->
+        <AlarmComment>Move_To_POS3_Timeout</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="70"> <!-- <Hex>0x46</Hex> -->
+        <AlarmComment>Soft_POT_detection_</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="71"> <!-- <Hex>0x47</Hex> -->
+        <AlarmComment>Soft_NOT_detection</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="72"> <!-- <Hex>0x48</Hex> -->
+        <AlarmComment>Command_exceeded_Soft_POT_</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="73"> <!-- <Hex>0x49</Hex> -->
+        <AlarmComment>Command_exceeded_Soft_NOT_</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="74"> <!-- <Hex>0x4A</Hex> -->
+        <AlarmComment>No_Teaching_Value</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="75"> <!-- <Hex>0x4B</Hex> -->
+        <AlarmComment>Sensor_not_detected</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="76"> <!-- <Hex>0x4C</Hex> -->
+        <AlarmComment>Teaching_value_error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+
+    <AlarmCode Code ="80"> <!-- <Hex>0x50</Hex> -->
+        <AlarmComment>Reading_CheckSum_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="81"> <!-- <Hex>0x51</Hex> -->
+        <AlarmComment>Reading_ID_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="82"> <!-- <Hex>0x52</Hex> -->
+        <AlarmComment>Reading_Tag_not_recognized</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="83"> <!-- <Hex>0x53</Hex> -->
+        <AlarmComment>Reading_Tag_type_error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="84"> <!-- <Hex>0x54</Hex> -->
+        <AlarmComment>Reading_Tag_Data_CheckSum_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="85"> <!-- <Hex>0x55</Hex> -->
+        <AlarmComment>Reading_Tag_communication_error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="86"> <!-- <Hex>0x56</Hex> -->
+        <AlarmComment>Reading_Antenna_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="87"> <!-- <Hex>0x57</Hex> -->
+        <AlarmComment>Light_Curtain_Detect_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="88"> <!-- <Hex>0x58</Hex> -->
+        <AlarmComment>Hoist_Detect_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="89"> <!-- <Hex>0x59</Hex> -->
+        <AlarmComment>PIO1_Valid_Wait_Time_Out_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="90"> <!-- <Hex>0x5A</Hex> -->
+        <AlarmComment>PIO1_Busy_Wait_Time_Out_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="91"> <!-- <Hex>0x5B</Hex> -->
+        <AlarmComment>PIO1_Busy_ON_Time_Out_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="92"> <!-- <Hex>0x5C</Hex> -->
+        <AlarmComment>PIO1_Complete_Wait_Time_Out_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="93"> <!-- <Hex>0x5D</Hex> -->
+        <AlarmComment>PIO1</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="94"> <!-- <Hex>0x5E</Hex> -->
+        <AlarmComment>PIO2_PIO_Ready_Wait_Time_Out_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="95"> <!-- <Hex>0x5F</Hex> -->
+        <AlarmComment>PIO2_PIO_Ready_Off_Time_Out_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="96"> <!-- <Hex>0x60</Hex> -->
+        <AlarmComment>PIO2_Port_Error_On_While_Busy_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="97"> <!-- <Hex>0x61</Hex> -->
+        <AlarmComment>PIO2_Port_Ready_Off_While_Busy_Error</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="98"> <!-- <Hex>0x62</Hex> -->
+        <AlarmComment>PIO2</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+
+    <AlarmCode Code ="128"> <!-- <Hex>0x80</Hex> -->
+        <AlarmComment>NormalConv</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="129"> <!-- <Hex>0x81</Hex> -->
+        <AlarmComment>LongConv</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+    <AlarmCode Code ="130"> <!-- <Hex>0x82</Hex> -->
+        <AlarmComment>TurnConv</AlarmComment>
+        <AlarmLevel>Error</AlarmLevel>
+        <AlarmType>Conveyor</AlarmType>
+    </AlarmCode>
+</AlarmListParam>

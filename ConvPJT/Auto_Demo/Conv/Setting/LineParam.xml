@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Lines>
+    <Line>
+        <ID>Mongolian</ID>
+        <StartConv>1</StartConv>
+        <EndID>2</EndID>
+        <ConvEA>0</ConvEA>
+    </Line>
+</Lines>

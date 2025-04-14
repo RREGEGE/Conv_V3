@@ -1,0 +1,54 @@
+﻿using Microsoft.Office.Interop.Excel;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static Synustech.G_Var;
+
+namespace Synustech.BcForm.ucPanel.BcSetting
+{
+    public partial class UserCVCreate : UserControl
+    {
+        public UserCVCreate()
+        {
+            InitializeComponent();
+        }
+        public void InitializeLines(List<Synustech.Line> lines)
+        {
+            bcCbLine.Items.Clear();
+            if (lines != null)
+            {
+                foreach (var line in lines)
+                {
+                    bcCbLine.Items.Add(line.ID);
+                }
+            }
+        }
+
+        private void btnCvCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCvSave_Click(object sender, EventArgs e)
+        {
+            _xml.SaveRectanglesToXML(RectFullPath);
+            _xml.SaveConveyorToXML(ConvFullPath);
+        }
+
+        private void btnMappingX_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMappingY_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
