@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Port_UIParam xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PortManualSpeedRatio>100</PortManualSpeedRatio>
+  <X_Axis_JogLowSpeed>1</X_Axis_JogLowSpeed>
+  <X_Axis_JogHighSpeed>6</X_Axis_JogHighSpeed>
+  <X_Axis_Inching>5</X_Axis_Inching>
+  <X_Axis_Target>472</X_Axis_Target>
+  <Z_Axis_JogLowSpeed>1</Z_Axis_JogLowSpeed>
+  <Z_Axis_JogHighSpeed>1</Z_Axis_JogHighSpeed>
+  <Z_Axis_Inching>1</Z_Axis_Inching>
+  <Z_Axis_Target>10</Z_Axis_Target>
+  <T_Axis_JogLowSpeed>1</T_Axis_JogLowSpeed>
+  <T_Axis_JogHighSpeed>1</T_Axis_JogHighSpeed>
+  <T_Axis_Inching>1</T_Axis_Inching>
+  <T_Axis_Target>10</T_Axis_Target>
+</Port_UIParam>

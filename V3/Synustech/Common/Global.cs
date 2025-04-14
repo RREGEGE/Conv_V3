@@ -1,14 +1,13 @@
-﻿using System;
+﻿using Synustech.Common;
+using System;
 using System.Collections.Generic;
-using System.Data.Common;
-using System.Threading;
-using wmx3Api;
-using WMX3ApiCLR;
+using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using Org.BouncyCastle.Tls;
-using System.Drawing.Drawing2D;
-using System.Drawing;
+using System.Threading.Tasks;
+using WMX3ApiCLR;
+using static Synustech.AlarmList;
 
 namespace Synustech
 {
@@ -57,6 +56,8 @@ namespace Synustech
     }
     internal class G_Var
     {
+        public static AlarmList m_ConveyorAlarmList = new AlarmList();
+
         // 파일 경로
         public static string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
@@ -130,16 +131,6 @@ namespace Synustech
         public static List<Line> lines;
         public static CustomRectangle selectedRectangle;     // 선택된 사각형
 
-        public static NormalConv Normal1;
-        public static NormalConv Normal2;
-        public static TurnConv Turn1;
-        public static LongConv Long1;
-        public static TurnConv Turn2;
-        public static NormalConv Normal3;
-        public static LongConv Long2;
-        public static TurnConv Turn3;
-        public static NormalConv Normal4;
-        public static TurnConv Turn4;
 
         public static byte[] byInput = new byte[255];
         public static byte[] byOutput = new byte[255];

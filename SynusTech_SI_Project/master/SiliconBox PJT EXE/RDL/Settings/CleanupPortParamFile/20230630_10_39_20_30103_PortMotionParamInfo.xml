@@ -1,0 +1,2322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PortMotionParameter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <eBufferType>Two_Buffer</eBufferType>
+  <ePortDirection>Output</ePortDirection>
+  <AutoRun_Ratio>50</AutoRun_Ratio>
+  <Ctrl_Axis>
+    <AxisControlParam>
+      <eAxisCtrlType>None</eAxisCtrlType>
+      <servoParam>
+        <AxisNum>-1</AxisNum>
+        <WaitPosEnable>Disable</WaitPosEnable>
+        <TeachingPos>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </TeachingPos>
+        <OverrideDistance>0</OverrideDistance>
+        <OverrideDecPercent>10</OverrideDecPercent>
+        <Manual_Speed>1</Manual_Speed>
+        <Manual_Acc>1</Manual_Acc>
+        <Manual_Dec>1</Manual_Dec>
+        <AutoRun_Speed>1</AutoRun_Speed>
+        <AutoRun_Acc>1</AutoRun_Acc>
+        <AutoRun_Dec>1</AutoRun_Dec>
+        <MaxLoad>100</MaxLoad>
+        <ManualPath />
+        <WMXParam>
+          <m_gearRatioNum>1</m_gearRatioNum>
+          <m_gearRatioDen>1</m_gearRatioDen>
+          <m_absEncoderMode>false</m_absEncoderMode>
+          <m_absEncoderHomeOffset>0</m_absEncoderHomeOffset>
+          <m_inposWidth>1000</m_inposWidth>
+          <m_posSetWidth>1000</m_posSetWidth>
+          <m_homeType>CurPos</m_homeType>
+          <m_homeDirection>Positive</m_homeDirection>
+          <m_homeSlowVelocity>10000</m_homeSlowVelocity>
+          <m_homeSlowAcc>10000</m_homeSlowAcc>
+          <m_homeSlowDec>10000</m_homeSlowDec>
+          <m_homeFastVelocity>10000</m_homeFastVelocity>
+          <m_homeFastAcc>10000</m_homeFastAcc>
+          <m_homeFastDec>10000</m_homeFastDec>
+          <m_homeShiftVelocity>10000</m_homeShiftVelocity>
+          <m_homeShiftAcc>10000</m_homeShiftAcc>
+          <m_homeShiftDec>10000</m_homeShiftDec>
+          <m_homeShiftDistance>10000</m_homeShiftDistance>
+          <m_limitSwitchType>None</m_limitSwitchType>
+          <m_limitDirection>Normal</m_limitDirection>
+          <m_softLimitSwitchType>None</m_softLimitSwitchType>
+          <m_softLimitPosValue>0</m_softLimitPosValue>
+          <m_softLimitNegValue>0</m_softLimitNegValue>
+          <m_softLimitDec>0</m_softLimitDec>
+          <m_softLimitSlowDec>0</m_softLimitSlowDec>
+          <m_invertPosLimit>false</m_invertPosLimit>
+          <m_invertNegLimit>false</m_invertNegLimit>
+          <m_linintplCalcMode>AxisLimit</m_linintplCalcMode>
+          <m_quickStopDecel>100000</m_quickStopDecel>
+        </WMXParam>
+      </servoParam>
+      <inverterParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </inverterParam>
+      <cylinderParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </cylinderParam>
+    </AxisControlParam>
+    <AxisControlParam>
+      <eAxisCtrlType>None</eAxisCtrlType>
+      <servoParam>
+        <AxisNum>-1</AxisNum>
+        <WaitPosEnable>Disable</WaitPosEnable>
+        <TeachingPos>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </TeachingPos>
+        <OverrideDistance>0</OverrideDistance>
+        <OverrideDecPercent>10</OverrideDecPercent>
+        <Manual_Speed>1</Manual_Speed>
+        <Manual_Acc>1</Manual_Acc>
+        <Manual_Dec>1</Manual_Dec>
+        <AutoRun_Speed>1</AutoRun_Speed>
+        <AutoRun_Acc>1</AutoRun_Acc>
+        <AutoRun_Dec>1</AutoRun_Dec>
+        <MaxLoad>100</MaxLoad>
+        <ManualPath />
+        <WMXParam>
+          <m_gearRatioNum>1</m_gearRatioNum>
+          <m_gearRatioDen>1</m_gearRatioDen>
+          <m_absEncoderMode>false</m_absEncoderMode>
+          <m_absEncoderHomeOffset>0</m_absEncoderHomeOffset>
+          <m_inposWidth>1000</m_inposWidth>
+          <m_posSetWidth>1000</m_posSetWidth>
+          <m_homeType>CurPos</m_homeType>
+          <m_homeDirection>Positive</m_homeDirection>
+          <m_homeSlowVelocity>10000</m_homeSlowVelocity>
+          <m_homeSlowAcc>10000</m_homeSlowAcc>
+          <m_homeSlowDec>10000</m_homeSlowDec>
+          <m_homeFastVelocity>10000</m_homeFastVelocity>
+          <m_homeFastAcc>10000</m_homeFastAcc>
+          <m_homeFastDec>10000</m_homeFastDec>
+          <m_homeShiftVelocity>10000</m_homeShiftVelocity>
+          <m_homeShiftAcc>10000</m_homeShiftAcc>
+          <m_homeShiftDec>10000</m_homeShiftDec>
+          <m_homeShiftDistance>10000</m_homeShiftDistance>
+          <m_limitSwitchType>None</m_limitSwitchType>
+          <m_limitDirection>Normal</m_limitDirection>
+          <m_softLimitSwitchType>None</m_softLimitSwitchType>
+          <m_softLimitPosValue>0</m_softLimitPosValue>
+          <m_softLimitNegValue>0</m_softLimitNegValue>
+          <m_softLimitDec>0</m_softLimitDec>
+          <m_softLimitSlowDec>0</m_softLimitSlowDec>
+          <m_invertPosLimit>false</m_invertPosLimit>
+          <m_invertNegLimit>false</m_invertNegLimit>
+          <m_linintplCalcMode>AxisLimit</m_linintplCalcMode>
+          <m_quickStopDecel>100000</m_quickStopDecel>
+        </WMXParam>
+      </servoParam>
+      <inverterParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </inverterParam>
+      <cylinderParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </cylinderParam>
+    </AxisControlParam>
+    <AxisControlParam>
+      <eAxisCtrlType>None</eAxisCtrlType>
+      <servoParam>
+        <AxisNum>-1</AxisNum>
+        <WaitPosEnable>Disable</WaitPosEnable>
+        <TeachingPos>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </TeachingPos>
+        <OverrideDistance>0</OverrideDistance>
+        <OverrideDecPercent>10</OverrideDecPercent>
+        <Manual_Speed>1</Manual_Speed>
+        <Manual_Acc>1</Manual_Acc>
+        <Manual_Dec>1</Manual_Dec>
+        <AutoRun_Speed>1</AutoRun_Speed>
+        <AutoRun_Acc>1</AutoRun_Acc>
+        <AutoRun_Dec>1</AutoRun_Dec>
+        <MaxLoad>100</MaxLoad>
+        <ManualPath />
+        <WMXParam>
+          <m_gearRatioNum>1</m_gearRatioNum>
+          <m_gearRatioDen>1</m_gearRatioDen>
+          <m_absEncoderMode>false</m_absEncoderMode>
+          <m_absEncoderHomeOffset>0</m_absEncoderHomeOffset>
+          <m_inposWidth>1000</m_inposWidth>
+          <m_posSetWidth>1000</m_posSetWidth>
+          <m_homeType>CurPos</m_homeType>
+          <m_homeDirection>Positive</m_homeDirection>
+          <m_homeSlowVelocity>10000</m_homeSlowVelocity>
+          <m_homeSlowAcc>10000</m_homeSlowAcc>
+          <m_homeSlowDec>10000</m_homeSlowDec>
+          <m_homeFastVelocity>10000</m_homeFastVelocity>
+          <m_homeFastAcc>10000</m_homeFastAcc>
+          <m_homeFastDec>10000</m_homeFastDec>
+          <m_homeShiftVelocity>10000</m_homeShiftVelocity>
+          <m_homeShiftAcc>10000</m_homeShiftAcc>
+          <m_homeShiftDec>10000</m_homeShiftDec>
+          <m_homeShiftDistance>10000</m_homeShiftDistance>
+          <m_limitSwitchType>None</m_limitSwitchType>
+          <m_limitDirection>Normal</m_limitDirection>
+          <m_softLimitSwitchType>None</m_softLimitSwitchType>
+          <m_softLimitPosValue>0</m_softLimitPosValue>
+          <m_softLimitNegValue>0</m_softLimitNegValue>
+          <m_softLimitDec>0</m_softLimitDec>
+          <m_softLimitSlowDec>0</m_softLimitSlowDec>
+          <m_invertPosLimit>false</m_invertPosLimit>
+          <m_invertNegLimit>false</m_invertNegLimit>
+          <m_linintplCalcMode>AxisLimit</m_linintplCalcMode>
+          <m_quickStopDecel>100000</m_quickStopDecel>
+        </WMXParam>
+      </servoParam>
+      <inverterParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </inverterParam>
+      <cylinderParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </cylinderParam>
+    </AxisControlParam>
+    <AxisControlParam>
+      <eAxisCtrlType>None</eAxisCtrlType>
+      <servoParam>
+        <AxisNum>55</AxisNum>
+        <WaitPosEnable>Disable</WaitPosEnable>
+        <TeachingPos>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </TeachingPos>
+        <OverrideDistance>0</OverrideDistance>
+        <OverrideDecPercent>10</OverrideDecPercent>
+        <Manual_Speed>5</Manual_Speed>
+        <Manual_Acc>5</Manual_Acc>
+        <Manual_Dec>5</Manual_Dec>
+        <AutoRun_Speed>5</AutoRun_Speed>
+        <AutoRun_Acc>5</AutoRun_Acc>
+        <AutoRun_Dec>5</AutoRun_Dec>
+        <MaxLoad>100</MaxLoad>
+        <ManualPath />
+        <WMXParam>
+          <m_gearRatioNum>1</m_gearRatioNum>
+          <m_gearRatioDen>1</m_gearRatioDen>
+          <m_absEncoderMode>false</m_absEncoderMode>
+          <m_absEncoderHomeOffset>0</m_absEncoderHomeOffset>
+          <m_inposWidth>1000</m_inposWidth>
+          <m_posSetWidth>1000</m_posSetWidth>
+          <m_homeType>CurPos</m_homeType>
+          <m_homeDirection>Positive</m_homeDirection>
+          <m_homeSlowVelocity>10000</m_homeSlowVelocity>
+          <m_homeSlowAcc>10000</m_homeSlowAcc>
+          <m_homeSlowDec>10000</m_homeSlowDec>
+          <m_homeFastVelocity>10000</m_homeFastVelocity>
+          <m_homeFastAcc>10000</m_homeFastAcc>
+          <m_homeFastDec>10000</m_homeFastDec>
+          <m_homeShiftVelocity>10000</m_homeShiftVelocity>
+          <m_homeShiftAcc>10000</m_homeShiftAcc>
+          <m_homeShiftDec>10000</m_homeShiftDec>
+          <m_homeShiftDistance>10000</m_homeShiftDistance>
+          <m_limitSwitchType>None</m_limitSwitchType>
+          <m_limitDirection>Normal</m_limitDirection>
+          <m_softLimitSwitchType>None</m_softLimitSwitchType>
+          <m_softLimitPosValue>0</m_softLimitPosValue>
+          <m_softLimitNegValue>0</m_softLimitNegValue>
+          <m_softLimitDec>0</m_softLimitDec>
+          <m_softLimitSlowDec>0</m_softLimitSlowDec>
+          <m_invertPosLimit>false</m_invertPosLimit>
+          <m_invertNegLimit>false</m_invertNegLimit>
+          <m_linintplCalcMode>AxisLimit</m_linintplCalcMode>
+          <m_quickStopDecel>100000</m_quickStopDecel>
+        </WMXParam>
+      </servoParam>
+      <inverterParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </inverterParam>
+      <cylinderParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </cylinderParam>
+    </AxisControlParam>
+    <AxisControlParam>
+      <eAxisCtrlType>Inverter</eAxisCtrlType>
+      <servoParam>
+        <AxisNum>-1</AxisNum>
+        <WaitPosEnable>Disable</WaitPosEnable>
+        <TeachingPos>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </TeachingPos>
+        <OverrideDistance>0</OverrideDistance>
+        <OverrideDecPercent>10</OverrideDecPercent>
+        <Manual_Speed>1</Manual_Speed>
+        <Manual_Acc>1</Manual_Acc>
+        <Manual_Dec>1</Manual_Dec>
+        <AutoRun_Speed>1</AutoRun_Speed>
+        <AutoRun_Acc>1</AutoRun_Acc>
+        <AutoRun_Dec>1</AutoRun_Dec>
+        <MaxLoad>100</MaxLoad>
+        <ManualPath />
+        <WMXParam>
+          <m_gearRatioNum>1</m_gearRatioNum>
+          <m_gearRatioDen>1</m_gearRatioDen>
+          <m_absEncoderMode>false</m_absEncoderMode>
+          <m_absEncoderHomeOffset>0</m_absEncoderHomeOffset>
+          <m_inposWidth>1000</m_inposWidth>
+          <m_posSetWidth>1000</m_posSetWidth>
+          <m_homeType>CurPos</m_homeType>
+          <m_homeDirection>Positive</m_homeDirection>
+          <m_homeSlowVelocity>10000</m_homeSlowVelocity>
+          <m_homeSlowAcc>10000</m_homeSlowAcc>
+          <m_homeSlowDec>10000</m_homeSlowDec>
+          <m_homeFastVelocity>10000</m_homeFastVelocity>
+          <m_homeFastAcc>10000</m_homeFastAcc>
+          <m_homeFastDec>10000</m_homeFastDec>
+          <m_homeShiftVelocity>10000</m_homeShiftVelocity>
+          <m_homeShiftAcc>10000</m_homeShiftAcc>
+          <m_homeShiftDec>10000</m_homeShiftDec>
+          <m_homeShiftDistance>10000</m_homeShiftDistance>
+          <m_limitSwitchType>None</m_limitSwitchType>
+          <m_limitDirection>Normal</m_limitDirection>
+          <m_softLimitSwitchType>None</m_softLimitSwitchType>
+          <m_softLimitPosValue>0</m_softLimitPosValue>
+          <m_softLimitNegValue>0</m_softLimitNegValue>
+          <m_softLimitDec>0</m_softLimitDec>
+          <m_softLimitSlowDec>0</m_softLimitSlowDec>
+          <m_invertPosLimit>false</m_invertPosLimit>
+          <m_invertNegLimit>false</m_invertNegLimit>
+          <m_linintplCalcMode>AxisLimit</m_linintplCalcMode>
+          <m_quickStopDecel>100000</m_quickStopDecel>
+        </WMXParam>
+      </servoParam>
+      <inverterParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>15</StartAddr>
+            <Bit>4</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>15</StartAddr>
+            <Bit>5</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>15</StartAddr>
+            <Bit>2</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>15</StartAddr>
+            <Bit>3</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </inverterParam>
+      <cylinderParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>62</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>62</StartAddr>
+            <Bit>2</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>62</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>62</StartAddr>
+            <Bit>3</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>62</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>62</StartAddr>
+            <Bit>2</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>62</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>62</StartAddr>
+            <Bit>3</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </cylinderParam>
+    </AxisControlParam>
+    <AxisControlParam>
+      <eAxisCtrlType>None</eAxisCtrlType>
+      <servoParam>
+        <AxisNum>-1</AxisNum>
+        <WaitPosEnable>Disable</WaitPosEnable>
+        <TeachingPos>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </TeachingPos>
+        <OverrideDistance>0</OverrideDistance>
+        <OverrideDecPercent>10</OverrideDecPercent>
+        <Manual_Speed>1</Manual_Speed>
+        <Manual_Acc>1</Manual_Acc>
+        <Manual_Dec>1</Manual_Dec>
+        <AutoRun_Speed>1</AutoRun_Speed>
+        <AutoRun_Acc>1</AutoRun_Acc>
+        <AutoRun_Dec>1</AutoRun_Dec>
+        <MaxLoad>100</MaxLoad>
+        <ManualPath />
+        <WMXParam>
+          <m_gearRatioNum>1</m_gearRatioNum>
+          <m_gearRatioDen>1</m_gearRatioDen>
+          <m_absEncoderMode>false</m_absEncoderMode>
+          <m_absEncoderHomeOffset>0</m_absEncoderHomeOffset>
+          <m_inposWidth>1000</m_inposWidth>
+          <m_posSetWidth>1000</m_posSetWidth>
+          <m_homeType>CurPos</m_homeType>
+          <m_homeDirection>Positive</m_homeDirection>
+          <m_homeSlowVelocity>10000</m_homeSlowVelocity>
+          <m_homeSlowAcc>10000</m_homeSlowAcc>
+          <m_homeSlowDec>10000</m_homeSlowDec>
+          <m_homeFastVelocity>10000</m_homeFastVelocity>
+          <m_homeFastAcc>10000</m_homeFastAcc>
+          <m_homeFastDec>10000</m_homeFastDec>
+          <m_homeShiftVelocity>10000</m_homeShiftVelocity>
+          <m_homeShiftAcc>10000</m_homeShiftAcc>
+          <m_homeShiftDec>10000</m_homeShiftDec>
+          <m_homeShiftDistance>10000</m_homeShiftDistance>
+          <m_limitSwitchType>None</m_limitSwitchType>
+          <m_limitDirection>Normal</m_limitDirection>
+          <m_softLimitSwitchType>None</m_softLimitSwitchType>
+          <m_softLimitPosValue>0</m_softLimitPosValue>
+          <m_softLimitNegValue>0</m_softLimitNegValue>
+          <m_softLimitDec>0</m_softLimitDec>
+          <m_softLimitSlowDec>0</m_softLimitSlowDec>
+          <m_invertPosLimit>false</m_invertPosLimit>
+          <m_invertNegLimit>false</m_invertNegLimit>
+          <m_linintplCalcMode>AxisLimit</m_linintplCalcMode>
+          <m_quickStopDecel>100000</m_quickStopDecel>
+        </WMXParam>
+      </servoParam>
+      <inverterParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </inverterParam>
+      <cylinderParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </cylinderParam>
+    </AxisControlParam>
+    <AxisControlParam>
+      <eAxisCtrlType>None</eAxisCtrlType>
+      <servoParam>
+        <AxisNum>56</AxisNum>
+        <WaitPosEnable>Disable</WaitPosEnable>
+        <TeachingPos>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </TeachingPos>
+        <OverrideDistance>0</OverrideDistance>
+        <OverrideDecPercent>10</OverrideDecPercent>
+        <Manual_Speed>1</Manual_Speed>
+        <Manual_Acc>1</Manual_Acc>
+        <Manual_Dec>1</Manual_Dec>
+        <AutoRun_Speed>1</AutoRun_Speed>
+        <AutoRun_Acc>1</AutoRun_Acc>
+        <AutoRun_Dec>1</AutoRun_Dec>
+        <MaxLoad>100</MaxLoad>
+        <ManualPath />
+        <WMXParam>
+          <m_gearRatioNum>1</m_gearRatioNum>
+          <m_gearRatioDen>1</m_gearRatioDen>
+          <m_absEncoderMode>false</m_absEncoderMode>
+          <m_absEncoderHomeOffset>0</m_absEncoderHomeOffset>
+          <m_inposWidth>1000</m_inposWidth>
+          <m_posSetWidth>1000</m_posSetWidth>
+          <m_homeType>CurPos</m_homeType>
+          <m_homeDirection>Positive</m_homeDirection>
+          <m_homeSlowVelocity>10000</m_homeSlowVelocity>
+          <m_homeSlowAcc>10000</m_homeSlowAcc>
+          <m_homeSlowDec>10000</m_homeSlowDec>
+          <m_homeFastVelocity>10000</m_homeFastVelocity>
+          <m_homeFastAcc>10000</m_homeFastAcc>
+          <m_homeFastDec>10000</m_homeFastDec>
+          <m_homeShiftVelocity>10000</m_homeShiftVelocity>
+          <m_homeShiftAcc>10000</m_homeShiftAcc>
+          <m_homeShiftDec>10000</m_homeShiftDec>
+          <m_homeShiftDistance>10000</m_homeShiftDistance>
+          <m_limitSwitchType>None</m_limitSwitchType>
+          <m_limitDirection>Normal</m_limitDirection>
+          <m_softLimitSwitchType>None</m_softLimitSwitchType>
+          <m_softLimitPosValue>0</m_softLimitPosValue>
+          <m_softLimitNegValue>0</m_softLimitNegValue>
+          <m_softLimitDec>0</m_softLimitDec>
+          <m_softLimitSlowDec>0</m_softLimitSlowDec>
+          <m_invertPosLimit>false</m_invertPosLimit>
+          <m_invertNegLimit>false</m_invertNegLimit>
+          <m_linintplCalcMode>AxisLimit</m_linintplCalcMode>
+          <m_quickStopDecel>100000</m_quickStopDecel>
+        </WMXParam>
+      </servoParam>
+      <inverterParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </inverterParam>
+      <cylinderParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </cylinderParam>
+    </AxisControlParam>
+    <AxisControlParam>
+      <eAxisCtrlType>None</eAxisCtrlType>
+      <servoParam>
+        <AxisNum>-1</AxisNum>
+        <WaitPosEnable>Disable</WaitPosEnable>
+        <TeachingPos>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </TeachingPos>
+        <OverrideDistance>0</OverrideDistance>
+        <OverrideDecPercent>10</OverrideDecPercent>
+        <Manual_Speed>1</Manual_Speed>
+        <Manual_Acc>1</Manual_Acc>
+        <Manual_Dec>1</Manual_Dec>
+        <AutoRun_Speed>1</AutoRun_Speed>
+        <AutoRun_Acc>1</AutoRun_Acc>
+        <AutoRun_Dec>1</AutoRun_Dec>
+        <MaxLoad>100</MaxLoad>
+        <ManualPath />
+        <WMXParam>
+          <m_gearRatioNum>1</m_gearRatioNum>
+          <m_gearRatioDen>1</m_gearRatioDen>
+          <m_absEncoderMode>false</m_absEncoderMode>
+          <m_absEncoderHomeOffset>0</m_absEncoderHomeOffset>
+          <m_inposWidth>1000</m_inposWidth>
+          <m_posSetWidth>1000</m_posSetWidth>
+          <m_homeType>CurPos</m_homeType>
+          <m_homeDirection>Positive</m_homeDirection>
+          <m_homeSlowVelocity>10000</m_homeSlowVelocity>
+          <m_homeSlowAcc>10000</m_homeSlowAcc>
+          <m_homeSlowDec>10000</m_homeSlowDec>
+          <m_homeFastVelocity>10000</m_homeFastVelocity>
+          <m_homeFastAcc>10000</m_homeFastAcc>
+          <m_homeFastDec>10000</m_homeFastDec>
+          <m_homeShiftVelocity>10000</m_homeShiftVelocity>
+          <m_homeShiftAcc>10000</m_homeShiftAcc>
+          <m_homeShiftDec>10000</m_homeShiftDec>
+          <m_homeShiftDistance>10000</m_homeShiftDistance>
+          <m_limitSwitchType>None</m_limitSwitchType>
+          <m_limitDirection>Normal</m_limitDirection>
+          <m_softLimitSwitchType>None</m_softLimitSwitchType>
+          <m_softLimitPosValue>0</m_softLimitPosValue>
+          <m_softLimitNegValue>0</m_softLimitNegValue>
+          <m_softLimitDec>0</m_softLimitDec>
+          <m_softLimitSlowDec>0</m_softLimitSlowDec>
+          <m_invertPosLimit>false</m_invertPosLimit>
+          <m_invertNegLimit>false</m_invertNegLimit>
+          <m_linintplCalcMode>AxisLimit</m_linintplCalcMode>
+          <m_quickStopDecel>100000</m_quickStopDecel>
+        </WMXParam>
+      </servoParam>
+      <inverterParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </inverterParam>
+      <cylinderParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>501</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>501</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>501</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>501</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </cylinderParam>
+    </AxisControlParam>
+    <AxisControlParam>
+      <eAxisCtrlType>None</eAxisCtrlType>
+      <servoParam>
+        <AxisNum>-1</AxisNum>
+        <WaitPosEnable>Disable</WaitPosEnable>
+        <TeachingPos>
+          <float>0</float>
+          <float>0</float>
+          <float>0</float>
+        </TeachingPos>
+        <OverrideDistance>0</OverrideDistance>
+        <OverrideDecPercent>10</OverrideDecPercent>
+        <Manual_Speed>1</Manual_Speed>
+        <Manual_Acc>1</Manual_Acc>
+        <Manual_Dec>1</Manual_Dec>
+        <AutoRun_Speed>1</AutoRun_Speed>
+        <AutoRun_Acc>1</AutoRun_Acc>
+        <AutoRun_Dec>1</AutoRun_Dec>
+        <MaxLoad>100</MaxLoad>
+        <ManualPath />
+        <WMXParam>
+          <m_gearRatioNum>1</m_gearRatioNum>
+          <m_gearRatioDen>1</m_gearRatioDen>
+          <m_absEncoderMode>false</m_absEncoderMode>
+          <m_absEncoderHomeOffset>0</m_absEncoderHomeOffset>
+          <m_inposWidth>1000</m_inposWidth>
+          <m_posSetWidth>1000</m_posSetWidth>
+          <m_homeType>CurPos</m_homeType>
+          <m_homeDirection>Positive</m_homeDirection>
+          <m_homeSlowVelocity>10000</m_homeSlowVelocity>
+          <m_homeSlowAcc>10000</m_homeSlowAcc>
+          <m_homeSlowDec>10000</m_homeSlowDec>
+          <m_homeFastVelocity>10000</m_homeFastVelocity>
+          <m_homeFastAcc>10000</m_homeFastAcc>
+          <m_homeFastDec>10000</m_homeFastDec>
+          <m_homeShiftVelocity>10000</m_homeShiftVelocity>
+          <m_homeShiftAcc>10000</m_homeShiftAcc>
+          <m_homeShiftDec>10000</m_homeShiftDec>
+          <m_homeShiftDistance>10000</m_homeShiftDistance>
+          <m_limitSwitchType>None</m_limitSwitchType>
+          <m_limitDirection>Normal</m_limitDirection>
+          <m_softLimitSwitchType>None</m_softLimitSwitchType>
+          <m_softLimitPosValue>0</m_softLimitPosValue>
+          <m_softLimitNegValue>0</m_softLimitNegValue>
+          <m_softLimitDec>0</m_softLimitDec>
+          <m_softLimitSlowDec>0</m_softLimitSlowDec>
+          <m_invertPosLimit>false</m_invertPosLimit>
+          <m_invertNegLimit>false</m_invertNegLimit>
+          <m_linintplCalcMode>AxisLimit</m_linintplCalcMode>
+          <m_quickStopDecel>100000</m_quickStopDecel>
+        </WMXParam>
+      </servoParam>
+      <inverterParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </inverterParam>
+      <cylinderParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </cylinderParam>
+    </AxisControlParam>
+  </Ctrl_Axis>
+  <Ctrl_CV>
+    <BufferCVParam>
+      <eCVCtrlEnable>Enable</eCVCtrlEnable>
+      <eCVStopperEnable>Disable</eCVStopperEnable>
+      <eCVCenteringEnable>Disable</eCVCenteringEnable>
+      <eCVSlowSensorEnable>Disable</eCVSlowSensorEnable>
+      <eCSTDetectSensorEnable>Disable</eCSTDetectSensorEnable>
+      <CVParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>14</StartAddr>
+            <Bit>7</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>15</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>14</StartAddr>
+            <Bit>5</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>14</StartAddr>
+            <Bit>6</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </CVParam>
+      <StopperParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>20</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>20</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </StopperParam>
+      <CenteringParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>20</StartAddr>
+            <Bit>2</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>20</StartAddr>
+            <Bit>3</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </CenteringParam>
+      <CST_DetectParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </CST_DetectParam>
+    </BufferCVParam>
+    <BufferCVParam>
+      <eCVCtrlEnable>Enable</eCVCtrlEnable>
+      <eCVStopperEnable>Disable</eCVStopperEnable>
+      <eCVCenteringEnable>Disable</eCVCenteringEnable>
+      <eCVSlowSensorEnable>Disable</eCVSlowSensorEnable>
+      <eCSTDetectSensorEnable>Disable</eCSTDetectSensorEnable>
+      <CVParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>14</StartAddr>
+            <Bit>2</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>14</StartAddr>
+            <Bit>3</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>14</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>14</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </CVParam>
+      <StopperParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>21</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>21</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </StopperParam>
+      <CenteringParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>21</StartAddr>
+            <Bit>2</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>21</StartAddr>
+            <Bit>3</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </CenteringParam>
+      <CST_DetectParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </CST_DetectParam>
+    </BufferCVParam>
+    <BufferCVParam>
+      <eCVCtrlEnable>Disable</eCVCtrlEnable>
+      <eCVStopperEnable>Disable</eCVStopperEnable>
+      <eCVCenteringEnable>Disable</eCVCenteringEnable>
+      <eCVSlowSensorEnable>Disable</eCVSlowSensorEnable>
+      <eCSTDetectSensorEnable>Enable</eCSTDetectSensorEnable>
+      <CVParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>22</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>22</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>22</StartAddr>
+            <Bit>2</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>22</StartAddr>
+            <Bit>3</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </CVParam>
+      <StopperParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </StopperParam>
+      <CenteringParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </CenteringParam>
+      <CST_DetectParam>
+        <Name />
+        <StartAddr>100</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </CST_DetectParam>
+    </BufferCVParam>
+    <BufferCVParam>
+      <eCVCtrlEnable>Disable</eCVCtrlEnable>
+      <eCVStopperEnable>Disable</eCVStopperEnable>
+      <eCVCenteringEnable>Disable</eCVCenteringEnable>
+      <eCVSlowSensorEnable>Disable</eCVSlowSensorEnable>
+      <eCSTDetectSensorEnable>Enable</eCSTDetectSensorEnable>
+      <CVParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>23</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>23</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>23</StartAddr>
+            <Bit>2</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>23</StartAddr>
+            <Bit>3</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </CVParam>
+      <StopperParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </StopperParam>
+      <CenteringParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </CenteringParam>
+      <CST_DetectParam>
+        <Name />
+        <StartAddr>100</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </CST_DetectParam>
+    </BufferCVParam>
+    <BufferCVParam>
+      <eCVCtrlEnable>Disable</eCVCtrlEnable>
+      <eCVStopperEnable>Disable</eCVStopperEnable>
+      <eCVCenteringEnable>Disable</eCVCenteringEnable>
+      <eCVSlowSensorEnable>Disable</eCVSlowSensorEnable>
+      <eCSTDetectSensorEnable>Disable</eCSTDetectSensorEnable>
+      <CVParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>24</StartAddr>
+            <Bit>0</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>24</StartAddr>
+            <Bit>1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>24</StartAddr>
+            <Bit>2</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>24</StartAddr>
+            <Bit>3</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </CVParam>
+      <StopperParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </StopperParam>
+      <CenteringParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </CenteringParam>
+      <CST_DetectParam>
+        <Name />
+        <StartAddr>100</StartAddr>
+        <Bit>2</Bit>
+        <bInvert>false</bInvert>
+      </CST_DetectParam>
+    </BufferCVParam>
+    <BufferCVParam>
+      <eCVCtrlEnable>Disable</eCVCtrlEnable>
+      <eCVStopperEnable>Disable</eCVStopperEnable>
+      <eCVCenteringEnable>Disable</eCVCenteringEnable>
+      <eCVSlowSensorEnable>Disable</eCVSlowSensorEnable>
+      <eCSTDetectSensorEnable>Disable</eCSTDetectSensorEnable>
+      <CVParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+      </CVParam>
+      <StopperParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </StopperParam>
+      <CenteringParam>
+        <Ctrl_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </Ctrl_IOParams>
+        <PosSensor_IOParams>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+          <IOParam>
+            <Name />
+            <StartAddr>-1</StartAddr>
+            <Bit>-1</Bit>
+            <bInvert>false</bInvert>
+          </IOParam>
+        </PosSensor_IOParams>
+      </CenteringParam>
+      <CST_DetectParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </CST_DetectParam>
+    </BufferCVParam>
+  </Ctrl_CV>
+  <Ctrl_IO>
+    <InputMap>
+      <IOParam>
+        <Name>LP_CV_In</Name>
+        <StartAddr>14</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>LP_CV_Out</Name>
+        <StartAddr>14</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>LP_CV_Error</Name>
+        <StartAddr>15</StartAddr>
+        <Bit>5</Bit>
+        <bInvert>true</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>LP_Z_Axis_NOT</Name>
+        <StartAddr>14</StartAddr>
+        <Bit>5</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>LP_Z_Axis_Down</Name>
+        <StartAddr>14</StartAddr>
+        <Bit>4</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>LP_Z_Axis_Up</Name>
+        <StartAddr>14</StartAddr>
+        <Bit>3</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>LP_Z_Axis_POT</Name>
+        <StartAddr>14</StartAddr>
+        <Bit>2</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>LP_Z_Axis_Error</Name>
+        <StartAddr>15</StartAddr>
+        <Bit>6</Bit>
+        <bInvert>true</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_CV_In</Name>
+        <StartAddr>15</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_CV_Out</Name>
+        <StartAddr>15</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_CV_Error</Name>
+        <StartAddr>15</StartAddr>
+        <Bit>4</Bit>
+        <bInvert>true</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_Z_Axis_NOT</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_Z_Axis_Down</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_Z_Axis_Up</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_Z_Axis_POT</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_Z_Axis_Error</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>MGV_Port_Area_Sensor</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>RM_Fork_Detect</Name>
+        <StartAddr>15</StartAddr>
+        <Bit>2</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Valid</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CS_0</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CS_1</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>AM_AVBL</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>TR_Request</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Busy</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Complete</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CONT</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+    </InputMap>
+    <OutputMap>
+      <IOParam>
+        <Name>Red_LED_Lamp_On</Name>
+        <StartAddr>18</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Green_LED_Lamp_On</Name>
+        <StartAddr>18</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Buzzer</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>LP_CV_Reset</Name>
+        <StartAddr>15</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>LP_Z_Reset</Name>
+        <StartAddr>15</StartAddr>
+        <Bit>6</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_CV_Reset</Name>
+        <StartAddr>14</StartAddr>
+        <Bit>4</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_Z_Reset</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Load_Request</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Unload_Request</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Valid</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Ready</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>VS_0</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>VS_1</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>HOAVBL</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>ES</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+    </OutputMap>
+  </Ctrl_IO>
+  <eRFIDModel>CH2</eRFIDModel>
+  <TagReadSize>16</TagReadSize>
+  <WatchdogDetectParam>
+    <X_Axis_HomingTimer>30000</X_Axis_HomingTimer>
+    <X_Axis_Move_To_LPTimer>30000</X_Axis_Move_To_LPTimer>
+    <X_Axis_Move_To_WaitTimer>30000</X_Axis_Move_To_WaitTimer>
+    <X_Axis_Move_To_OPTimer>30000</X_Axis_Move_To_OPTimer>
+    <Z_Axis_HomingTimer>30000</Z_Axis_HomingTimer>
+    <Z_Axis_Move_To_UpTimer>30000</Z_Axis_Move_To_UpTimer>
+    <Z_Axis_Move_To_DownTimer>30000</Z_Axis_Move_To_DownTimer>
+    <T_Axis_HomingTimer>30000</T_Axis_HomingTimer>
+    <T_Axis_Move_To_0DegTimer>30000</T_Axis_Move_To_0DegTimer>
+    <T_Axis_Move_To_180DegTimer>30000</T_Axis_Move_To_180DegTimer>
+    <RM_ForkDetectTimer>30000</RM_ForkDetectTimer>
+    <OHT_HoistDetectTimer>5000</OHT_HoistDetectTimer>
+    <OP_Placement_ErrorTimer>2000</OP_Placement_ErrorTimer>
+    <BP_Placement_ErrorTimer>2000</BP_Placement_ErrorTimer>
+    <LP_Placement_ErrorTimer>2000</LP_Placement_ErrorTimer>
+    <PortArea_Timer>10000</PortArea_Timer>
+    <PortArea_And_ShuttleMovingTimer>500</PortArea_And_ShuttleMovingTimer>
+    <LP_PIO_Timer>60000</LP_PIO_Timer>
+    <OP_PIO_Timer>60000</OP_PIO_Timer>
+    <LP_Step_Timer>120000</LP_Step_Timer>
+    <BP_Step_Timer>120000</BP_Step_Timer>
+    <OP_Step_Timer>120000</OP_Step_Timer>
+    <EQ_Step_Timer>120000</EQ_Step_Timer>
+    <Buffer1_CV_Moving_Timer>60000</Buffer1_CV_Moving_Timer>
+    <Buffer2_CV_Moving_Timer>60000</Buffer2_CV_Moving_Timer>
+  </WatchdogDetectParam>
+</PortMotionParameter>

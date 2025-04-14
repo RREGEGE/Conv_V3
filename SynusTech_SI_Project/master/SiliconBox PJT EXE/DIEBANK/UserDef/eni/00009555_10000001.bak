@@ -1,0 +1,29 @@
+IdentificationReg134: 1
+DcAssignActive: 0x0300
+IoInput: 0, 3
+
+[boot2init]
+
+[init2boot]
+
+[init2preop]
+SMConfig: 0x0,0x1000,128,0x26,1
+SMConfig: 0x1,0x1080,128,0x22,1
+SMConfig: 0x3,0x1400,3,0x20,1
+FMMUConfig: 0x1,0x1400,3,1
+
+[preop2init]
+
+[preop2safeop]
+SDODownload: 0x1c13,0x0,1,0x00,1
+SDODownload: 0x1c13,0x01,2,0x1b01,1
+SDODownload: 0x1c13,0x02,2,0x1bff,1
+SDODownload: 0x1c13,0x0,1,0x02,1
+
+[safeop2preop]
+
+[safeop2op]
+
+[op2safeop]
+
+

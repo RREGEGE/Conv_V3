@@ -1,0 +1,24 @@
+2023-01-17 오후 2:39:54 : 
+Message -> Cycle Run
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   위치: System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   위치: System.Convert.ToInt32(String value)
+   위치: Master.SubForm.PortTPForm.PortTPSubForm.Frm_PortTPMain.btn_CycleRun_Click(Object sender, EventArgs e) 파일 C:\Leems\1_Program\99_Git\4_Synustech\Master\SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMain.cs:줄 903
+
+2023-01-17 오후 2:49:48 : 
+Message -> Cycle Run
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   위치: System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   위치: System.Convert.ToInt32(String value)
+   위치: Master.SubForm.PortTPForm.PortTPSubForm.Frm_PortTPMain.btn_CycleRun_Click(Object sender, EventArgs e)
+
+2023-01-17 오후 3:13:00 : 
+Message -> Cycle Run
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   위치: System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   위치: System.Convert.ToInt32(String value)
+   위치: Master.SubForm.PortTPForm.PortTPSubForm.Frm_PortTPMain.btn_CycleRun_Click(Object sender, EventArgs e)
+

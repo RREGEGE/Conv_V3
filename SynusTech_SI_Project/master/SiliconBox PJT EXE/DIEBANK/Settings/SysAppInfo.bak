@@ -1,0 +1,17 @@
+[Application]
+LoginDuration=300.0
+LangType=Korean
+[Log]
+LogCompressionCycle=1
+ZIPDeleteCycle=1
+LogShowType_Application=True
+LogShowType_Exception=True
+LogShowType_Port=True
+LogShowType_RackMaster=True
+LogShowType_CIM=True
+LogShowType_Master=True
+LogShowType_WMX=True
+LogShowType_CPS=True
+LogShowType_Normal=True
+LogShowType_Warning=True
+LogShowType_Error=True

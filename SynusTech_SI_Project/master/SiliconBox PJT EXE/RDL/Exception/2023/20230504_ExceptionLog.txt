@@ -1,0 +1,119 @@
+2023-05-04 오후 2:25:21 : 
+Message -> Exception Error
+삭제된 개체에 액세스할 수 없습니다.
+개체 이름: 'Frm_PortTPScreen' 
+Stack ->    위치: System.Windows.Forms.Control.CreateHandle()
+   위치: System.Windows.Forms.Form.CreateHandle()
+   위치: System.Windows.Forms.Control.get_Handle()
+   위치: System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+   위치: System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+   위치: System.Windows.Forms.Control.Show()
+   위치: Master.Frm_Main.btn_PortTPForm_Click(Object sender, EventArgs e) 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\Frm_Main.cs:줄 1012
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   위치: System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   위치: System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   위치: Master.Program.Main() 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\Program.cs:줄 25
+
+2023-05-04 오후 2:26:34 : 
+Message -> Exception Error
+삭제된 개체에 액세스할 수 없습니다.
+개체 이름: 'Frm_PortTPScreen' 
+Stack ->    위치: System.Windows.Forms.Control.CreateHandle()
+   위치: System.Windows.Forms.Form.CreateHandle()
+   위치: System.Windows.Forms.Control.get_Handle()
+   위치: System.Windows.Forms.Control.SetVisibleCore(Boolean value)
+   위치: System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+   위치: System.Windows.Forms.Control.Show()
+   위치: Master.Frm_Main.btn_PortTPForm_Click(Object sender, EventArgs e) 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\Frm_Main.cs:줄 1012
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   위치: System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   위치: System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   위치: Master.Program.Main() 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\Program.cs:줄 25
+
+2023-05-04 오후 2:50:41 : 
+Message -> Exception Error
+삭제된 개체에 액세스할 수 없습니다.
+개체 이름: 'Frm_PortTPScreen' 
+Stack ->    위치: System.Windows.Forms.Control.CreateHandle()
+   위치: System.Windows.Forms.Form.CreateHandle()
+   위치: System.Windows.Forms.Control.get_Handle()
+   위치: System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   위치: Master.Frm_Main.btn_PortTPForm_Click(Object sender, EventArgs e)
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   위치: System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   위치: System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   위치: Master.Program.Main()
+
+2023-05-04 오후 2:52:42 : 
+Message -> Exception Error
+삭제된 개체에 액세스할 수 없습니다.
+개체 이름: 'Frm_PortTPScreen' 
+Stack ->    위치: System.Windows.Forms.Control.CreateHandle()
+   위치: System.Windows.Forms.Form.CreateHandle()
+   위치: System.Windows.Forms.Control.get_Handle()
+   위치: System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   위치: Master.Frm_Main.btn_PortTPForm_Click(Object sender, EventArgs e) 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\Frm_Main.cs:줄 985
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   위치: System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   위치: System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   위치: Master.Program.Main() 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\Program.cs:줄 25
+
+2023-05-04 오후 2:55:43 : 
+Message -> Exception Error
+삭제된 개체에 액세스할 수 없습니다.
+개체 이름: 'Frm_PortTPScreen' 
+Stack ->    위치: System.Windows.Forms.Control.CreateHandle()
+   위치: System.Windows.Forms.Form.CreateHandle()
+   위치: System.Windows.Forms.Control.get_Handle()
+   위치: System.Windows.Forms.Form.ShowDialog(IWin32Window owner)
+   위치: Master.Frm_Main.btn_PortTPForm_Click(Object sender, EventArgs e)
+   위치: System.Windows.Forms.Control.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnClick(EventArgs e)
+   위치: System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   위치: System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   위치: System.Windows.Forms.Control.WndProc(Message& m)
+   위치: System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   위치: System.Windows.Forms.Button.WndProc(Message& m)
+   위치: System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   위치: System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   위치: System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   위치: System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   위치: Master.Program.Main()
+

@@ -1,0 +1,127 @@
+[Master 0]
+DcMode=1
+CommCycle=1000
+CycleMode=1
+PrintLog=0
+InaccessCount=10
+TransmitTimeout=500
+ProcessingDelay=20
+ForwardingDelay=5
+DcDiffRangeH=80
+DcDiffRangeL=60
+DcDiffShiftRatio=50
+HaltOnNetworkDiff=0
+MessageLevel=0
+UseAliasAsAxisIndex=0
+TurnOffOnTopoChange=0
+HaltOnReverseSlave=0
+EniFolder=C:\eni
+UseLRW=0
+Init2PreOpWaitTime=8000
+PreOp2InitWaitTime=3000
+PreOp2SafeOpWaitTime=10000
+SafeOp2PreOpWaitTime=3000
+SafeOp2OpWaitTime=5000
+Op2SafeOpWaitTime=5000
+TotalWaitTime=23000
+NotWaitAllSlaveOp=0
+CopyCmdIfNoFbPdo=0
+SlaveInitThread=32
+UserDef=1
+PPMode=0
+PPStartDelay=3
+ResetInput=0
+ResetOutput=0
+
+[Slave 0]
+Vendorid=0x00000083
+ProductCode=0x0000007c
+Alias=0x00000000
+
+[Slave 1]
+Vendorid=0x00009555
+ProductCode=0x10000001
+Alias=0x00000001
+InAddr=4
+InSize=3
+
+[Slave 2]
+Vendorid=0x00009555
+ProductCode=0x10000005
+Alias=0x00000002
+InAddr=8
+InSize=1
+OutAddr=8
+OutSize=2
+
+[Slave 3]
+Vendorid=0x00009555
+ProductCode=0x10000001
+Alias=0x00000003
+InAddr=12
+InSize=3
+
+[Slave 4]
+Vendorid=0x00009555
+ProductCode=0x10000001
+Alias=0x00000004
+InAddr=16
+InSize=3
+
+[Slave 5]
+Vendorid=0x00009555
+ProductCode=0x10000001
+Alias=0x00000005
+InAddr=20
+InSize=3
+
+[Slave 6]
+Vendorid=0x00009555
+ProductCode=0x10000005
+Alias=0x00000006
+InAddr=24
+InSize=1
+OutAddr=24
+OutSize=2
+
+[Slave 7]
+Vendorid=0x00009555
+ProductCode=0x10000003
+Alias=0x00000008
+InAddr=32
+InSize=1
+OutAddr=32
+OutSize=1
+
+[Slave 8]
+Vendorid=0x00009555
+ProductCode=0x10000003
+Alias=0x00000009
+InAddr=36
+InSize=1
+OutAddr=36
+OutSize=1
+
+[Slave 9]
+Vendorid=0x00009555
+ProductCode=0x10000001
+Alias=0x00000007
+InAddr=28
+InSize=3
+
+[Slave 10]
+Vendorid=0x0000066f
+ProductCode=0x60380006
+Alias=0x0000000a
+Axis0=0
+InAddr=40
+InSize=4
+
+[Slave 11]
+Vendorid=0x0000066f
+ProductCode=0x60380006
+Alias=0x0000000b
+Axis0=1
+InAddr=44
+InSize=4
+

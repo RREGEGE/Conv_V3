@@ -1,0 +1,460 @@
+diff a/Master/ManagedFile/EquipMotionParam.cs b/Master/ManagedFile/EquipMotionParam.cs	(rejected hunks)
+@@ -15,76 +15,407 @@
+ {
+     public static class EquipMotionParam
+     {
+-        public class PortMotionParameter
++        public class PortMotionParam
++        {
++            public Port_Normal NormalParam                  = new Port_Normal();
++            public Port_Conveyor ConveyorParam              = new Port_Conveyor();
++            public Port_WatchdogParam WatchdogDetectParam   = new Port_WatchdogParam();
++            public int PortAutoRunSpeedRatio                = 50;
++            public int[] InputMap                           = new int[100];
++            public int[] OutputMap                          = new int[100];
++            public RFIDReader.Model eRFIDModel              = RFIDReader.Model.CH2;
++            public int TagReadSize                          = 16;
++
++            static public void Load(string PortId, ref PortMotionParam _PortParam)
++            {
++                try
++                {
++                    string filePath = ManagedFileInfo.EquipMotionParamDirectory + @"\" + $"{PortId}_{ManagedFileInfo.EquipMotionParamFileName}";
++
++                    if (!File.Exists(filePath))
++                    {
++                        Log.Add(new Log.LogItem(Log.LogLevel.Error, Log.LogType.Application, Log.Equipment.Port, PortId, $"Parameter File Not Exist"));
++                        return;
++                    }
++
++                    _PortParam = (PortMotionParam)MyXML.XmlToClass(filePath, typeof(PortMotionParam));
++
++                    if (_PortParam != null)
++                        Log.Add(new Log.LogItem(Log.LogLevel.Normal, Log.LogType.Application, Log.Equipment.Port, PortId, $"Parameter Load Success"));
++                    else
++                        throw new Exception();
++                }
++                catch
++                {
++                    Log.Add(new Log.LogItem(Log.LogLevel.Error, Log.LogType.Application, Log.Equipment.Port, PortId, $"Parameter Load Error"));
++                }
++            }
++            static public bool Save(string PortId, PortMotionParam _PortParam, bool bWithBackup = true)
++            {
++                try
++                {
++                    string filePath = ManagedFileInfo.EquipMotionParamDirectory + @"\" + $"{PortId}_{ManagedFileInfo.EquipMotionParamFileName}";
++
++                    if (File.Exists(filePath) && bWithBackup)
++                    {
++                        if (MyFile.BackupAndRemove(filePath))
++                            Log.Add(new Log.LogItem(Log.LogLevel.Normal, Log.LogType.Application, Log.Equipment.Port, PortId, $"Parameter Backup Success"));
++                    }
++
++                    if (File.Exists(filePath))
++                    {
++                        //backup 과정에서 file 삭제되는 경우도 있으므로 재 검사
++                        File.SetAttributes(filePath, File.GetAttributes(filePath) & FileAttributes.Archive);
++                    }
++
++                    MyXML.ClassToXml(filePath, _PortParam, typeof(PortMotionParam));
++                    File.SetAttributes(filePath, File.GetAttributes(filePath) | FileAttributes.Hidden);
++
++                    Log.Add(new Log.LogItem(Log.LogLevel.Normal, Log.LogType.Application, Log.Equipment.Port, PortId, $"Parameter Save Success"));
++                    return true;
++                }
++                catch
++                {
++                    Log.Add(new Log.LogItem(Log.LogLevel.Error, Log.LogType.Application, Log.Equipment.Port, PortId, $"Parameter Save Error"));
++                    return false;
++                }
++            }
++
++            private GeneralMotionParam GetAxisMotionGeneralParam(Port.PortAxis ePortAxis)
++            {
++                if (ePortAxis == Port.PortAxis.X_Axis)
++                    return NormalParam.X_AxisParam.GeneralParam;
++                else if (ePortAxis == Port.PortAxis.Z_Axis)
++                    return NormalParam.Z_AxisParam.GeneralParam;
++                else if (ePortAxis == Port.PortAxis.T_Axis)
++                    return NormalParam.T_AxisParam.GeneralParam;
++                else
++                    return null;
++            }
++            private GeneralMotionParam GetAxisMotionGeneralParam(Port.BufferAxis eBufferAxis)
++            {
++                if (eBufferAxis == Port.BufferAxis.Buffer1_X_Axis)
++                    return ConveyorParam.Buffer1_X_AxisParam.GeneralParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_Z_Axis)
++                    return ConveyorParam.Buffer1_Z_AxisParam.GeneralParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_T_Axis)
++                    return ConveyorParam.Buffer1_T_AxisParam.GeneralParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_X_Axis)
++                    return ConveyorParam.Buffer2_X_AxisParam.GeneralParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_Z_Axis)
++                    return ConveyorParam.Buffer2_Z_AxisParam.GeneralParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_T_Axis)
++                    return ConveyorParam.Buffer2_T_AxisParam.GeneralParam;
++                else
++                    return null;
++            }
++            public bool IsValidServo(Port.PortAxis ePortAxis)
++            {
++                if (ePortAxis == Port.PortAxis.X_Axis)
++                    return NormalParam.X_Axis_IsValidServo;
++                else if (ePortAxis == Port.PortAxis.Z_Axis)
++                    return NormalParam.Z_Axis_IsValidServo;
++                else if (ePortAxis == Port.PortAxis.T_Axis)
++                    return NormalParam.T_Axis_IsValidServo;
++                else
++                    return false;
++            }
++            public bool IsValidServo(Port.BufferAxis eBufferAxis)
++            {
++                if (eBufferAxis == Port.BufferAxis.Buffer1_X_Axis)
++                    return ConveyorParam.Buffer1_X_Axis_IsValidServo;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_Z_Axis)
++                    return ConveyorParam.Buffer1_Z_Axis_IsValidServo;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_T_Axis)
++                    return ConveyorParam.Buffer1_T_Axis_IsValidServo;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_X_Axis)
++                    return ConveyorParam.Buffer2_X_Axis_IsValidServo;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_Z_Axis)
++                    return ConveyorParam.Buffer2_Z_Axis_IsValidServo;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_T_Axis)
++                    return ConveyorParam.Buffer2_T_Axis_IsValidServo;
++                else
++                    return false;
++            }
++            public bool IsServoType(Port.PortAxis ePortAxis)
++            {
++                if (ePortAxis == Port.PortAxis.X_Axis)
++                    return NormalParam.eXAxisType == Port.XAxisType.Servo ? true : false;
++                else if (ePortAxis == Port.PortAxis.Z_Axis)
++                    return NormalParam.eZAxisType == Port.ZAxisType.Servo ? true : false;
++                else if (ePortAxis == Port.PortAxis.T_Axis)
++                    return NormalParam.eTAxisType == Port.TAxisType.Servo ? true : false;
++                else
++                    return false;
++            }
++            public bool IsServoType(Port.BufferAxis eBufferAxis)
++            {
++                if (eBufferAxis == Port.BufferAxis.Buffer1_X_Axis)
++                    return ConveyorParam.eBuffer1_XAxisType == Port.XAxisType.Servo ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_Z_Axis)
++                    return ConveyorParam.eBuffer1_ZAxisType == Port.ZAxisType.Servo ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_T_Axis)
++                    return ConveyorParam.eBuffer1_TAxisType == Port.TAxisType.Servo ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_X_Axis)
++                    return ConveyorParam.eBuffer2_XAxisType == Port.XAxisType.Servo ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_Z_Axis)
++                    return ConveyorParam.eBuffer2_ZAxisType == Port.ZAxisType.Servo ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_T_Axis)
++                    return ConveyorParam.eBuffer2_TAxisType == Port.TAxisType.Servo ? true : false;
++                else
++                    return false;
++            }
++            public bool IsNoneType(Port.PortAxis ePortAxis)
++            {
++                if (ePortAxis == Port.PortAxis.X_Axis)
++                    return NormalParam.eXAxisType == Port.XAxisType.None ? true : false;
++                else if (ePortAxis == Port.PortAxis.Z_Axis)
++                    return NormalParam.eZAxisType == Port.ZAxisType.None ? true : false;
++                else if (ePortAxis == Port.PortAxis.T_Axis)
++                    return NormalParam.eTAxisType == Port.TAxisType.None ? true : false;
++                else
++                    return false;
++            }
++            public bool IsNoneType(Port.BufferAxis eBufferAxis)
++            {
++                if (eBufferAxis == Port.BufferAxis.Buffer1_X_Axis)
++                    return ConveyorParam.eBuffer1_XAxisType == Port.XAxisType.None ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_Z_Axis)
++                    return ConveyorParam.eBuffer1_ZAxisType == Port.ZAxisType.None ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_T_Axis)
++                    return ConveyorParam.eBuffer1_TAxisType == Port.TAxisType.None ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_X_Axis)
++                    return ConveyorParam.eBuffer2_XAxisType == Port.XAxisType.None ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_Z_Axis)
++                    return ConveyorParam.eBuffer2_ZAxisType == Port.ZAxisType.None ? true : false;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_T_Axis)
++                    return ConveyorParam.eBuffer2_TAxisType == Port.TAxisType.None ? true : false;
++                else
++                    return false;
++            }
++            public int GetAxisNum(Port.PortAxis ePortAxis)
++            {
++                if (ePortAxis == Port.PortAxis.X_Axis)
++                    return NormalParam.AxisNum_X;
++                else if (ePortAxis == Port.PortAxis.Z_Axis)
++                    return NormalParam.AxisNum_Z;
++                else if (ePortAxis == Port.PortAxis.T_Axis)
++                    return NormalParam.AxisNum_T;
++                else
++                    return -1;
++            }
++            public int GetAxisNum(Port.BufferAxis eBufferAxis)
++            {
++                if (eBufferAxis == Port.BufferAxis.Buffer1_X_Axis)
++                    return ConveyorParam.Buffer1_AxisNum_X;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_Z_Axis)
++                    return ConveyorParam.Buffer1_AxisNum_Z;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_T_Axis)
++                    return ConveyorParam.Buffer1_AxisNum_T;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_X_Axis)
++                    return ConveyorParam.Buffer2_AxisNum_X;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_Z_Axis)
++                    return ConveyorParam.Buffer2_AxisNum_Z;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_T_Axis)
++                    return ConveyorParam.Buffer1_AxisNum_T;
++                else
++                    return -1;
++            }
++            public WMXMotion.AxisParameter GetAxisWMXParam(Port.PortAxis ePortAxis)
++            {
++                if (ePortAxis == Port.PortAxis.X_Axis)
++                    return NormalParam.X_AxisParam.WMXParam;
++                else if (ePortAxis == Port.PortAxis.Z_Axis)
++                    return NormalParam.Z_AxisParam.WMXParam;
++                else if (ePortAxis == Port.PortAxis.T_Axis)
++                    return NormalParam.T_AxisParam.WMXParam;
++                else
++                    return null;
++            }
++            public WMXMotion.AxisParameter GetAxisWMXParam(Port.BufferAxis eBufferAxis)
++            {
++                if (eBufferAxis == Port.BufferAxis.Buffer1_X_Axis)
++                    return ConveyorParam.Buffer1_X_AxisParam.WMXParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_Z_Axis)
++                    return ConveyorParam.Buffer1_Z_AxisParam.WMXParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer1_T_Axis)
++                    return ConveyorParam.Buffer1_T_AxisParam.WMXParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_X_Axis)
++                    return ConveyorParam.Buffer2_X_AxisParam.WMXParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_Z_Axis)
++                    return ConveyorParam.Buffer2_Z_AxisParam.WMXParam;
++                else if (eBufferAxis == Port.BufferAxis.Buffer2_T_Axis)
++                    return ConveyorParam.Buffer2_T_AxisParam.WMXParam;
++                else
++                    return null;
++            }
++            public float GetManualSpeed(Port.PortAxis ePortAxis)
++            {
++                return GetAxisMotionGeneralParam(ePortAxis).Manual_Speed;
++            }
++            public float GetManualSpeed(Port.BufferAxis eBufferAxis)
++            {
++                return GetAxisMotionGeneralParam(eBufferAxis).Manual_Speed;
++            }
++            public float GetManualAcc(Port.PortAxis ePortAxis)
++            {
++                return GetAxisMotionGeneralParam(ePortAxis).Manual_Acc;
++            }
++            public float GetManualAcc(Port.BufferAxis eBufferAxis)
++            {
++                return GetAxisMotionGeneralParam(eBufferAxis).Manual_Acc;
++            }
++            public float GetManualDec(Port.PortAxis ePortAxis)
++            {
++                return GetAxisMotionGeneralParam(ePortAxis).Manual_Dec;
++            }
++            public float GetManualDec(Port.BufferAxis eBufferAxis)
++            {
++                return GetAxisMotionGeneralParam(eBufferAxis).Manual_Dec;
++            }
++            public float GetAutoSpeed(Port.PortAxis ePortAxis)
++            {
++                return GetAxisMotionGeneralParam(ePortAxis).AutoRun_Speed;
++            }
++            public float GetAutoSpeed(Port.BufferAxis eBufferAxis)
++            {
++                return GetAxisMotionGeneralParam(eBufferAxis).AutoRun_Speed;
++            }
++            public float GetAutoAcc(Port.PortAxis ePortAxis)
++            {
++                return GetAxisMotionGeneralParam(ePortAxis).AutoRun_Acc;
++            }
++            public float GetAutoAcc(Port.BufferAxis eBufferAxis)
++            {
++                return GetAxisMotionGeneralParam(eBufferAxis).AutoRun_Acc;
++            }
++            public float GetAutoDec(Port.PortAxis ePortAxis)
++            {
++                return GetAxisMotionGeneralParam(ePortAxis).AutoRun_Dec;
++            }
++            public float GetAutoDec(Port.BufferAxis eBufferAxis)
++            {
++                return GetAxisMotionGeneralParam(eBufferAxis).AutoRun_Dec;
++            }
++
++            public short GetMaxLoad(Port.PortAxis ePortAxis)
++            {
++                return GetAxisMotionGeneralParam(ePortAxis).MaxLoad;
++            }
++            public short GetMaxLoad(Port.BufferAxis eBufferAxis)
++            {
++                return GetAxisMotionGeneralParam(eBufferAxis).MaxLoad;
++            }
++            public void SetMaxLoad(Port.PortAxis ePortAxis, short value)
++            {
++                GetAxisMotionGeneralParam(ePortAxis).MaxLoad = value;
++            }
++            public void SetMaxLoad(Port.BufferAxis eBufferAxis, short value)
++            {
++                GetAxisMotionGeneralParam(eBufferAxis).MaxLoad = value;
++            }
++            public string GetManualPath(Port.PortAxis ePortAxis)
++            {
++                return GetAxisMotionGeneralParam(ePortAxis).ManualPath;
++            }
++            public string GetManualPath(Port.BufferAxis eBufferAxis)
++            {
++                return GetAxisMotionGeneralParam(eBufferAxis).ManualPath;
++            }
++        }
++
++        public class Port_Normal
+         {
+             public Port.BufferType eBufferType = Port.BufferType.BP2;
+             public Port.PortDirection ePortDirection = Port.PortDirection.Input;
+-            public Port.XAxisType eXAxisType = Port.XAxisType.Servo;
+-            public Port.ZAxisType eZAxisType = Port.ZAxisType.Servo;
++            public Port.XAxisType eXAxisType = Port.XAxisType.None;
++            public Port.ZAxisType eZAxisType = Port.ZAxisType.None;
+             public Port.TAxisType eTAxisType = Port.TAxisType.None;
+-            public Port.X_Axis_WaitPosEnable eX_Axis_WaitPosEnable = Port.X_Axis_WaitPosEnable.Disable;
++            public Port.WaitPosEnable eWaitPosEnable = Port.WaitPosEnable.Disable;
+             public int AxisNum_X = -1;
+             public int AxisNum_Z = -1;
+             public int AxisNum_T = -1;
+-            public int PortAutoRunSpeedRatio = 50; // 50% default
+-            public Port_XAxisMotionParam X_AxisParam = new Port_XAxisMotionParam();
+-            public Port_ZAxisMotionParam Z_AxisParam = new Port_ZAxisMotionParam();
+-            public Port_TAxisMotionParam T_AxisParam = new Port_TAxisMotionParam();
+-            public int InputStartAddress = -1;
+-            public int OutputStartAddress = -1;
+-            public RFIDReader.Model eRFIDModel = RFIDReader.Model.CH2;
+-            public int TagReadSize = 16;
+-            public Port_WatchdogParam WatchdogDetectParam = new Port_WatchdogParam();
++            public XAxis_MotionParam X_AxisParam = new XAxis_MotionParam();
++            public ZAxis_MotionParam Z_AxisParam = new ZAxis_MotionParam();
++            public TAxis_MotionParam T_AxisParam = new TAxis_MotionParam();
++
++            public bool X_Axis_IsValidServo { get { return eXAxisType == Port.XAxisType.Servo && AxisNum_X >= 0 && AxisNum_X < 128 ? true : false; } }
++            public bool Z_Axis_IsValidServo { get { return eZAxisType == Port.ZAxisType.Servo && AxisNum_Z >= 0 && AxisNum_Z < 128 ? true : false; } }
++            public bool T_Axis_IsValidServo { get { return eTAxisType == Port.TAxisType.Servo && AxisNum_T >= 0 && AxisNum_T < 128 ? true : false; } }
+         }
+ 
+-        public class Port_XAxisMotionParam
++        public class Port_Conveyor
+         {
+-            public float X_OP_Position = 0;
+-            public float X_Wait_Position = 0;
+-            public float X_LP_Position = 0;
+-            public float X_Move_Manual_Speed = 1;
+-            public float X_Move_Manual_Acc = 1;
+-            public float X_Move_Manual_Dec = 1;
+-            public float X_Move_AutoRun_Speed = 1;
+-            public float X_Move_AutoRun_Acc = 1;
+-            public float X_Move_AutoRun_Dec = 1;
+-            public short X_Move_MaxLoad = 100;
+-            public string ManualPath = string.Empty;
++            public Port.PortDirection ePortDirection = Port.PortDirection.Input;
++            public Port.XAxisType eBuffer1_XAxisType = Port.XAxisType.None;
++            public Port.ZAxisType eBuffer1_ZAxisType = Port.ZAxisType.None;
++            public Port.TAxisType eBuffer1_TAxisType = Port.TAxisType.None;
++
++            public Port.XAxisType eBuffer2_XAxisType = Port.XAxisType.None;
++            public Port.ZAxisType eBuffer2_ZAxisType = Port.ZAxisType.None;
++            public Port.TAxisType eBuffer2_TAxisType = Port.TAxisType.None;
++
++            public int Buffer1_AxisNum_X = -1;
++            public int Buffer1_AxisNum_Z = -1;
++            public int Buffer1_AxisNum_T = -1;
++
++            public int Buffer2_AxisNum_X = -1;
++            public int Buffer2_AxisNum_Z = -1;
++            public int Buffer2_AxisNum_T = -1;
++
++            public XAxis_MotionParam Buffer1_X_AxisParam = new XAxis_MotionParam();
++            public ZAxis_MotionParam Buffer1_Z_AxisParam = new ZAxis_MotionParam();
++            public TAxis_MotionParam Buffer1_T_AxisParam = new TAxis_MotionParam();
++
++            public XAxis_MotionParam Buffer2_X_AxisParam = new XAxis_MotionParam();
++            public ZAxis_MotionParam Buffer2_Z_AxisParam = new ZAxis_MotionParam();
++            public TAxis_MotionParam Buffer2_T_AxisParam = new TAxis_MotionParam();
++
++            public bool Buffer1_X_Axis_IsValidServo { get { return eBuffer1_XAxisType == Port.XAxisType.Servo && Buffer1_AxisNum_X >= 0 && Buffer1_AxisNum_X < 128 ? true : false; } }
++            public bool Buffer1_Z_Axis_IsValidServo { get { return eBuffer1_ZAxisType == Port.ZAxisType.Servo && Buffer1_AxisNum_Z >= 0 && Buffer1_AxisNum_Z < 128 ? true : false; } }
++            public bool Buffer1_T_Axis_IsValidServo { get { return eBuffer1_TAxisType == Port.TAxisType.Servo && Buffer1_AxisNum_T >= 0 && Buffer1_AxisNum_T < 128 ? true : false; } }
++
++            public bool Buffer2_X_Axis_IsValidServo { get { return eBuffer2_XAxisType == Port.XAxisType.Servo && Buffer2_AxisNum_X >= 0 && Buffer2_AxisNum_X < 128 ? true : false; } }
++            public bool Buffer2_Z_Axis_IsValidServo { get { return eBuffer2_ZAxisType == Port.ZAxisType.Servo && Buffer2_AxisNum_Z >= 0 && Buffer2_AxisNum_Z < 128 ? true : false; } }
++            public bool Buffer2_T_Axis_IsValidServo { get { return eBuffer2_TAxisType == Port.TAxisType.Servo && Buffer2_AxisNum_T >= 0 && Buffer2_AxisNum_T < 128 ? true : false; } }
++        }
+ 
++
++        public class XAxis_MotionParam
++        {
++            public float OP_Position = 0;
++            public float Wait_Position = 0;
++            public float LP_Position = 0;
++            public GeneralMotionParam GeneralParam = new GeneralMotionParam();
+             public WMXMotion.AxisParameter WMXParam = new WMXMotion.AxisParameter();
+         }
+-        public class Port_ZAxisMotionParam
++        public class ZAxis_MotionParam
+         {
+-            public float Z_Up_Position = 0;
+-            public float Z_Down_Position = 0;
+-            public float Z_OverrideDistance = 0;
+-            public float Z_OverrideDecPercent = 10.0f;
+-            public float Z_Move_Manual_Speed = 1;
+-            public float Z_Move_Manual_Acc = 1;
+-            public float Z_Move_Manual_Dec = 1;
+-            public float Z_Move_AutoRun_Speed = 1;
+-            public float Z_Move_AutoRun_Acc = 1;
+-            public float Z_Move_AutoRun_Dec = 1;
+-            public short Z_Move_MaxLoad = 100;
+-            public string ManualPath = string.Empty;
+-
++            public float Up_Position = 0;
++            public float Down_Position = 0;
++            public float Override_Position = 0;
++            public float Override_DecPercent = 10.0f;
++            public GeneralMotionParam GeneralParam = new GeneralMotionParam();
+             public WMXMotion.AxisParameter WMXParam = new WMXMotion.AxisParameter();
+         }
+-        public class Port_TAxisMotionParam
++        public class TAxis_MotionParam
+         {
+-            public float T_0_Degree_Position = 0;
+-            public float T_180_Degree_Position = 0;
+-            public float T_Move_Manual_Speed = 1;
+-            public float T_Move_Manual_Acc = 1;
+-            public float T_Move_Manual_Dec = 1;
+-            public float T_Move_AutoRun_Speed = 1;
+-            public float T_Move_AutoRun_Acc = 1;
+-            public float T_Move_AutoRun_Dec = 1;
+-            public short T_Move_MaxLoad = 100;
+-            public string ManualPath = string.Empty;
+-
++            public float Deg0_Position = 0;
++            public float Deg180_Position = 0;
++            public GeneralMotionParam GeneralParam = new GeneralMotionParam();
+             public WMXMotion.AxisParameter WMXParam = new WMXMotion.AxisParameter();
+         }
++        public class GeneralMotionParam
++        {
++            public float Manual_Speed = 1;
++            public float Manual_Acc = 1;
++            public float Manual_Dec = 1;
++            public float AutoRun_Speed = 1;
++            public float AutoRun_Acc = 1;
++            public float AutoRun_Dec = 1;
++            public short MaxLoad = 100;
++            public string ManualPath = string.Empty;
++        }
+         public class Port_WatchdogParam
+         {
+             //public int[] WatchdogTime = new int[Enum.GetValues(typeof(Port.WatchdogList)).Length];

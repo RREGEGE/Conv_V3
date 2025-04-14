@@ -1,0 +1,814 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{407E5756-C4A6-4FED-B3BB-2D8117A76D6C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Master</RootNamespace>
+    <AssemblyName>SynusTechMaster</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;//EumSeongDemo</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SynustechMaster.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MovenCore" Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+      <HintPath>..\MovenCore\bin\x64\Release\MovenCore.dll</HintPath>
+    </Reference>
+    <Reference Include="SynusLangPack" Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+      <HintPath>..\SynusLangPack\bin\x64\Release\SynusLangPack.dll</HintPath>
+    </Reference>
+    <Reference Include="MovenCore" Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+      <HintPath>..\MovenCore\bin\x64\Debug\MovenCore.dll</HintPath>
+    </Reference>
+    <Reference Include="SynusLangPack" Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+      <HintPath>..\SynusLangPack\bin\x64\Debug\SynusLangPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Equipment\CIM\CIM.cs" />
+    <Compile Include="Equipment\CIM\CIMAction.cs" />
+    <Compile Include="Equipment\CPS\CPS.cs" />
+    <Compile Include="Equipment\CPS\CPSAction.cs" />
+    <Compile Include="Equipment\CPS\CPSAlarm.cs" />
+    <Compile Include="Equipment\Master\BitWordMapping\CIMToMaster_BitMapItem.cs" />
+    <Compile Include="Equipment\Master\BitWordMapping\MasterToCIM_BitMapItem.cs" />
+    <Compile Include="Equipment\Master\MasterUI.cs" />
+    <Compile Include="Equipment\Omron\Omron.cs" />
+    <Compile Include="Equipment\Port\Auto\AutoStep\Port_1BP.cs" />
+    <Compile Include="Equipment\Port\Auto\AutoStep\Port_2BP.cs" />
+    <Compile Include="Equipment\Port\Auto\AutoStep\Port_Conveyor.cs" />
+    <Compile Include="Equipment\Port\Auto\AutoStep\Port_DIEBANK.cs" />
+    <Compile Include="Equipment\Port\Auto\AutoStep\Port_STK_PIO_Step.cs" />
+    <Compile Include="Equipment\Port\Auto\AutoStep\Port_TAG_READ_Step.cs" />
+    <Compile Include="Equipment\Port\BitWordMapping\CIMToPort_BitMapItem.cs" />
+    <Compile Include="Equipment\Port\BitWordMapping\CIMToPort_WordMapItem.cs" />
+    <Compile Include="Equipment\Port\BitWordMapping\PortToCIM_BitMapItem.cs" />
+    <Compile Include="Equipment\Port\BitWordMapping\PortToCIM_WordMapItem.cs" />
+    <Compile Include="Equipment\Port\Control\Port_ControlBuffer.cs" />
+    <Compile Include="Equipment\Port\Control\Port_ControlCylinder.cs" />
+    <Compile Include="Equipment\Port\Control\Port_ControlInverter.cs" />
+    <Compile Include="Equipment\Port\Control\Port_ControlServo.cs" />
+    <Compile Include="Equipment\Port\PortAction.cs" />
+    <Compile Include="Equipment\Port\PortAlarm.cs" />
+    <Compile Include="Equipment\Port\Auto\PortAutoMotion.cs" />
+    <Compile Include="Equipment\Port\PortInterlock.cs" />
+    <Compile Include="Equipment\Port\Auto\Function\Port_CarrierStatus.cs" />
+    <Compile Include="Equipment\Port\PortUI.cs" />
+    <Compile Include="Equipment\Port\PortWatchdog.cs" />
+    <Compile Include="Equipment\Port\TagReader\Reader\BCRReader.cs" />
+    <Compile Include="Equipment\Port\TagReader\Reader\CanTops_CTS_RFID_LM21.cs" />
+    <Compile Include="Equipment\Port\TagReader\Reader\RFIDReader.cs" />
+    <Compile Include="Equipment\Port\TagReader\CSTIDReader.cs" />
+    <Compile Include="Equipment\Port\Control\WMX\WMX_IO.cs" />
+    <Compile Include="Equipment\Port\Control\WMX\WMX_Motion.cs" />
+    <Compile Include="Equipment\RackMaster\BitWordMapping\CIMToRackMaster_BitMapItem.cs" />
+    <Compile Include="Equipment\RackMaster\BitWordMapping\CIMToRackMaster_WordMapItem.cs" />
+    <Compile Include="Equipment\RackMaster\BitWordMapping\RackMasterToCIM_BitMapItem.cs" />
+    <Compile Include="Equipment\RackMaster\BitWordMapping\RackMasterToCIM_WordMapItem.cs" />
+    <Compile Include="Equipment\RackMaster\RackMasterAcition.cs" />
+    <Compile Include="Equipment\RackMaster\RackMasterAlarm.cs" />
+    <Compile Include="Equipment\RackMaster\Auto\RackMasterAutoCycleMotion.cs" />
+    <Compile Include="Equipment\RackMaster\Auto\RackMasterAutoTeaching.cs" />
+    <Compile Include="Equipment\RackMaster\RackMasterInterlock.cs" />
+    <Compile Include="Equipment\Port\PortUnit.cs" />
+    <Compile Include="Equipment\RackMaster\RackMasterUI.cs" />
+    <Compile Include="GlobalForm\Frm_AcceptSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_AcceptSave.Designer.cs">
+      <DependentUpon>Frm_AcceptSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_IOTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_IOTable.Designer.cs">
+      <DependentUpon>Frm_IOTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_Keypad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_Keypad.Designer.cs">
+      <DependentUpon>Frm_Keypad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_Lock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_Lock.Designer.cs">
+      <DependentUpon>Frm_Lock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_OmronTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_OmronTable.Designer.cs">
+      <DependentUpon>Frm_OmronTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_MasterSafetyMapSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_MasterSafetyMapSettings.Designer.cs">
+      <DependentUpon>Frm_MasterSafetyMapSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_PortSafetyMapSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalForm\Frm_PortSafetyMapSettings.Designer.cs">
+      <DependentUpon>Frm_PortSafetyMapSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\Alarm\CodeAlarm.cs" />
+    <Compile Include="Interface\Alarm\WordAlarm.cs" />
+    <Compile Include="Interface\File\MyFile.cs" />
+    <Compile Include="Interface\File\MyXML.cs" />
+    <Compile Include="Interface\Login\LogIn.cs" />
+    <Compile Include="Interface\Math\Average.cs" />
+    <Compile Include="Interface\Math\BitOperation.cs" />
+    <Compile Include="Interface\Math\Compare.cs" />
+    <Compile Include="Interface\Math\Max.cs" />
+    <Compile Include="Interface\Processor\CPUUsage.cs" />
+    <Compile Include="Interface\Processor\MemoryUsage.cs" />
+    <Compile Include="Interface\Safty\EStop.cs" />
+    <Compile Include="Interface\Watchdog\Watchdog.cs" />
+    <Compile Include="ManagedFile\ApplicationParam.cs" />
+    <Compile Include="ManagedFile\CassetteInfo.cs" />
+    <Compile Include="ManagedFile\EquipMasterIOParam.cs" />
+    <Compile Include="ManagedFile\EquipNetworkParam.cs" />
+    <Compile Include="ManagedFile\EquipPortMotionParam.cs" />
+    <Compile Include="Equipment\Port\Port.cs" />
+    <Compile Include="Equipment\RackMaster\RackMaster.cs" />
+    <Compile Include="Interface\File\MyINI.cs" />
+    <Compile Include="Interface\Form\UIControl.cs" />
+    <Compile Include="Interface\TCP\ProtocolRoles.cs" />
+    <Compile Include="ManagedFile\Log.cs" />
+    <Compile Include="ManagedFile\ManagedFileInfo.cs" />
+    <Compile Include="Equipment\Master\MasterAlarm.cs" />
+    <Compile Include="Equipment\Master\WMX\Master_WMXIO.cs" />
+    <Compile Include="ManagedFile\MasterSafetyImageInfo.cs" />
+    <Compile Include="ManagedFile\ParamSaveAdmin.cs" />
+    <Compile Include="SubForm\Frm_ControlMonPort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Frm_ControlMonPort.Designer.cs">
+      <DependentUpon>Frm_ControlMonPort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Frm_ControlMonRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Frm_ControlMonRM.Designer.cs">
+      <DependentUpon>Frm_ControlMonRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Frm_EquipMotionSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Frm_EquipMotionSettings.Designer.cs">
+      <DependentUpon>Frm_EquipMotionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Frm_EquipNetworkSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Frm_EquipNetworkSettings.Designer.cs">
+      <DependentUpon>Frm_EquipNetworkSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Frm_Language.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Frm_Language.Designer.cs">
+      <DependentUpon>Frm_Language.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\Frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Frm_Login.Designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\TCP\TCPClient.cs" />
+    <Compile Include="Interface\TCP\TCPServer.cs" />
+    <Compile Include="Interface\TCP\TCPSocket.cs" />
+    <Compile Include="Equipment\Master\Master.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Main.Designer.cs">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubForm\Frm_LogSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\Frm_LogSet.Designer.cs">
+      <DependentUpon>Frm_LogSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\Frm_MasterCtrlScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\Frm_MasterCtrlScreen.Designer.cs">
+      <DependentUpon>Frm_MasterCtrlScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlAlarmInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlAlarmInfo.Designer.cs">
+      <DependentUpon>Frm_MasterCtrlAlarmInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlCPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlCPS.Designer.cs">
+      <DependentUpon>Frm_MasterCtrlCPS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlMain.Designer.cs">
+      <DependentUpon>Frm_MasterCtrlMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlMappingInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlMappingInfo.Designer.cs">
+      <DependentUpon>Frm_MasterCtrlMappingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\MasterForm\MasterSubForm\Frm_MasterSettings.Designer.cs">
+      <DependentUpon>Frm_MasterSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_ConveyorMotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_ConveyorMotion.Designer.cs">
+      <DependentUpon>Frm_ConveyorMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_CylinderMotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_CylinderMotion.Designer.cs">
+      <DependentUpon>Frm_CylinderMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_InverterMotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_InverterMotion.Designer.cs">
+      <DependentUpon>Frm_InverterMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\Frm_MotionSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\Frm_MotionSelect.Designer.cs">
+      <DependentUpon>Frm_MotionSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_ServoMotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_ServoMotion.Designer.cs">
+      <DependentUpon>Frm_ServoMotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortCSTInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortCSTInfo.Designer.cs">
+      <DependentUpon>Frm_PortCSTInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortAlarmInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortAlarmInfo.Designer.cs">
+      <DependentUpon>Frm_PortAlarmInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPSettings.Designer.cs">
+      <DependentUpon>Frm_PortTPSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\StatusForm\Frm_PortStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSideForm\StatusForm\Frm_PortStatus.Designer.cs">
+      <DependentUpon>Frm_PortStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPMain.Designer.cs">
+      <DependentUpon>Frm_RackMasterTPMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPMappingInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPMappingInfo.Designer.cs">
+      <DependentUpon>Frm_RackMasterTPMappingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPSettings.Designer.cs">
+      <DependentUpon>Frm_RackMasterTPSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPTeaching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPTeaching.Designer.cs">
+      <DependentUpon>Frm_RackMasterTPTeaching.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\Frm_RackMasterTPScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\RMTPForm\Frm_RackMasterTPScreen.Designer.cs">
+      <DependentUpon>Frm_RackMasterTPScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\Frm_PortTPScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\Frm_PortTPScreen.Designer.cs">
+      <DependentUpon>Frm_PortTPScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPIO.Designer.cs">
+      <DependentUpon>Frm_PortTPIO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPLog.Designer.cs">
+      <DependentUpon>Frm_PortTPLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMain.Designer.cs">
+      <DependentUpon>Frm_PortTPMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMappingInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMappingInfo.Designer.cs">
+      <DependentUpon>Frm_PortTPMappingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMotor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMotor.Designer.cs">
+      <DependentUpon>Frm_PortTPMotor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPTeaching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPTeaching.Designer.cs">
+      <DependentUpon>Frm_PortTPTeaching.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalForm\Frm_AcceptSave.resx">
+      <DependentUpon>Frm_AcceptSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalForm\Frm_IOTable.resx">
+      <DependentUpon>Frm_IOTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalForm\Frm_Keypad.resx">
+      <DependentUpon>Frm_Keypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalForm\Frm_Lock.resx">
+      <DependentUpon>Frm_Lock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalForm\Frm_OmronTable.resx">
+      <DependentUpon>Frm_OmronTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalForm\Frm_MasterSafetyMapSettings.resx">
+      <DependentUpon>Frm_MasterSafetyMapSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalForm\Frm_PortSafetyMapSettings.resx">
+      <DependentUpon>Frm_PortSafetyMapSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Frm_ControlMonPort.resx">
+      <DependentUpon>Frm_ControlMonPort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Frm_ControlMonRM.resx">
+      <DependentUpon>Frm_ControlMonRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Frm_EquipMotionSettings.resx">
+      <DependentUpon>Frm_EquipMotionSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Frm_EquipNetworkSettings.resx">
+      <DependentUpon>Frm_EquipNetworkSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Frm_Language.resx">
+      <DependentUpon>Frm_Language.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\Frm_LogSet.resx">
+      <DependentUpon>Frm_LogSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\MasterForm\Frm_MasterCtrlScreen.resx">
+      <DependentUpon>Frm_MasterCtrlScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlAlarmInfo.resx">
+      <DependentUpon>Frm_MasterCtrlAlarmInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlCPS.resx">
+      <DependentUpon>Frm_MasterCtrlCPS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlMain.resx">
+      <DependentUpon>Frm_MasterCtrlMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\MasterForm\MasterSubForm\Frm_MasterCtrlMappingInfo.resx">
+      <DependentUpon>Frm_MasterCtrlMappingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\MasterForm\MasterSubForm\Frm_MasterSettings.resx">
+      <DependentUpon>Frm_MasterSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_ConveyorMotion.resx">
+      <DependentUpon>Frm_ConveyorMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_CylinderMotion.resx">
+      <DependentUpon>Frm_CylinderMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_InverterMotion.resx">
+      <DependentUpon>Frm_InverterMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\Frm_MotionSelect.resx">
+      <DependentUpon>Frm_MotionSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSideForm\ControlForm\ControlSubForm\Frm_ServoMotion.resx">
+      <DependentUpon>Frm_ServoMotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortCSTInfo.resx">
+      <DependentUpon>Frm_PortCSTInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortAlarmInfo.resx">
+      <DependentUpon>Frm_PortAlarmInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPSettings.resx">
+      <DependentUpon>Frm_PortTPSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSideForm\StatusForm\Frm_PortStatus.resx">
+      <DependentUpon>Frm_PortStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\RMTPForm\Frm_RackMasterTPScreen.resx">
+      <DependentUpon>Frm_RackMasterTPScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\Frm_PortTPScreen.resx">
+      <DependentUpon>Frm_PortTPScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPIO.resx">
+      <DependentUpon>Frm_PortTPIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPLog.resx">
+      <DependentUpon>Frm_PortTPLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMain.resx">
+      <DependentUpon>Frm_PortTPMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMappingInfo.resx">
+      <DependentUpon>Frm_PortTPMappingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPMotor.resx">
+      <DependentUpon>Frm_PortTPMotor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\PortTPForm\PortTPSubForm\Frm_PortTPTeaching.resx">
+      <DependentUpon>Frm_PortTPTeaching.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPMain.resx">
+      <DependentUpon>Frm_RackMasterTPMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPMappingInfo.resx">
+      <DependentUpon>Frm_RackMasterTPMappingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPSettings.resx">
+      <DependentUpon>Frm_RackMasterTPSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPTeaching.resx">
+      <DependentUpon>Frm_RackMasterTPTeaching.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Lang\MasterLangPack.ini" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lock-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-unlock-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-thin-client-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-noise-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-monitor-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-robot-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-language-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-stop-sign-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TreeNodeCircle_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TreeNodeCircle_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-window-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-noise-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Port_Buffer_IO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Port_Shuttle_IO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Port_Shuttle_Z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OHT_PIO_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OHT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AGV_PIO_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AGV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-arrow-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-forward-button-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-double-left-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-double-right-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-forward-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WorkingZone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Port.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-file-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-indent-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minus-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-as-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-opened-folder-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-thick-arrow-pointing-up-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-thick-arrow-pointing-down-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reset-36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reset-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-opened-folder-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eraser-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-thick-arrow-pointing-up-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-thick-arrow-pointing-down-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plane-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-left-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-right-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-audio-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mute-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-siren-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-open-door-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-door-closed-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CV_Buffer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-warning-96.png" />
+    <None Include="Resources\icons8-no-image-96.png" />
+    <None Include="Resources\icons8-settings-24 %282%29.png" />
+    <None Include="Resources\icons8-minimize-48.png" />
+    <None Include="Resources\icons8-check-48.png" />
+    <None Include="Resources\icons8-open-document-48.png" />
+    <None Include="Resources\Load.png" />
+    <None Include="Resources\Unload.png" />
+    <None Include="Resources\icons8-arrow-24 %281%29.png" />
+    <None Include="Resources\icons8-arrow-24 %282%29.png" />
+    <Content Include="SynustechMaster.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>copy /Y "$(SolutionDir)\MovenCore\bin\x64\Release\IMDll.dll" "$(TargetDir)\IMDll.dll"
+copy /Y "$(SolutionDir)\MovenCore\bin\x64\Release\WMX3Api_CLRLib.dll" "$(TargetDir)\WMX3Api_CLRLib.dll"
+if not exist "$(TargetDir)Lang" mkdir "$(TargetDir)Lang"
+copy /Y "$(ProjectDir)\Lang\MasterLangPack.ini" "$(TargetDir)\Lang\MasterLangPack.ini"</PreBuildEvent>
+  </PropertyGroup>
+</Project>

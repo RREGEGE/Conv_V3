@@ -1,0 +1,16 @@
+2023-03-07 오전 10:18:18 : 
+Message -> Port Motion 값 설정 오류
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   위치: System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   위치: System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   위치: Master.SubForm.Frm_EquipMotionSettings.IsPortMotionParamValid() 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\SubForm\Frm_EquipMotionSettings.cs:줄 635
+
+2023-03-07 오후 7:40:39 : 
+Message -> Cycle Run
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   위치: System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   위치: System.Convert.ToInt32(String value)
+   위치: Master.SubForm.RMTPForm.RMTPSubForm.Frm_RackMasterTPMain.btn_CycleRun_Click(Object sender, EventArgs e) 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPMain.cs:줄 1194
+

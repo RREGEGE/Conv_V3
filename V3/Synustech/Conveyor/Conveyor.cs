@@ -103,7 +103,14 @@ namespace Synustech
 
             Step1000_FinalCVN_Wait = 1000
         }
-
+        /// <summary>
+        /// Conveyor의 제어 모드
+        /// </summary>
+        public enum ControlMode
+        {
+            MasterMode,
+            CIMMode
+        }
         /// <summary>
         /// Common
         /// </summary>
@@ -118,6 +125,7 @@ namespace Synustech
         public double initVelocity;
         public bool isInterface = false;
         public bool isPIORun = false;
+        public AlarmList m_ConveyorAlarmList;
 
         // Conveyor 상태 관련 변수
         public CnvRun run = CnvRun.Stop;

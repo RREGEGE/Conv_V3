@@ -1,0 +1,12 @@
+2023-04-20 오후 12:42:21 : 
+Message -> Port[30201] IO Parameter Apply Error 
+Input Start Address Range : Insert Value -> -1, Range -> [0 ~ 7999] 
+Stack ->    위치: Master.SubForm.PortTPForm.PortTPSubForm.Frm_PortTPSettings.ApplyInputGridView(DataGridView& DGV, Port port) 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\SubForm\PortTPForm\PortTPSubForm\Frm_PortTPSettings.cs:줄 702
+
+2023-04-20 오후 5:33:41 : 
+Message -> Jog Run
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.ParseSingle(String value, NumberStyles options, NumberFormatInfo numfmt)
+   위치: System.Convert.ToSingle(String value)
+   위치: Master.SubForm.PortTPForm.PortTPSubForm.ControlForm.Frm_ServoMotion.btn_Jog_MouseDown(Object sender, MouseEventArgs e)
+

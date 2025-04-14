@@ -1,0 +1,18 @@
+2023-04-10 오후 7:33:00 : 
+Message -> Port[30102] IO Parameter Apply Error 
+Input StartAddr Range Error : Insert Value -> -1, Range -> [0 ~ 7999] 
+Stack ->    위치: Master.SubForm.PortTPForm.PortTPSubForm.Frm_PortTPSettings.ApplyInputGridView(DataGridView& DGV, Port port)
+
+2023-04-10 오후 7:34:34 : 
+Message -> Port[30102] IO Parameter Apply Error 
+Input Start Address Range Error :
+Insert Value -> -1, Range -> [0 ~ 7999] 
+Stack ->    위치: Master.SubForm.PortTPForm.PortTPSubForm.Frm_PortTPSettings.ApplyInputGridView(DataGridView& DGV, Port port)
+
+2023-04-10 오후 7:36:38 : 
+Message -> Port[30102] IO Parameter Apply Error 
+Input Start Address Range :
+Insert Value -> -1
+Range -> [0 ~ 7999] 
+Stack ->    위치: Master.SubForm.PortTPForm.PortTPSubForm.Frm_PortTPSettings.ApplyInputGridView(DataGridView& DGV, Port port)
+

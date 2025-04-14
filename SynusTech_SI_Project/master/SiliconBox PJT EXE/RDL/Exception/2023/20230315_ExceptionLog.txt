@@ -1,0 +1,8 @@
+2023-03-15 오후 3:12:39 : 
+Message -> Cycle Run
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   위치: System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   위치: System.Convert.ToInt32(String value)
+   위치: Master.SubForm.RMTPForm.RMTPSubForm.Frm_RackMasterTPMain.btn_CycleRun_Click(Object sender, EventArgs e) 파일 D:\Leems\1_Program\98_Git\25_Synustech_SI_Project\SynusTech_SI_Project\Master\SubForm\RMTPForm\RMTPSubForm\Frm_RackMasterTPMain.cs:줄 262
+

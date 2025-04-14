@@ -1,0 +1,37 @@
+Master/bin/
+Master/obj/
+MovenCore/bin/
+MovenCore/obj/
+N2Stocker/bin/
+N2Stocker/obj/
+SynNetwork/obj/
+TestForm/bin/
+TestForm/obj/
+SynNetwork/bin/
+GOTMode/bin/
+GOTMode/obj/
+SynusLangPack/bin/
+SynusLangPack/obj/
+RackMaster/obj/
+RackMaster/bin/
+.vs/Sysnustech_SI_Project/v16/
+OmronTagCommunicator/OmronTagCommunicator/bin/
+OmronTagCommunicator/OmronTagCommunicator/obj/
+SiliconBox PJT EXE/DIEBANK/Log/
+SiliconBox PJT EXE/DIEBANK/Exception/
+SiliconBox PJT EXE/DIEBANK/Settings/CleanupPortParamFile/
+SiliconBox PJT EXE/EOL/Log/
+SiliconBox PJT EXE/EOL/Exception/
+SiliconBox PJT EXE/EOL/Settings/CleanupPortParamFile/
+SiliconBox PJT EXE/RDLOVEN/Log/
+SiliconBox PJT EXE/RDLOVEN/Exception/
+SiliconBox PJT EXE/RDLOVEN/Settings/CleanupPortParamFile/
+SiliconBox PJT EXE/RECON/Log/
+SiliconBox PJT EXE/RECON/Exception/
+SiliconBox PJT EXE/RECON/Settings/CleanupPortParamFile/
+SiliconBox PJT EXE/RECONOVEN/Log/
+SiliconBox PJT EXE/RECONOVEN/Exception/
+SiliconBox PJT EXE/RECONOVEN/Settings/CleanupPortParamFile/
+SiliconBox PJT RM EXE/STK/Exception Log/
+SiliconBox PJT RM EXE/STK/Log/
+.vs/Sysnustech_SI_Project/

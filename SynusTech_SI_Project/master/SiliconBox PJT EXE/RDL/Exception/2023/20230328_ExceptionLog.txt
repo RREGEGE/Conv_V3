@@ -1,0 +1,7 @@
+2023-03-28 오후 2:24:51 : 
+Message -> Jog Run
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.ParseSingle(String value, NumberStyles options, NumberFormatInfo numfmt)
+   위치: System.Convert.ToSingle(String value)
+   위치: Master.SubForm.PortTPForm.PortTPSubForm.Frm_PortTPMotor.btn_Jog_MouseDown(Object sender, MouseEventArgs e)
+

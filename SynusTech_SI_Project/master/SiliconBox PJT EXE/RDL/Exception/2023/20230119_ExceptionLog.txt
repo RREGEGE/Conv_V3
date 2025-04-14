@@ -1,0 +1,154 @@
+2023-01-19 오전 10:13:23 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:13:28 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 10:13:42 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:19:42 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:19:46 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 10:19:47 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:19:47 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 10:19:49 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:19:50 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 10:19:51 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:19:51 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 10:19:51 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:19:51 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 10:19:51 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:19:51 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 10:19:52 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:19:52 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 10:19:53 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 10:19:53 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 11:09:25 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 11:09:27 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 11:09:30 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 11:11:07 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 11:11:35 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+
+2023-01-19 오전 11:12:37 : 
+Message -> DataAddress Exception Error
+소스 배열의 길이가 짧습니다. srcIndex, length 및 배열의 하한을 확인하십시오. 
+Stack ->    위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   위치: System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+   위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataMapAddress(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 167
+
+2023-01-19 오전 11:12:40 : 
+Message -> DataType Exception Error
+인덱스가 배열 범위를 벗어났습니다. 
+Stack ->    위치: Master.Interface.TCP.ProtocolRoles.GetValue_DataType(Byte[] _packets) 파일 C:\Users\SSK\Desktop\KimTaeWoo2\02. Development Project\07. 시너스텍 스토커 장비 개발\Project\Master\Interface\TCP\ProtocolRoles.cs:줄 152
+

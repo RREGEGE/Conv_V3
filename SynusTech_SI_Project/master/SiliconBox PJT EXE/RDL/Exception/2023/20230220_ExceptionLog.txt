@@ -1,0 +1,16 @@
+2023-02-20 오후 3:50:25 : 
+Message -> Port 설정 오류
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   위치: System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   위치: System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   위치: Master.SubForm.Frm_EquipNetworkSettings.IsPortParamValid() 파일 C:\Leems\1_Program\99_Git\4_Synustech\Master\SubForm\Frm_EquipNetworkSettings.cs:줄 471
+
+2023-02-20 오후 4:00:21 : 
+Message -> Port 설정 오류
+입력 문자열의 형식이 잘못되었습니다. 
+Stack ->    위치: System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   위치: System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   위치: System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   위치: Master.SubForm.Frm_EquipNetworkSettings.IsPortParamValid()
+

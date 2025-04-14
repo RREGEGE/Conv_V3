@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MasterIOParameter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Ctrl_IO>
+    <InputMap>
+      <IOParam>
+        <Name>Main_MC_On</Name>
+        <StartAddr>4</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>RM_Power</Name>
+        <StartAddr>4</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>MCUL_Fault</Name>
+        <StartAddr>4</StartAddr>
+        <Bit>6</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>HP_Door_Open</Name>
+        <StartAddr>4</StartAddr>
+        <Bit>2</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_Door_Open</Name>
+        <StartAddr>4</StartAddr>
+        <Bit>3</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Maint_Door_Open</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>HP_AutoManual_Select_Key</Name>
+        <StartAddr>4</StartAddr>
+        <Bit>4</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_AutoManual_Select_Key</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>HP_Outside_EMO</Name>
+        <StartAddr>5</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>HP_Inside_EMO</Name>
+        <StartAddr>5</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_Outside_EMO</Name>
+        <StartAddr>5</StartAddr>
+        <Bit>2</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_Inside_EMO</Name>
+        <StartAddr>5</StartAddr>
+        <Bit>3</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Port_DTP_EMO</Name>
+        <StartAddr>28</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Port_DTP_Dead_Man</Name>
+        <StartAddr>28</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Port_DTP_Mode1</Name>
+        <StartAddr>28</StartAddr>
+        <Bit>2</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Port_DTP_Mode2</Name>
+        <StartAddr>28</StartAddr>
+        <Bit>3</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>HP_DTP_EMO</Name>
+        <StartAddr>12</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>HP_DTP_Dead_Man</Name>
+        <StartAddr>12</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>HP_DTP_Mode1</Name>
+        <StartAddr>12</StartAddr>
+        <Bit>2</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>HP_DTP_Mode2</Name>
+        <StartAddr>12</StartAddr>
+        <Bit>3</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_DTP_EMO</Name>
+        <StartAddr>12</StartAddr>
+        <Bit>4</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_DTP_Dead_Man</Name>
+        <StartAddr>12</StartAddr>
+        <Bit>5</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_DTP_Mode1</Name>
+        <StartAddr>12</StartAddr>
+        <Bit>7</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>OP_DTP_Mode2</Name>
+        <StartAddr>12</StartAddr>
+        <Bit>6</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CPS_Run</Name>
+        <StartAddr>5</StartAddr>
+        <Bit>6</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CPS_Fault</Name>
+        <StartAddr>5</StartAddr>
+        <Bit>7</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CPS_Power_On_Enable_Lamp</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CPS_Power_On_Req_Lamp</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CPS_Error_Reset_Req_Lamp</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CPS_Error_Lamp</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Int_Fan_Error</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Exh_Fan_Error</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+    </InputMap>
+    <OutputMap>
+      <IOParam>
+        <Name>Door_Bypass_Relay_On</Name>
+        <StartAddr>8</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Door_Open_Relay_On</Name>
+        <StartAddr>8</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Main_Reset_SW_Lamp</Name>
+        <StartAddr>8</StartAddr>
+        <Bit>3</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Tower_Lamp_Red</Name>
+        <StartAddr>9</StartAddr>
+        <Bit>0</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Tower_Lamp_Yellow</Name>
+        <StartAddr>9</StartAddr>
+        <Bit>1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Tower_Lamp_Green</Name>
+        <StartAddr>9</StartAddr>
+        <Bit>2</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Tower_Lamp_Blue</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Buzzer_MasterError</Name>
+        <StartAddr>9</StartAddr>
+        <Bit>4</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Buzzer_PortError</Name>
+        <StartAddr>9</StartAddr>
+        <Bit>5</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Buzzer_RackMasterActive</Name>
+        <StartAddr>9</StartAddr>
+        <Bit>6</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>Buzzer_Sound</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CPS_Power_On</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name>CPS_Error_Reset</Name>
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+      <IOParam>
+        <Name />
+        <StartAddr>-1</StartAddr>
+        <Bit>-1</Bit>
+        <bInvert>false</bInvert>
+      </IOParam>
+    </OutputMap>
+  </Ctrl_IO>
+</MasterIOParameter>
