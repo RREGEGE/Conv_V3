@@ -8,7 +8,7 @@ using System.Linq;
 using System.IO;
 using System.Diagnostics;
 
-namespace Synustech.Conveyor
+namespace Synustech
 {
     /// <summary>
     /// Conveyor.cs는 이니셜라이징 및 주요 처리 부 작성

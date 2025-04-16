@@ -164,27 +164,6 @@ namespace Synustech
             ucConvControl_Re.Jogneg += m_WMXMotion.StartJogNeg;
             ucConvControl_Re.Jogstop += m_WMXMotion.StopJog;
 
-            G_Var.Normal1 = new NormalConv("Normal1");
-            G_Var.Normal2 = new NormalConv("Normal2");
-            G_Var.Normal3 = new NormalConv("Normal3");
-            G_Var.Normal4 = new NormalConv("Normal4");
-            G_Var.Turn1 = new TurnConv("Turn1");
-            G_Var.Turn2 = new TurnConv("Turn2");
-            G_Var.Turn3 = new TurnConv("Turn3");
-            G_Var.Turn4 = new TurnConv("Turn4");
-            G_Var.Long1 = new LongConv("Long1");
-            G_Var.Long2 = new LongConv("Long2");
-            G_Var.conveyors.Add(Normal1);
-            G_Var.conveyors.Add(Turn1);
-            G_Var.conveyors.Add(Normal2);
-            G_Var.conveyors.Add(Long1);
-            G_Var.conveyors.Add(Turn2);
-            G_Var.conveyors.Add(Normal3);
-            G_Var.conveyors.Add(Long2);
-            G_Var.conveyors.Add(Turn3);
-            G_Var.conveyors.Add(Normal4);
-            G_Var.conveyors.Add(Turn4);
-
             _xml.LoadLineFromXml(LineFullPath);
             _xml.LoadConveyorFromXML(ConvFullPath);
             _xml.LoadRectanglesFromXML(RectFullPath);

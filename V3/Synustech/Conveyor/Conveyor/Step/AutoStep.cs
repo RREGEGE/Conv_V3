@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Synustech.Conveyor
+namespace Synustech
 {
     /// <summary>
     /// AutoStep.cs는 

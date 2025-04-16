@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Synustech.G_Var;
 
-namespace Synustech.Conveyor
+namespace Synustech
 {
     partial class Conveyor
     {
