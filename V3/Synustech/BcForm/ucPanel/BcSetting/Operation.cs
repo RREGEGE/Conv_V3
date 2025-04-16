@@ -81,13 +81,13 @@ namespace Synustech.BcForm.ucPanel.BcSetting
 
             for (int i = 0; i < Constants.MaxAxes; i++)
             {
-                w_motion.m_AxisProfile[i].m_velocity = velocity;
-                w_motion.m_AxisProfile[i].m_acc = acc;
-                w_motion.m_AxisProfile[i].m_dec = dec;
-                w_motion.m_AxisProfile[i].m_axis = i;
+                m_WMXMotion.m_AxisProfile[i].m_velocity = velocity;
+                m_WMXMotion.m_AxisProfile[i].m_acc = acc;
+                m_WMXMotion.m_AxisProfile[i].m_dec = dec;
+                m_WMXMotion.m_AxisProfile[i].m_axis = i;
             }
             _xml.SetProfileParameter(ProfileFullPath);
-            Console.WriteLine(w_motion.m_AxisProfile[0].m_velocity);
+            Console.WriteLine(m_WMXMotion.m_AxisProfile[0].m_velocity);
         }
 
         private void btnOperationLoad_Click(object sender, EventArgs e)
@@ -95,11 +95,11 @@ namespace Synustech.BcForm.ucPanel.BcSetting
 
             _xml.GetProfileParameter(ProfileFullPath);
 
-            dgOperationView.Rows[3].Cells[0].Value = umTodegree(w_motion.m_AxisProfile[0].m_velocity);
-            dgOperationView.Rows[4].Cells[0].Value = umTodegree(w_motion.m_AxisProfile[0].m_acc);
-            dgOperationView.Rows[5].Cells[0].Value = umTodegree(w_motion.m_AxisProfile[0].m_dec);
+            dgOperationView.Rows[3].Cells[0].Value = umTodegree(m_WMXMotion.m_AxisProfile[0].m_velocity);
+            dgOperationView.Rows[4].Cells[0].Value = umTodegree(m_WMXMotion.m_AxisProfile[0].m_acc);
+            dgOperationView.Rows[5].Cells[0].Value = umTodegree(m_WMXMotion.m_AxisProfile[0].m_dec);
 
-            foreach (var axis in w_motion.m_AxisProfile)
+            foreach (var axis in m_WMXMotion.m_AxisProfile)
             {
                 Console.WriteLine(axis.m_axis);
             }

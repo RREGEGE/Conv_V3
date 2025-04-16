@@ -87,7 +87,7 @@ namespace Synustech
         //public static string ParamFullPath = Path.GetFullPath(Path.Combine(solutionDirectory, ParamFilePath));
         public static string ParamFullPath = @"C:\Users\240604\Desktop\241105_Merge\Setting\wmx_parameters.xml";
 
-        public static WMXMotion w_motion;
+        public static WMXMotion m_WMXMotion;
         public static CoreMotionStatus cmStatus = new CoreMotionStatus();
         // Error 선언
         public const int MASTER_ALAMR_BYTE_SIZE = 14;

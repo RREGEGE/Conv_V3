@@ -1,3 +1,4 @@
+Port
 1. ControlMode{CIM, Master} 도입
 2. 네트워크 관련 기능
 3. TagReader 관련 기능
@@ -9,4 +10,55 @@
 9. CMD_SetOverLoadValue() 과부하 기준 값 설정
 10. CMD_SetOverLoadClear() 과부하 검출 값 클리어
 11. Home 관련해서 다시 보기
-12. 839~ 다시보기 (IO관련해서 어떻게 가져오는지 찾아보기)
+12. AutoRunProgressTimeUpdate() -> Line에 넣어서 Line의 Auto 시간 업데이트
+13. CSTAutoClearCheck() -> Line에 넣어서 CST Clear
+14. CV Type을 Enum으로 정의해서 GetType 함수로 호출,,?
+15. PortDirection GetOperationDirection() -> CV 및 Line의 구동 방향 가져옴
+16. GetSWEStopState() -> Line(프로그램 자체로 할지 Line으로 할지 합의)의 SW EStop 눌림 상태 가져오기
+17. CIM 관련 통신은 나중에 보기
+18. CMD_PortSetAutoControlDirection() -> Input / Output 공정 방향 지정 *****CV InterLock.cs 새로 만들어서 InterLock 관련 함수 만들어 놓기
+19. IsPortAxisBusy -> 적용할지 검토
+20. HomeDone 변수 다시 검토해보기 (IsPortHomeDone())
+21. EStop Class 검토해보기
+22. CMD_PortStop() -> Line에 넣어서 전 CV Stop 명령 전송
+23. IsIOParamDupleCheck() -> IO 주소를 설정한다고 할때 중복 여부 체크
+
+Port InterLock
+1. Interlock_SetControlMode() -> Control Mode를 지정
+2. Interlock_StaartAutoControl() -> Auto 공정 시작 명령
+3. Interlock_StopAutoControl() -> Auto 공정 정지 명령
+4. Interlock_PortPowerOn() -> Power On 명령
+5. Interlock_PortPowerOff() -> Power Off 명령
+6. Interlock_StartAutoManualCycleControl() -> Cycle 공정 시작
+7. Interlock_StopAutoManualCycleControl() -> Cycle 공정 정지
+8. Interlock_SetAutoRunSpeed() -> Auto 공정 속도 비율 설정
+9. Interlock_AutoControlDirectionChange() -> 공정 방향 변경
+10. Interlock_TagReadFailErrorOptionChange() -> Tag Reader Option 설정 (보류)
+11. Interlock_AxisStartHoming() -> Homing 동작 진행
+12. Interlock_AxisInchingMove() -> Inching 동작 진행
+13. Interlock_AxisTargetMove() -> 타겟 동작 진행
+14. Interlock_AxisStop() -> 축 정지 명령
+15. Interlock_T_Axis_Move_To_TeachingPos() -> T 티칭 위치 이동 동작 명령
+16. Interlock_SetOverLoadValue() -> Servo Amp 사용 시 과부하 검출 값을 지정 (Step Driver도 되는지 검토)
+17. Interlock_SetOverClear() -> 검출된 과부하 값을 초기화
+18. Interlock_ParameterSave() / Interlock_ParameterApply() /Interlock_ParameterRefresh() -> Parameter Save 및 Apply 및 새로고침
+19. Interlock_AlarmCreate() -> 매뉴얼 알람 생성
+20. 특정 상황을 체크하기 위한 함수
+Check_CIMMode()
+Check_CycleControlRun()
+Check_PortOverLoadLimit()
+Check_PowerOffEnable()
+Check_PowerOnEnable()
+Check_AutoControlRunEnable()
+Check_AutoControlRun()
+Check_PortBusy()
+Check_PortHomeDone()
+Check_PortAlarm()
+Check_ModeChangeEnable()
+Check_DirectionChangeEnable()
+Check_PortEStopAlarm()
+Check_ValidJogSpeedValue()
+Check_IOValid()
+Check_ValidInchingValue()
+Check_Axis_Limit_WithOutMovingDirection()
+21. Interlock_LogMessage() -> Interlock 로그 기재

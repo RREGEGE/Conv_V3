@@ -110,15 +110,15 @@ namespace Synustech.BcForm.ucPanel.BcSetting
                 //w_motion.m_axisParameter[axis].m_motorDirection = Convert.ToInt32(dgParaView.Rows[0].Cells[i].Value);
                 //w_motion.m_axisParameter[axis].m_homeType = Convert.ToInt32(dgParaView.Rows[1].Cells[i].Value);
                 //w_motion.m_axisParameter[axis].m_homeDirection = Convert.ToInt32(dgParaView.Rows[2].Cells[i].Value);
-                w_motion.m_axisParameter[axis].m_homeFastVelocity = mmToum(Convert.ToDouble(dgParaView.Rows[3].Cells[i].Value));
-                w_motion.m_axisParameter[axis].m_homeFastAcc = mmToum(Convert.ToDouble(dgParaView.Rows[4].Cells[i].Value));
-                w_motion.m_axisParameter[axis].m_homeFastDec = mmToum(Convert.ToDouble(dgParaView.Rows[5].Cells[i].Value));
-                w_motion.m_axisParameter[axis].m_homeSlowVelocity = mmToum(Convert.ToDouble(dgParaView.Rows[6].Cells[i].Value));
-                w_motion.m_axisParameter[axis].m_homeSlowAcc = mmToum(Convert.ToDouble(dgParaView.Rows[7].Cells[i].Value));
-                w_motion.m_axisParameter[axis].m_homeSlowDec = mmToum(Convert.ToDouble(dgParaView.Rows[8].Cells[i].Value));
-                w_motion.m_axisParameter[axis].m_homeShiftDistance = mmToum(Convert.ToDouble(dgParaView.Rows[9].Cells[i].Value));
+                m_WMXMotion.m_axisParameter[axis].m_homeFastVelocity = mmToum(Convert.ToDouble(dgParaView.Rows[3].Cells[i].Value));
+                m_WMXMotion.m_axisParameter[axis].m_homeFastAcc = mmToum(Convert.ToDouble(dgParaView.Rows[4].Cells[i].Value));
+                m_WMXMotion.m_axisParameter[axis].m_homeFastDec = mmToum(Convert.ToDouble(dgParaView.Rows[5].Cells[i].Value));
+                m_WMXMotion.m_axisParameter[axis].m_homeSlowVelocity = mmToum(Convert.ToDouble(dgParaView.Rows[6].Cells[i].Value));
+                m_WMXMotion.m_axisParameter[axis].m_homeSlowAcc = mmToum(Convert.ToDouble(dgParaView.Rows[7].Cells[i].Value));
+                m_WMXMotion.m_axisParameter[axis].m_homeSlowDec = mmToum(Convert.ToDouble(dgParaView.Rows[8].Cells[i].Value));
+                m_WMXMotion.m_axisParameter[axis].m_homeShiftDistance = mmToum(Convert.ToDouble(dgParaView.Rows[9].Cells[i].Value));
             }
-            w_motion.GetAndSaveAxisParameter(G_Var.ParamFullPath);
+            m_WMXMotion.GetAndSaveAxisParameter(G_Var.ParamFullPath);
         }
 
         private void btnParaLoad_Click(object sender, EventArgs e)
@@ -146,16 +146,16 @@ namespace Synustech.BcForm.ucPanel.BcSetting
             int i = 0;
             foreach(var axis in Axes) 
             {
-                dgParaView.Rows[0].Cells[i].Value = w_motion.m_axisParameter[axis].m_motorDirection;
-                dgParaView.Rows[1].Cells[i].Value = w_motion.m_axisParameter[axis].m_homeType;
-                dgParaView.Rows[2].Cells[i].Value = w_motion.m_axisParameter[axis].m_homeDirection;
-                dgParaView.Rows[3].Cells[i].Value = umTomm(w_motion.m_axisParameter[axis].m_homeFastVelocity);
-                dgParaView.Rows[4].Cells[i].Value = umTomm(w_motion.m_axisParameter[axis].m_homeFastAcc);
-                dgParaView.Rows[5].Cells[i].Value = umTomm(w_motion.m_axisParameter[axis].m_homeFastDec);
-                dgParaView.Rows[6].Cells[i].Value = umTomm(w_motion.m_axisParameter[axis].m_homeSlowVelocity);
-                dgParaView.Rows[7].Cells[i].Value = umTomm(w_motion.m_axisParameter[axis].m_homeSlowAcc);
-                dgParaView.Rows[8].Cells[i].Value = umTomm(w_motion.m_axisParameter[axis].m_homeSlowDec);
-                dgParaView.Rows[9].Cells[i].Value = umTomm(w_motion.m_axisParameter[axis].m_homeShiftDistance);
+                dgParaView.Rows[0].Cells[i].Value = m_WMXMotion.m_axisParameter[axis].m_motorDirection;
+                dgParaView.Rows[1].Cells[i].Value = m_WMXMotion.m_axisParameter[axis].m_homeType;
+                dgParaView.Rows[2].Cells[i].Value = m_WMXMotion.m_axisParameter[axis].m_homeDirection;
+                dgParaView.Rows[3].Cells[i].Value = umTomm(m_WMXMotion.m_axisParameter[axis].m_homeFastVelocity);
+                dgParaView.Rows[4].Cells[i].Value = umTomm(m_WMXMotion.m_axisParameter[axis].m_homeFastAcc);
+                dgParaView.Rows[5].Cells[i].Value = umTomm(m_WMXMotion.m_axisParameter[axis].m_homeFastDec);
+                dgParaView.Rows[6].Cells[i].Value = umTomm(m_WMXMotion.m_axisParameter[axis].m_homeSlowVelocity);
+                dgParaView.Rows[7].Cells[i].Value = umTomm(m_WMXMotion.m_axisParameter[axis].m_homeSlowAcc);
+                dgParaView.Rows[8].Cells[i].Value = umTomm(m_WMXMotion.m_axisParameter[axis].m_homeSlowDec);
+                dgParaView.Rows[9].Cells[i].Value = umTomm(m_WMXMotion.m_axisParameter[axis].m_homeShiftDistance);
                 i++;
             }
 

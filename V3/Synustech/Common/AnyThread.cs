@@ -343,12 +343,12 @@ namespace Synustech
                     {
                         if (conveyor.type == "Turn")
                         {
-                            w_motion.ServoOff(conveyor.Axis);
-                            w_motion.ServoOff(conveyor.TurnAxis);
+                            m_WMXMotion.ServoOff(conveyor.Axis);
+                            m_WMXMotion.ServoOff(conveyor.TurnAxis);
                         }
                         else
                         {
-                            w_motion.ServoOff(conveyor.Axis);
+                            m_WMXMotion.ServoOff(conveyor.Axis);
                         }
                     }
                 }
@@ -429,7 +429,7 @@ namespace Synustech
                 {
                     if (conveyor.type == "Turn")
                     {
-                        if (w_motion.IsServoRun(conveyor.Axis) || w_motion.IsServoRun(conveyor.TurnAxis))
+                        if (m_WMXMotion.IsServoRun(conveyor.Axis) || m_WMXMotion.IsServoRun(conveyor.TurnAxis))
                         {
                             conveyor.run = Conveyor.CnvRun.Run;
                         }
@@ -440,7 +440,7 @@ namespace Synustech
                     }
                     else
                     {
-                        if (w_motion.IsServoRun(conveyor.Axis))
+                        if (m_WMXMotion.IsServoRun(conveyor.Axis))
                         {
                             conveyor.run = Conveyor.CnvRun.Run;
                         }
@@ -498,11 +498,11 @@ namespace Synustech
                 {
                     if (conveyor.type == "Turn")
                     {
-                        conveyor.servo = ((w_motion.IsServoOn(conveyor.Axis) == true) && (w_motion.IsServoOn(conveyor.TurnAxis) == true)) ? ServoOnOff.On : ServoOnOff.Off;
+                        conveyor.servo = ((m_WMXMotion.IsServoOn(conveyor.Axis) == true) && (m_WMXMotion.IsServoOn(conveyor.TurnAxis) == true)) ? ServoOnOff.On : ServoOnOff.Off;
                     }
                     else
                     {
-                        conveyor.servo = (w_motion.IsServoOn(conveyor.Axis) == true) ? ServoOnOff.On : ServoOnOff.Off;
+                        conveyor.servo = (m_WMXMotion.IsServoOn(conveyor.Axis) == true) ? ServoOnOff.On : ServoOnOff.Off;
                     }
                 }
             }

@@ -745,29 +745,17 @@ namespace Synustech
             ret = m_coreMotion.Config.GetAndExportAll(path);
             return ret;
         }
-        public void ServoOn(int axis)
+        public int ServoOn(int axis)
         {
             int ret = -1;
             ret = m_coreMotion.AxisControl.SetServoOn(axis, 1);
-
-            if (ret != ErrorCode.None)
-            {
-                strErrString = WMX3Api.ErrorToString(ret);
-                MessageBox.Show($"Faild to set servo on \n: {strErrString}");
-                return;
-            }
+            return ret;
         }
-        public void ServoOff(int axis)
+        public int ServoOff(int axis)
         {
             int ret = -1;
             ret = m_coreMotion.AxisControl.SetServoOn(axis, 0);
-
-            if (ret != ErrorCode.None)
-            {
-                strErrString = WMX3Api.ErrorToString(nErr);
-                MessageBox.Show($"Faild to set servo on \n: {strErrString}");
-                return;
-            }
+            return ret;
         }
         public bool IsAmpOffline(int axisIndex)
         {
@@ -805,7 +793,7 @@ namespace Synustech
             else
                 return false;
         }
-        public int AbsoluteMove(AxisProfile posProfile, double Location)
+        public int AbsoluteMove(AxisProfile posProfile)
         {
             int ret = -1;
             Motion.PosCommand pos = new Motion.PosCommand();
@@ -815,7 +803,7 @@ namespace Synustech
             pos.Profile.Velocity = posProfile.m_velocity;
             pos.Profile.Acc = posProfile.m_acc;
             pos.Profile.Dec = posProfile.m_dec;
-            pos.Target = Location;
+            pos.Target = posProfile.m_dest;
             pos.Profile.EndVelocity = posProfile.m_endvelocity;
             pos.Profile.JerkAccRatio = pos.Profile.JerkDecRatio = posProfile.m_jerkRatio;
 
@@ -844,7 +832,7 @@ namespace Synustech
             return ret;
         }
 
-        public int RelativeMove(AxisProfile movProfile, double distance)
+        public int RelativeMove(AxisProfile movProfile)
         {
             int ret = -1;
             Motion.PosCommand pos = new Motion.PosCommand();
@@ -854,7 +842,7 @@ namespace Synustech
             pos.Profile.Velocity = movProfile.m_velocity;
             pos.Profile.Acc = movProfile.m_acc;
             pos.Profile.Dec = movProfile.m_dec;
-            pos.Target = distance;
+            pos.Target = movProfile.m_dest;
             pos.Profile.JerkAccRatio = pos.Profile.JerkDecRatio = movProfile.m_jerkRatio;
 
             ret = m_coreMotion.Motion.StartMov(pos);
@@ -918,24 +906,17 @@ namespace Synustech
                 }
             }
         }
-        public void StartJogPos(int axis, double speed)
+        public int JogMove(AxisProfile jogProfile)
         {
-            if (G_Var.bMouse == true)
-            {
-                Motion.JogCommand jog = new Motion.JogCommand();
-                jog.Axis = axis;
-                jog.Profile.Velocity = speed * 1000;
-                jog.Profile.Acc = 2 * jog.Profile.Velocity;
-                jog.Profile.Dec = 2 * jog.Profile.Velocity;
+            Motion.JogCommand jog = new Motion.JogCommand();
+            jog.Axis = jogProfile.m_axis;
+            jog.Profile.Velocity = jogProfile.m_velocity;
+            jog.Profile.Acc = jogProfile.m_acc;
+            jog.Profile.Dec = jogProfile.m_dec;
+            jog.Profile.JerkAccRatio = jogProfile.m_jerkRatio;
 
-                int ret = m_coreMotion.Motion.StartJog(jog);
-                if (ret != ErrorCode.None)
-                {
-                    ret = m_coreMotion.Motion.Stop(axis);
-                    MessageBox.Show("Failed to start positive jog. Error code: " + ret.ToString());
-                    return;
-                }
-            }
+            int ret = m_coreMotion.Motion.StartJog(jog);
+            return ret;
         }
         public void StartJogNeg(int axis, double speed)
         {
@@ -956,7 +937,7 @@ namespace Synustech
                 }
             }
         }
-        public void StartJogPos_Auto(int axis, double speed)
+        public int StartJogPos_Auto(int axis, double speed)
         {
 
             Motion.JogCommand jog = new Motion.JogCommand();
@@ -968,15 +949,10 @@ namespace Synustech
             jog.Profile.Dec = 150000;
 
             int ret = m_coreMotion.Motion.StartJog(jog);
-            //if (ret != ErrorCode.None)
-            //{
-            //    ret = m_coreMotion.Motion.Stop(axis);
-            //    MessageBox.Show("Failed to start positive jog. Error code: " + ret.ToString());
-            //    return;
-            //}
+            return ret;
 
         }
-        public void StartJogNeg_Auto(int axis, double speed)
+        public int StartJogNeg_Auto(int axis, double speed)
         {
 
             Motion.JogCommand jog = new Motion.JogCommand();
@@ -988,22 +964,14 @@ namespace Synustech
             jog.Profile.Dec = 150000;
 
             int ret = m_coreMotion.Motion.StartJog(jog);
-            //if (ret != ErrorCode.None)
-            //{
-            //    ret = m_coreMotion.Motion.Stop(axis);
-            //    MessageBox.Show("Failed to start negative jog. Error code: " + ret.ToString());
-            //    return;
-            //}
+            return ret;
 
         }
         // JOG 공통 메서드.
-        public void StopJog(int axis)
+        public int StopServo(int axis)
         {
             int ret = m_coreMotion.Motion.Stop(axis);
-            if (ret != ErrorCode.None)
-            {
-                MessageBox.Show("Failed to stop jog. Error code: " + ret.ToString());
-            }
+            return ret;
         }
         public void AutoModeChange()
         {

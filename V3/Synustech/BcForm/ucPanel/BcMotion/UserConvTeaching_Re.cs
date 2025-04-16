@@ -45,7 +45,7 @@ namespace Synustech.ucPanel.BcMotion
                     if (double.TryParse(btnDegree.Text, out degreeValue))
                     {
                         //selectedconveyor.TurnJogPOS(degreeValue);
-                        w_motion.RelativeMove(w_motion.m_AxisProfile[selectedconveyor.TurnAxis], degreeValue);
+                        m_WMXMotion.RelativeMove(m_WMXMotion.m_AxisProfile[selectedconveyor.TurnAxis], degreeValue);
                     }
                     else
                     {
@@ -73,7 +73,7 @@ namespace Synustech.ucPanel.BcMotion
                     {
                         degreeValue = -1 * degreeValue;
                         //selectedconveyor.TurnJogNEG(degreeValue);
-                        w_motion.RelativeMove(w_motion.m_AxisProfile[selectedconveyor.TurnAxis], degreeValue);
+                        m_WMXMotion.RelativeMove(m_WMXMotion.m_AxisProfile[selectedconveyor.TurnAxis], degreeValue);
                     }
                     else
                     {
@@ -238,7 +238,7 @@ namespace Synustech.ucPanel.BcMotion
                         DialogResult result = MessageBox.Show("Would you like to move with Load POS?", "Move Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
                         {
-                            w_motion.AbsoluteMove(w_motion.m_AxisProfile[selectedconveyor.TurnAxis], selectedconveyor.LoadPos);
+                            m_WMXMotion.AbsoluteMove(m_WMXMotion.m_AxisProfile[selectedconveyor.TurnAxis], selectedconveyor.LoadPos);
                         }
                     }
                     else
@@ -261,7 +261,7 @@ namespace Synustech.ucPanel.BcMotion
                         DialogResult result = MessageBox.Show("Would you like to move with Unload POS?", "Move Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
                         {
-                            w_motion.AbsoluteMove(w_motion.m_AxisProfile[selectedconveyor.TurnAxis], selectedconveyor.UnloadPos);
+                            m_WMXMotion.AbsoluteMove(m_WMXMotion.m_AxisProfile[selectedconveyor.TurnAxis], selectedconveyor.UnloadPos);
                         }
                     }
                     else

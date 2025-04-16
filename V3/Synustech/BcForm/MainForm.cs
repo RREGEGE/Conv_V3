@@ -118,8 +118,8 @@ namespace Synustech
             //Main_SubMenu
             ucTopComm.CommunicationWMX += Init;
             ucTopComm.CloseWMX         += DisConnectWMX;
-            ucTopComm.ServoOn          += w_motion.AllServoOn;
-            ucTopComm.ServoOff         += w_motion.AllServoOff;
+            ucTopComm.ServoOn          += m_WMXMotion.AllServoOn;
+            ucTopComm.ServoOff         += m_WMXMotion.AllServoOff;
 
             //MainbMenu
             
@@ -160,9 +160,9 @@ namespace Synustech
 
             userCurrentAlarm.SendCode += userSolution.UcCurrentAlarm_SendCode;
 
-            ucConvControl_Re.Jogpos += w_motion.StartJogPos;
-            ucConvControl_Re.Jogneg += w_motion.StartJogNeg;
-            ucConvControl_Re.Jogstop += w_motion.StopJog;
+            ucConvControl_Re.Jogpos += m_WMXMotion.JogMove;
+            ucConvControl_Re.Jogneg += m_WMXMotion.StartJogNeg;
+            ucConvControl_Re.Jogstop += m_WMXMotion.StopJog;
 
             G_Var.Normal1 = new NormalConv("Normal1");
             G_Var.Normal2 = new NormalConv("Normal2");
@@ -210,11 +210,11 @@ namespace Synustech
         private void Init()
         {
             WMX3.CreateWMX3Device("Conveyor");
-            w_motion = new WMXMotion("ConvMotion", true);
+            m_WMXMotion = new WMXMotion("ConvMotion", true);
             WMX3.StartCommunicate();
             Task.Delay(500);
-            w_motion.LoadAndSetAxisParameter(ParamFullPath);
-            w_motion.GetAndSaveAxisParameter(ParamFullPath);
+            m_WMXMotion.LoadAndSetAxisParameter(ParamFullPath);
+            m_WMXMotion.GetAndSaveAxisParameter(ParamFullPath);
             ThreadStart();
         }
         private void ThreadStart()
@@ -258,7 +258,7 @@ namespace Synustech
         private void DisConnectWMX()
         {
             WMX3.StopCommunicate();
-            w_motion.CloseWMXMotion();
+            m_WMXMotion.CloseWMXMotion();
             WMX3.CloseDevice();
         }
         private void InitializeIOPanel()

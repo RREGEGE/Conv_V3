@@ -243,14 +243,20 @@
     </Compile>
     <Compile Include="Common\AlarmCheck.cs" />
     <Compile Include="Common\AlarmList.cs" />
+    <Compile Include="Common\Log.cs" />
     <Compile Include="Common\Math.cs" />
-    <Compile Include="Conveyor\Conveyor.cs" />
+    <Compile Include="Conveyor\Control\WMX_Motion.cs" />
+    <Compile Include="Conveyor\Conveyor\Step\InitStep.cs" />
+    <Compile Include="Conveyor\Conveyor\Step\PIOStep.cs" />
+    <Compile Include="Conveyor\Conveyor\Conveyor.cs" />
+    <Compile Include="Conveyor\Conveyor\Step\AutoStep.cs" />
     <Compile Include="Conveyor\Rect\LongRect_Horizontal.cs" />
     <Compile Include="Conveyor\Rect\LongRect_Vertical.cs" />
     <Compile Include="Common\Global.cs" />
     <Compile Include="Common\AnyThread.cs" />
     <Compile Include="Conveyor\Line\Line.cs" />
     <Compile Include="MainCDevice\CDevice.cs" />
+    <Compile Include="ManagedFile\ManagedFileInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

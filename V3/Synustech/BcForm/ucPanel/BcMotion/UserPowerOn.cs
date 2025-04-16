@@ -150,12 +150,12 @@ namespace Synustech.ucPanel.BcMotion
                     Conveyor conv = conveyors.FirstOrDefault(c => c.ID == rect.ID);
                     if (conv.type == "Turn")
                     {
-                        w_motion.ServoOn(conv.Axis);
-                        w_motion.ServoOn(conv.TurnAxis);
+                        m_WMXMotion.ServoOn(conv.Axis);
+                        m_WMXMotion.ServoOn(conv.TurnAxis);
                     }
                     else
                     {
-                        w_motion.ServoOn(conv.Axis);
+                        m_WMXMotion.ServoOn(conv.Axis);
                     }
                 }
             }
@@ -170,12 +170,12 @@ namespace Synustech.ucPanel.BcMotion
                     Conveyor conv = conveyors.FirstOrDefault(c => c.ID == rect.ID);
                     if (conv.type == "Turn")
                     {
-                        w_motion.ServoOff(conv.Axis);
-                        w_motion.ServoOff(conv.TurnAxis);
+                        m_WMXMotion.ServoOff(conv.Axis);
+                        m_WMXMotion.ServoOff(conv.TurnAxis);
                     }
                     else
                     {
-                        w_motion.ServoOff(conv.Axis);
+                        m_WMXMotion.ServoOff(conv.Axis);
                     }
 
                 }
@@ -189,7 +189,7 @@ namespace Synustech.ucPanel.BcMotion
             {
                 if(selectedconveyor.type == "Turn")
                 {
-                    w_motion.HomeStart(selectedconveyor.TurnAxis);
+                    m_WMXMotion.HomeStart(selectedconveyor.TurnAxis);
                 }
                 else
                 {
@@ -260,8 +260,8 @@ namespace Synustech.ucPanel.BcMotion
                 {
                     if (selectedconveyor.type == "Turn")
                     {
-                        w_motion.HomeStart(selectedconveyor.TurnAxis);
-                        Console.WriteLine(w_motion.IsServoRun(selectedconveyor.TurnAxis));
+                        m_WMXMotion.HomeStart(selectedconveyor.TurnAxis);
+                        Console.WriteLine(m_WMXMotion.IsServoRun(selectedconveyor.TurnAxis));
 
                         await Task.Run(() =>
                         {
@@ -269,7 +269,7 @@ namespace Synustech.ucPanel.BcMotion
                             {
                                 CoreMotionAxisStatus cmAxis = WMX3.m_coreMotionStatus.AxesStatus[selectedconveyor.TurnAxis];
 
-                                if (!w_motion.IsServoRun(selectedconveyor.TurnAxis) &&
+                                if (!m_WMXMotion.IsServoRun(selectedconveyor.TurnAxis) &&
                                     cmAxis.ActualPos == 0 &&
                                     selectedconveyor.POS[0] == SensorOnOff.On)
                                 {
@@ -304,7 +304,7 @@ namespace Synustech.ucPanel.BcMotion
                 {
                     if (selectedconveyor.type == "Turn")
                     {
-                        w_motion.StopJog(selectedconveyor.TurnAxis);
+                        m_WMXMotion.StopJog(selectedconveyor.TurnAxis);
                         CoreMotionAxisStatus cmAxis = WMX3.m_coreMotionStatus.AxesStatus[selectedconveyor.TurnAxis];
                         if (cmAxis.ActualPos != 0 || selectedconveyor.POS[0] == SensorOnOff.Off)
                         {

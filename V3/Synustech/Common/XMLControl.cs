@@ -372,36 +372,36 @@ namespace Synustech
                         switch (under_paramNode.Name)
                         {
                             case "Velocity":
-                                w_motion.m_AxisProfile[axisValue].m_velocity = double.Parse(under_paramNode.InnerText);
+                                m_WMXMotion.m_AxisProfile[axisValue].m_velocity = double.Parse(under_paramNode.InnerText);
                                 break;
 
                             case "EndVelocity":
-                                w_motion.m_AxisProfile[axisValue].m_endvelocity = double.Parse(under_paramNode.InnerText);
+                                m_WMXMotion.m_AxisProfile[axisValue].m_endvelocity = double.Parse(under_paramNode.InnerText);
                                 break;
 
                             case "Acceleration":
-                                w_motion.m_AxisProfile[axisValue].m_acc = double.Parse(under_paramNode.InnerText);
+                                m_WMXMotion.m_AxisProfile[axisValue].m_acc = double.Parse(under_paramNode.InnerText);
                                 break;
 
                             case "Deceleration":
-                                w_motion.m_AxisProfile[axisValue].m_dec = double.Parse(under_paramNode.InnerText);
+                                m_WMXMotion.m_AxisProfile[axisValue].m_dec = double.Parse(under_paramNode.InnerText);
                                 break;
 
                             case "JerkRatio":
-                                w_motion.m_AxisProfile[axisValue].m_jerkRatio = double.Parse(under_paramNode.InnerText);
+                                m_WMXMotion.m_AxisProfile[axisValue].m_jerkRatio = double.Parse(under_paramNode.InnerText);
                                 break;
 
                             case "Destination":
-                                w_motion.m_AxisProfile[axisValue].m_dest = double.Parse(under_paramNode.InnerText);
+                                m_WMXMotion.m_AxisProfile[axisValue].m_dest = double.Parse(under_paramNode.InnerText);
                                 break;
 
                             case "Axis":
-                                w_motion.m_AxisProfile[axisValue].m_axis = int.Parse(under_paramNode.InnerText);
-                                Console.WriteLine(w_motion.m_AxisProfile[axisValue].m_axis);
+                                m_WMXMotion.m_AxisProfile[axisValue].m_axis = int.Parse(under_paramNode.InnerText);
+                                Console.WriteLine(m_WMXMotion.m_AxisProfile[axisValue].m_axis);
                                 break;
 
                             case "ProfileType":
-                                w_motion.m_AxisProfile[axisValue].m_profileType = (WMXParam.m_profileType)Enum.Parse(typeof(ProfileType), under_paramNode.InnerText);
+                                m_WMXMotion.m_AxisProfile[axisValue].m_profileType = (WMXParam.m_profileType)Enum.Parse(typeof(ProfileType), under_paramNode.InnerText);
                                 break;
 
                                 //default:
@@ -415,7 +415,7 @@ namespace Synustech
             }
             // 결과 확인용 출력 
             //Console.WriteLine($"Axis: {conveyor.Axis + i} {w_motion.m_OprationParameter[conveyor.Axis + i].m_Cnv_Auto_Speed} 설정 완료 ");
-            Console.WriteLine($"Setting {w_motion.m_AxisProfile[0].m_velocity} 설정 완료 ");
+            Console.WriteLine($"Setting {m_WMXMotion.m_AxisProfile[0].m_velocity} 설정 완료 ");
 
             return;
         }
@@ -462,7 +462,7 @@ namespace Synustech
             {
 
                 int axisValue = int.Parse(axisNode.Attributes["Axis"].Value);
-                AxisProfile axisProfile = w_motion.m_AxisProfile[axisValue]; //모든 Axis 값을 참조할 인스턴스 생성
+                AxisProfile axisProfile = m_WMXMotion.m_AxisProfile[axisValue]; //모든 Axis 값을 참조할 인스턴스 생성
 
 
                 //// 원하는 Axis 값과 비교, 불일치 하면 재실행 
