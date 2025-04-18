@@ -255,6 +255,8 @@
     <Compile Include="Common\Global.cs" />
     <Compile Include="Common\AnyThread.cs" />
     <Compile Include="Conveyor\Line\Line.cs" />
+    <Compile Include="Interface\Form\UIControl.cs" />
+    <Compile Include="Interface\Watchdog\Wathchdog.cs" />
     <Compile Include="MainCDevice\CDevice.cs" />
     <Compile Include="ManagedFile\ManagedFileInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

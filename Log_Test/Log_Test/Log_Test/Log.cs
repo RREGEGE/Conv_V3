@@ -646,7 +646,6 @@ namespace Log_Test
             DataGridViewTextBoxColumn TbxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn TbxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn TbxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -713,11 +712,12 @@ namespace Log_Test
 
             LogDGV.AllowUserToAddRows = false;
             LogDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            LogDGV.BackgroundColor = System.Drawing.Color.AliceBlue;
+            LogDGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
             LogDGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             LogDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            LogDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             DGV_ColumnHeadersDefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            DGV_ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            DGV_ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(60, 64, 85);
             DGV_ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
             DGV_ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.SystemColors.WindowText;
             DGV_ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
