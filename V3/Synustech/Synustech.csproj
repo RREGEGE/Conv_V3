@@ -246,6 +246,7 @@
     </Compile>
     <Compile Include="Common\AlarmCheck.cs" />
     <Compile Include="Common\AlarmList.cs" />
+    <Compile Include="Conveyor\Line\LineParam.cs" />
     <Compile Include="ManagedFile\Log.cs" />
     <Compile Include="Common\Math.cs" />
     <Compile Include="Conveyor\Control\WMX_Motion.cs" />

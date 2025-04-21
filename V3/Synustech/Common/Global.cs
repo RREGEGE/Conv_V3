@@ -11,7 +11,6 @@ using static Synustech.AlarmList;
 
 namespace Synustech
 {
-
     // <summary>
     public enum Safety
     {

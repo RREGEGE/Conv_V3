@@ -8,6 +8,16 @@ namespace Synustech
 {
     public class Line
     {
+        public enum LineDirection
+        {
+            Input,
+            Output
+        }
+        public enum Auto
+        {
+            Enable,
+            Disable
+        }
         public static int Linenum = 1;
         public string ID;
         public List<Conveyor> conveyors;
@@ -47,7 +57,6 @@ namespace Synustech
         }
         public void StatusCheck()
         {
-
             int convEA = 0;
             int autoEA = 0;
             int idleEA = 0;
