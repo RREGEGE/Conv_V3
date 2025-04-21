@@ -17,8 +17,17 @@ namespace Log_Test
         {
             InitializeComponent();
             LogDGVInit();
+            SystemFilesLoad();
         }
-
+        private void SystemFilesLoad()
+        {
+            if (SynusLangPack.LoadFile(ManagedFileInfo.LangPackDirectory, ManagedFileInfo.LangPackFileName))
+            {
+                //Load 성공 시 값을 SynusLangPack 클래스에 적용
+                //SynusLangPack.SetLanguageType(ApplicationParam.m_ApplicationParam.eLangType);
+                LogMsg.AddApplicationLog(LogMsg.LogLevel.Normal, LogMsg.MsgList.FileLoadSuccess, $"Lang Pack: {SynusLangPack.GetLanguagePackVersion()}");
+            }
+        }
         private void btnLog1_Click(object sender, EventArgs e)
         {
             LogMsg.AddApplicationLog(LogMsg.LogLevel.Normal, LogMsg.MsgList.ButtonClick, $"MainForm-Network Settings Click");

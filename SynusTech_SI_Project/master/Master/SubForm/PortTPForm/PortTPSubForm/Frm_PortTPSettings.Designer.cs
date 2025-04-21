@@ -191,6 +191,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DGV_WatchdogSettings = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_WatchdogParamAllSave = new System.Windows.Forms.Button();
             this.btn_WatchdogParamSave = new System.Windows.Forms.Button();
@@ -222,11 +227,6 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_BCRGetStatus = new System.Windows.Forms.Button();
             this.btn_BCRTagRead = new System.Windows.Forms.Button();
             this.btn_BCRTeachIn = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox_PortOverLoadSettings.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -341,7 +341,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel3.Controls.Add(this.tbx_T_Axis_OverLoadSettings, 2, 3);
             this.tableLayoutPanel3.Controls.Add(this.btn_T_Axis_OverLoadSettings_Send, 3, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 6;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -350,7 +350,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(843, 316);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(843, 306);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // lbl_SetValue
@@ -360,7 +360,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_SetValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_SetValue.Location = new System.Drawing.Point(423, 0);
             this.lbl_SetValue.Name = "lbl_SetValue";
-            this.lbl_SetValue.Size = new System.Drawing.Size(204, 52);
+            this.lbl_SetValue.Size = new System.Drawing.Size(204, 51);
             this.lbl_SetValue.TabIndex = 25;
             this.lbl_SetValue.Text = "Set Value";
             this.lbl_SetValue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -372,7 +372,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_AppliedValue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_AppliedValue.Location = new System.Drawing.Point(213, 0);
             this.lbl_AppliedValue.Name = "lbl_AppliedValue";
-            this.lbl_AppliedValue.Size = new System.Drawing.Size(204, 52);
+            this.lbl_AppliedValue.Size = new System.Drawing.Size(204, 51);
             this.lbl_AppliedValue.TabIndex = 24;
             this.lbl_AppliedValue.Text = "Read Value";
             this.lbl_AppliedValue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -382,9 +382,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_XAxisMaxLoadTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbl_XAxisMaxLoadTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_XAxisMaxLoadTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_XAxisMaxLoadTitle.Location = new System.Drawing.Point(3, 52);
+            this.lbl_XAxisMaxLoadTitle.Location = new System.Drawing.Point(3, 51);
             this.lbl_XAxisMaxLoadTitle.Name = "lbl_XAxisMaxLoadTitle";
-            this.lbl_XAxisMaxLoadTitle.Size = new System.Drawing.Size(204, 52);
+            this.lbl_XAxisMaxLoadTitle.Size = new System.Drawing.Size(204, 51);
             this.lbl_XAxisMaxLoadTitle.TabIndex = 8;
             this.lbl_XAxisMaxLoadTitle.Text = "X-Axis Max Load [%] :";
             this.lbl_XAxisMaxLoadTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -394,9 +394,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_ZAxisMaxLoadTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ZAxisMaxLoadTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_ZAxisMaxLoadTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_ZAxisMaxLoadTitle.Location = new System.Drawing.Point(3, 104);
+            this.lbl_ZAxisMaxLoadTitle.Location = new System.Drawing.Point(3, 102);
             this.lbl_ZAxisMaxLoadTitle.Name = "lbl_ZAxisMaxLoadTitle";
-            this.lbl_ZAxisMaxLoadTitle.Size = new System.Drawing.Size(204, 52);
+            this.lbl_ZAxisMaxLoadTitle.Size = new System.Drawing.Size(204, 51);
             this.lbl_ZAxisMaxLoadTitle.TabIndex = 9;
             this.lbl_ZAxisMaxLoadTitle.Text = "Z-Axis Max Load [%] :";
             this.lbl_ZAxisMaxLoadTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -406,9 +406,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_X_Axis_Read_SetMaxLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_X_Axis_Read_SetMaxLoad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_X_Axis_Read_SetMaxLoad.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_X_Axis_Read_SetMaxLoad.Location = new System.Drawing.Point(213, 52);
+            this.lbl_X_Axis_Read_SetMaxLoad.Location = new System.Drawing.Point(213, 51);
             this.lbl_X_Axis_Read_SetMaxLoad.Name = "lbl_X_Axis_Read_SetMaxLoad";
-            this.lbl_X_Axis_Read_SetMaxLoad.Size = new System.Drawing.Size(204, 52);
+            this.lbl_X_Axis_Read_SetMaxLoad.Size = new System.Drawing.Size(204, 51);
             this.lbl_X_Axis_Read_SetMaxLoad.TabIndex = 12;
             this.lbl_X_Axis_Read_SetMaxLoad.Text = "0 %";
             this.lbl_X_Axis_Read_SetMaxLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -418,9 +418,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_Z_Axis_Read_SetMaxLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Z_Axis_Read_SetMaxLoad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Z_Axis_Read_SetMaxLoad.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_Z_Axis_Read_SetMaxLoad.Location = new System.Drawing.Point(213, 104);
+            this.lbl_Z_Axis_Read_SetMaxLoad.Location = new System.Drawing.Point(213, 102);
             this.lbl_Z_Axis_Read_SetMaxLoad.Name = "lbl_Z_Axis_Read_SetMaxLoad";
-            this.lbl_Z_Axis_Read_SetMaxLoad.Size = new System.Drawing.Size(204, 52);
+            this.lbl_Z_Axis_Read_SetMaxLoad.Size = new System.Drawing.Size(204, 51);
             this.lbl_Z_Axis_Read_SetMaxLoad.TabIndex = 13;
             this.lbl_Z_Axis_Read_SetMaxLoad.Text = "0 %";
             this.lbl_Z_Axis_Read_SetMaxLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -429,11 +429,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             // 
             this.tbx_X_Axis_OverLoadSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbx_X_Axis_OverLoadSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbx_X_Axis_OverLoadSettings.Location = new System.Drawing.Point(423, 55);
+            this.tbx_X_Axis_OverLoadSettings.Location = new System.Drawing.Point(423, 54);
             this.tbx_X_Axis_OverLoadSettings.MaxLength = 3;
             this.tbx_X_Axis_OverLoadSettings.Multiline = true;
             this.tbx_X_Axis_OverLoadSettings.Name = "tbx_X_Axis_OverLoadSettings";
-            this.tbx_X_Axis_OverLoadSettings.Size = new System.Drawing.Size(204, 46);
+            this.tbx_X_Axis_OverLoadSettings.Size = new System.Drawing.Size(204, 45);
             this.tbx_X_Axis_OverLoadSettings.TabIndex = 16;
             this.tbx_X_Axis_OverLoadSettings.Text = "100";
             this.tbx_X_Axis_OverLoadSettings.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -443,11 +443,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             // 
             this.tbx_Z_Axis_OverLoadSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbx_Z_Axis_OverLoadSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbx_Z_Axis_OverLoadSettings.Location = new System.Drawing.Point(423, 107);
+            this.tbx_Z_Axis_OverLoadSettings.Location = new System.Drawing.Point(423, 105);
             this.tbx_Z_Axis_OverLoadSettings.MaxLength = 3;
             this.tbx_Z_Axis_OverLoadSettings.Multiline = true;
             this.tbx_Z_Axis_OverLoadSettings.Name = "tbx_Z_Axis_OverLoadSettings";
-            this.tbx_Z_Axis_OverLoadSettings.Size = new System.Drawing.Size(204, 46);
+            this.tbx_Z_Axis_OverLoadSettings.Size = new System.Drawing.Size(204, 45);
             this.tbx_Z_Axis_OverLoadSettings.TabIndex = 17;
             this.tbx_Z_Axis_OverLoadSettings.Text = "100";
             this.tbx_Z_Axis_OverLoadSettings.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -460,10 +460,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_X_Axis_OverLoadSettings_Send.FlatAppearance.BorderSize = 0;
             this.btn_X_Axis_OverLoadSettings_Send.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_X_Axis_OverLoadSettings_Send.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_X_Axis_OverLoadSettings_Send.Location = new System.Drawing.Point(631, 53);
+            this.btn_X_Axis_OverLoadSettings_Send.Location = new System.Drawing.Point(631, 52);
             this.btn_X_Axis_OverLoadSettings_Send.Margin = new System.Windows.Forms.Padding(1);
             this.btn_X_Axis_OverLoadSettings_Send.Name = "btn_X_Axis_OverLoadSettings_Send";
-            this.btn_X_Axis_OverLoadSettings_Send.Size = new System.Drawing.Size(211, 50);
+            this.btn_X_Axis_OverLoadSettings_Send.Size = new System.Drawing.Size(211, 49);
             this.btn_X_Axis_OverLoadSettings_Send.TabIndex = 20;
             this.btn_X_Axis_OverLoadSettings_Send.Text = "Send";
             this.btn_X_Axis_OverLoadSettings_Send.UseVisualStyleBackColor = false;
@@ -477,10 +477,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_Z_Axis_OverLoadSettings_Send.FlatAppearance.BorderSize = 0;
             this.btn_Z_Axis_OverLoadSettings_Send.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_Z_Axis_OverLoadSettings_Send.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Z_Axis_OverLoadSettings_Send.Location = new System.Drawing.Point(631, 105);
+            this.btn_Z_Axis_OverLoadSettings_Send.Location = new System.Drawing.Point(631, 103);
             this.btn_Z_Axis_OverLoadSettings_Send.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Z_Axis_OverLoadSettings_Send.Name = "btn_Z_Axis_OverLoadSettings_Send";
-            this.btn_Z_Axis_OverLoadSettings_Send.Size = new System.Drawing.Size(211, 50);
+            this.btn_Z_Axis_OverLoadSettings_Send.Size = new System.Drawing.Size(211, 49);
             this.btn_Z_Axis_OverLoadSettings_Send.TabIndex = 21;
             this.btn_Z_Axis_OverLoadSettings_Send.Text = "Send";
             this.btn_Z_Axis_OverLoadSettings_Send.UseVisualStyleBackColor = false;
@@ -494,10 +494,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_All_Axis_OverLoadSettings_Send.FlatAppearance.BorderSize = 0;
             this.btn_All_Axis_OverLoadSettings_Send.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_All_Axis_OverLoadSettings_Send.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_All_Axis_OverLoadSettings_Send.Location = new System.Drawing.Point(631, 261);
+            this.btn_All_Axis_OverLoadSettings_Send.Location = new System.Drawing.Point(631, 256);
             this.btn_All_Axis_OverLoadSettings_Send.Margin = new System.Windows.Forms.Padding(1);
             this.btn_All_Axis_OverLoadSettings_Send.Name = "btn_All_Axis_OverLoadSettings_Send";
-            this.btn_All_Axis_OverLoadSettings_Send.Size = new System.Drawing.Size(211, 54);
+            this.btn_All_Axis_OverLoadSettings_Send.Size = new System.Drawing.Size(211, 49);
             this.btn_All_Axis_OverLoadSettings_Send.TabIndex = 26;
             this.btn_All_Axis_OverLoadSettings_Send.Text = "All Send";
             this.btn_All_Axis_OverLoadSettings_Send.UseVisualStyleBackColor = false;
@@ -509,9 +509,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_TAxisMaxLoadTitle.BackColor = System.Drawing.Color.Transparent;
             this.lbl_TAxisMaxLoadTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_TAxisMaxLoadTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_TAxisMaxLoadTitle.Location = new System.Drawing.Point(3, 156);
+            this.lbl_TAxisMaxLoadTitle.Location = new System.Drawing.Point(3, 153);
             this.lbl_TAxisMaxLoadTitle.Name = "lbl_TAxisMaxLoadTitle";
-            this.lbl_TAxisMaxLoadTitle.Size = new System.Drawing.Size(204, 52);
+            this.lbl_TAxisMaxLoadTitle.Size = new System.Drawing.Size(204, 51);
             this.lbl_TAxisMaxLoadTitle.TabIndex = 11;
             this.lbl_TAxisMaxLoadTitle.Text = "T-Axis Max Load [%] :";
             this.lbl_TAxisMaxLoadTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -521,9 +521,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_T_Axis_Read_SetMaxLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_T_Axis_Read_SetMaxLoad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_T_Axis_Read_SetMaxLoad.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_T_Axis_Read_SetMaxLoad.Location = new System.Drawing.Point(213, 156);
+            this.lbl_T_Axis_Read_SetMaxLoad.Location = new System.Drawing.Point(213, 153);
             this.lbl_T_Axis_Read_SetMaxLoad.Name = "lbl_T_Axis_Read_SetMaxLoad";
-            this.lbl_T_Axis_Read_SetMaxLoad.Size = new System.Drawing.Size(204, 52);
+            this.lbl_T_Axis_Read_SetMaxLoad.Size = new System.Drawing.Size(204, 51);
             this.lbl_T_Axis_Read_SetMaxLoad.TabIndex = 15;
             this.lbl_T_Axis_Read_SetMaxLoad.Text = "0 %";
             this.lbl_T_Axis_Read_SetMaxLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -532,11 +532,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             // 
             this.tbx_T_Axis_OverLoadSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbx_T_Axis_OverLoadSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbx_T_Axis_OverLoadSettings.Location = new System.Drawing.Point(423, 159);
+            this.tbx_T_Axis_OverLoadSettings.Location = new System.Drawing.Point(423, 156);
             this.tbx_T_Axis_OverLoadSettings.MaxLength = 3;
             this.tbx_T_Axis_OverLoadSettings.Multiline = true;
             this.tbx_T_Axis_OverLoadSettings.Name = "tbx_T_Axis_OverLoadSettings";
-            this.tbx_T_Axis_OverLoadSettings.Size = new System.Drawing.Size(204, 46);
+            this.tbx_T_Axis_OverLoadSettings.Size = new System.Drawing.Size(204, 45);
             this.tbx_T_Axis_OverLoadSettings.TabIndex = 19;
             this.tbx_T_Axis_OverLoadSettings.Text = "100";
             this.tbx_T_Axis_OverLoadSettings.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -549,10 +549,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_T_Axis_OverLoadSettings_Send.FlatAppearance.BorderSize = 0;
             this.btn_T_Axis_OverLoadSettings_Send.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_T_Axis_OverLoadSettings_Send.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_T_Axis_OverLoadSettings_Send.Location = new System.Drawing.Point(631, 157);
+            this.btn_T_Axis_OverLoadSettings_Send.Location = new System.Drawing.Point(631, 154);
             this.btn_T_Axis_OverLoadSettings_Send.Margin = new System.Windows.Forms.Padding(1);
             this.btn_T_Axis_OverLoadSettings_Send.Name = "btn_T_Axis_OverLoadSettings_Send";
-            this.btn_T_Axis_OverLoadSettings_Send.Size = new System.Drawing.Size(211, 50);
+            this.btn_T_Axis_OverLoadSettings_Send.Size = new System.Drawing.Size(211, 49);
             this.btn_T_Axis_OverLoadSettings_Send.TabIndex = 23;
             this.btn_T_Axis_OverLoadSettings_Send.Text = "Send";
             this.btn_T_Axis_OverLoadSettings_Send.UseVisualStyleBackColor = false;
@@ -590,7 +590,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel4.Controls.Add(this.lbl_T_Axis_Detected_OverLoad, 2, 3);
             this.tableLayoutPanel4.Controls.Add(this.btn_T_Axis_Detected_OverLoad_Clear, 3, 3);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 6;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -599,7 +599,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(843, 316);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(843, 306);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // lbl_XAxisMaxLoadTitle2
@@ -607,9 +607,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_XAxisMaxLoadTitle2.BackColor = System.Drawing.Color.Transparent;
             this.lbl_XAxisMaxLoadTitle2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_XAxisMaxLoadTitle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_XAxisMaxLoadTitle2.Location = new System.Drawing.Point(3, 52);
+            this.lbl_XAxisMaxLoadTitle2.Location = new System.Drawing.Point(3, 51);
             this.lbl_XAxisMaxLoadTitle2.Name = "lbl_XAxisMaxLoadTitle2";
-            this.lbl_XAxisMaxLoadTitle2.Size = new System.Drawing.Size(204, 52);
+            this.lbl_XAxisMaxLoadTitle2.Size = new System.Drawing.Size(204, 51);
             this.lbl_XAxisMaxLoadTitle2.TabIndex = 8;
             this.lbl_XAxisMaxLoadTitle2.Text = "X-Axis Max Load [%] :";
             this.lbl_XAxisMaxLoadTitle2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -619,9 +619,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_ZAxisMaxLoadTitle2.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ZAxisMaxLoadTitle2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_ZAxisMaxLoadTitle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_ZAxisMaxLoadTitle2.Location = new System.Drawing.Point(3, 104);
+            this.lbl_ZAxisMaxLoadTitle2.Location = new System.Drawing.Point(3, 102);
             this.lbl_ZAxisMaxLoadTitle2.Name = "lbl_ZAxisMaxLoadTitle2";
-            this.lbl_ZAxisMaxLoadTitle2.Size = new System.Drawing.Size(204, 52);
+            this.lbl_ZAxisMaxLoadTitle2.Size = new System.Drawing.Size(204, 51);
             this.lbl_ZAxisMaxLoadTitle2.TabIndex = 9;
             this.lbl_ZAxisMaxLoadTitle2.Text = "Z-Axis Max Load [%] :";
             this.lbl_ZAxisMaxLoadTitle2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -633,10 +633,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_X_Axis_Detected_OverLoad_Clear.FlatAppearance.BorderSize = 0;
             this.btn_X_Axis_Detected_OverLoad_Clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_X_Axis_Detected_OverLoad_Clear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_X_Axis_Detected_OverLoad_Clear.Location = new System.Drawing.Point(631, 53);
+            this.btn_X_Axis_Detected_OverLoad_Clear.Location = new System.Drawing.Point(631, 52);
             this.btn_X_Axis_Detected_OverLoad_Clear.Margin = new System.Windows.Forms.Padding(1);
             this.btn_X_Axis_Detected_OverLoad_Clear.Name = "btn_X_Axis_Detected_OverLoad_Clear";
-            this.btn_X_Axis_Detected_OverLoad_Clear.Size = new System.Drawing.Size(211, 50);
+            this.btn_X_Axis_Detected_OverLoad_Clear.Size = new System.Drawing.Size(211, 49);
             this.btn_X_Axis_Detected_OverLoad_Clear.TabIndex = 20;
             this.btn_X_Axis_Detected_OverLoad_Clear.Text = "Clear";
             this.btn_X_Axis_Detected_OverLoad_Clear.UseVisualStyleBackColor = false;
@@ -650,10 +650,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_Z_Axis_Detected_OverLoad_Clear.FlatAppearance.BorderSize = 0;
             this.btn_Z_Axis_Detected_OverLoad_Clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_Z_Axis_Detected_OverLoad_Clear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_Z_Axis_Detected_OverLoad_Clear.Location = new System.Drawing.Point(631, 105);
+            this.btn_Z_Axis_Detected_OverLoad_Clear.Location = new System.Drawing.Point(631, 103);
             this.btn_Z_Axis_Detected_OverLoad_Clear.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Z_Axis_Detected_OverLoad_Clear.Name = "btn_Z_Axis_Detected_OverLoad_Clear";
-            this.btn_Z_Axis_Detected_OverLoad_Clear.Size = new System.Drawing.Size(211, 50);
+            this.btn_Z_Axis_Detected_OverLoad_Clear.Size = new System.Drawing.Size(211, 49);
             this.btn_Z_Axis_Detected_OverLoad_Clear.TabIndex = 21;
             this.btn_Z_Axis_Detected_OverLoad_Clear.Text = "Clear";
             this.btn_Z_Axis_Detected_OverLoad_Clear.UseVisualStyleBackColor = false;
@@ -667,10 +667,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_All_Axis_Detected_OverLoad_Clear.FlatAppearance.BorderSize = 0;
             this.btn_All_Axis_Detected_OverLoad_Clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_All_Axis_Detected_OverLoad_Clear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_All_Axis_Detected_OverLoad_Clear.Location = new System.Drawing.Point(631, 261);
+            this.btn_All_Axis_Detected_OverLoad_Clear.Location = new System.Drawing.Point(631, 256);
             this.btn_All_Axis_Detected_OverLoad_Clear.Margin = new System.Windows.Forms.Padding(1);
             this.btn_All_Axis_Detected_OverLoad_Clear.Name = "btn_All_Axis_Detected_OverLoad_Clear";
-            this.btn_All_Axis_Detected_OverLoad_Clear.Size = new System.Drawing.Size(211, 54);
+            this.btn_All_Axis_Detected_OverLoad_Clear.Size = new System.Drawing.Size(211, 49);
             this.btn_All_Axis_Detected_OverLoad_Clear.TabIndex = 26;
             this.btn_All_Axis_Detected_OverLoad_Clear.Text = "All Clear";
             this.btn_All_Axis_Detected_OverLoad_Clear.UseVisualStyleBackColor = false;
@@ -684,7 +684,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_DetectedValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lbl_DetectedValue.Location = new System.Drawing.Point(423, 0);
             this.lbl_DetectedValue.Name = "lbl_DetectedValue";
-            this.lbl_DetectedValue.Size = new System.Drawing.Size(204, 52);
+            this.lbl_DetectedValue.Size = new System.Drawing.Size(204, 51);
             this.lbl_DetectedValue.TabIndex = 24;
             this.lbl_DetectedValue.Text = "Detect Value";
             this.lbl_DetectedValue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -694,9 +694,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_X_Axis_Detected_OverLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_X_Axis_Detected_OverLoad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_X_Axis_Detected_OverLoad.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_X_Axis_Detected_OverLoad.Location = new System.Drawing.Point(423, 52);
+            this.lbl_X_Axis_Detected_OverLoad.Location = new System.Drawing.Point(423, 51);
             this.lbl_X_Axis_Detected_OverLoad.Name = "lbl_X_Axis_Detected_OverLoad";
-            this.lbl_X_Axis_Detected_OverLoad.Size = new System.Drawing.Size(204, 52);
+            this.lbl_X_Axis_Detected_OverLoad.Size = new System.Drawing.Size(204, 51);
             this.lbl_X_Axis_Detected_OverLoad.TabIndex = 12;
             this.lbl_X_Axis_Detected_OverLoad.Text = "0 %";
             this.lbl_X_Axis_Detected_OverLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -706,9 +706,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_Z_Axis_Detected_OverLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Z_Axis_Detected_OverLoad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Z_Axis_Detected_OverLoad.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_Z_Axis_Detected_OverLoad.Location = new System.Drawing.Point(423, 104);
+            this.lbl_Z_Axis_Detected_OverLoad.Location = new System.Drawing.Point(423, 102);
             this.lbl_Z_Axis_Detected_OverLoad.Name = "lbl_Z_Axis_Detected_OverLoad";
-            this.lbl_Z_Axis_Detected_OverLoad.Size = new System.Drawing.Size(204, 52);
+            this.lbl_Z_Axis_Detected_OverLoad.Size = new System.Drawing.Size(204, 51);
             this.lbl_Z_Axis_Detected_OverLoad.TabIndex = 13;
             this.lbl_Z_Axis_Detected_OverLoad.Text = "0 %";
             this.lbl_Z_Axis_Detected_OverLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -718,9 +718,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_TAxisMaxLoadTitle2.BackColor = System.Drawing.Color.Transparent;
             this.lbl_TAxisMaxLoadTitle2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_TAxisMaxLoadTitle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_TAxisMaxLoadTitle2.Location = new System.Drawing.Point(3, 156);
+            this.lbl_TAxisMaxLoadTitle2.Location = new System.Drawing.Point(3, 153);
             this.lbl_TAxisMaxLoadTitle2.Name = "lbl_TAxisMaxLoadTitle2";
-            this.lbl_TAxisMaxLoadTitle2.Size = new System.Drawing.Size(204, 52);
+            this.lbl_TAxisMaxLoadTitle2.Size = new System.Drawing.Size(204, 51);
             this.lbl_TAxisMaxLoadTitle2.TabIndex = 11;
             this.lbl_TAxisMaxLoadTitle2.Text = "T-Axis Max Load [%] :";
             this.lbl_TAxisMaxLoadTitle2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -730,9 +730,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.lbl_T_Axis_Detected_OverLoad.BackColor = System.Drawing.Color.Transparent;
             this.lbl_T_Axis_Detected_OverLoad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_T_Axis_Detected_OverLoad.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_T_Axis_Detected_OverLoad.Location = new System.Drawing.Point(423, 156);
+            this.lbl_T_Axis_Detected_OverLoad.Location = new System.Drawing.Point(423, 153);
             this.lbl_T_Axis_Detected_OverLoad.Name = "lbl_T_Axis_Detected_OverLoad";
-            this.lbl_T_Axis_Detected_OverLoad.Size = new System.Drawing.Size(204, 52);
+            this.lbl_T_Axis_Detected_OverLoad.Size = new System.Drawing.Size(204, 51);
             this.lbl_T_Axis_Detected_OverLoad.TabIndex = 15;
             this.lbl_T_Axis_Detected_OverLoad.Text = "0 %";
             this.lbl_T_Axis_Detected_OverLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -744,10 +744,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_T_Axis_Detected_OverLoad_Clear.FlatAppearance.BorderSize = 0;
             this.btn_T_Axis_Detected_OverLoad_Clear.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_T_Axis_Detected_OverLoad_Clear.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_T_Axis_Detected_OverLoad_Clear.Location = new System.Drawing.Point(631, 157);
+            this.btn_T_Axis_Detected_OverLoad_Clear.Location = new System.Drawing.Point(631, 154);
             this.btn_T_Axis_Detected_OverLoad_Clear.Margin = new System.Windows.Forms.Padding(1);
             this.btn_T_Axis_Detected_OverLoad_Clear.Name = "btn_T_Axis_Detected_OverLoad_Clear";
-            this.btn_T_Axis_Detected_OverLoad_Clear.Size = new System.Drawing.Size(211, 50);
+            this.btn_T_Axis_Detected_OverLoad_Clear.Size = new System.Drawing.Size(211, 49);
             this.btn_T_Axis_Detected_OverLoad_Clear.TabIndex = 23;
             this.btn_T_Axis_Detected_OverLoad_Clear.Text = "Clear";
             this.btn_T_Axis_Detected_OverLoad_Clear.UseVisualStyleBackColor = false;
@@ -778,7 +778,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel2.Controls.Add(this.lbl_RFIDTCPIP, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -789,7 +789,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(843, 570);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(843, 560);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // lbl_RWState
@@ -883,7 +883,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(837, 384);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(837, 374);
             this.tableLayoutPanel6.TabIndex = 11;
             // 
             // tableLayoutPanel11
@@ -900,13 +900,13 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel11.Controls.Add(this.btn_ANT1Enable, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.btn_SetVerboseMode, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 220);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 215);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 3;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(831, 161);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(831, 156);
             this.tableLayoutPanel11.TabIndex = 47;
             // 
             // btn_RFIDSave
@@ -916,10 +916,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_RFIDSave.FlatAppearance.BorderSize = 0;
             this.btn_RFIDSave.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_RFIDSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_RFIDSave.Location = new System.Drawing.Point(555, 107);
+            this.btn_RFIDSave.Location = new System.Drawing.Point(555, 105);
             this.btn_RFIDSave.Margin = new System.Windows.Forms.Padding(1);
             this.btn_RFIDSave.Name = "btn_RFIDSave";
-            this.btn_RFIDSave.Size = new System.Drawing.Size(275, 53);
+            this.btn_RFIDSave.Size = new System.Drawing.Size(275, 50);
             this.btn_RFIDSave.TabIndex = 38;
             this.btn_RFIDSave.Text = "Save";
             this.btn_RFIDSave.UseVisualStyleBackColor = false;
@@ -935,7 +935,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_ANT1ANT2Enable.Location = new System.Drawing.Point(555, 1);
             this.btn_ANT1ANT2Enable.Margin = new System.Windows.Forms.Padding(1);
             this.btn_ANT1ANT2Enable.Name = "btn_ANT1ANT2Enable";
-            this.btn_ANT1ANT2Enable.Size = new System.Drawing.Size(275, 51);
+            this.btn_ANT1ANT2Enable.Size = new System.Drawing.Size(275, 50);
             this.btn_ANT1ANT2Enable.TabIndex = 37;
             this.btn_ANT1ANT2Enable.Text = "Set ANT1, ANT2 Enable";
             this.btn_ANT1ANT2Enable.UseVisualStyleBackColor = false;
@@ -948,10 +948,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_GetOperationMode.FlatAppearance.BorderSize = 0;
             this.btn_GetOperationMode.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_GetOperationMode.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_GetOperationMode.Location = new System.Drawing.Point(555, 54);
+            this.btn_GetOperationMode.Location = new System.Drawing.Point(555, 53);
             this.btn_GetOperationMode.Margin = new System.Windows.Forms.Padding(1);
             this.btn_GetOperationMode.Name = "btn_GetOperationMode";
-            this.btn_GetOperationMode.Size = new System.Drawing.Size(275, 51);
+            this.btn_GetOperationMode.Size = new System.Drawing.Size(275, 50);
             this.btn_GetOperationMode.TabIndex = 34;
             this.btn_GetOperationMode.Text = "Get Operation Mode";
             this.btn_GetOperationMode.UseVisualStyleBackColor = false;
@@ -967,7 +967,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_ANT2Enable.Location = new System.Drawing.Point(278, 1);
             this.btn_ANT2Enable.Margin = new System.Windows.Forms.Padding(1);
             this.btn_ANT2Enable.Name = "btn_ANT2Enable";
-            this.btn_ANT2Enable.Size = new System.Drawing.Size(275, 51);
+            this.btn_ANT2Enable.Size = new System.Drawing.Size(275, 50);
             this.btn_ANT2Enable.TabIndex = 36;
             this.btn_ANT2Enable.Text = "Set ANT2 Enable";
             this.btn_ANT2Enable.UseVisualStyleBackColor = false;
@@ -980,10 +980,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_SetAutoReadMode.FlatAppearance.BorderSize = 0;
             this.btn_SetAutoReadMode.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_SetAutoReadMode.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_SetAutoReadMode.Location = new System.Drawing.Point(278, 54);
+            this.btn_SetAutoReadMode.Location = new System.Drawing.Point(278, 53);
             this.btn_SetAutoReadMode.Margin = new System.Windows.Forms.Padding(1);
             this.btn_SetAutoReadMode.Name = "btn_SetAutoReadMode";
-            this.btn_SetAutoReadMode.Size = new System.Drawing.Size(275, 51);
+            this.btn_SetAutoReadMode.Size = new System.Drawing.Size(275, 50);
             this.btn_SetAutoReadMode.TabIndex = 30;
             this.btn_SetAutoReadMode.Text = "Set Auto Read Mode";
             this.btn_SetAutoReadMode.UseVisualStyleBackColor = false;
@@ -999,7 +999,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_ANT1Enable.Location = new System.Drawing.Point(1, 1);
             this.btn_ANT1Enable.Margin = new System.Windows.Forms.Padding(1);
             this.btn_ANT1Enable.Name = "btn_ANT1Enable";
-            this.btn_ANT1Enable.Size = new System.Drawing.Size(275, 51);
+            this.btn_ANT1Enable.Size = new System.Drawing.Size(275, 50);
             this.btn_ANT1Enable.TabIndex = 35;
             this.btn_ANT1Enable.Text = "Set ANT1 Enable";
             this.btn_ANT1Enable.UseVisualStyleBackColor = false;
@@ -1012,10 +1012,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_SetVerboseMode.FlatAppearance.BorderSize = 0;
             this.btn_SetVerboseMode.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_SetVerboseMode.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_SetVerboseMode.Location = new System.Drawing.Point(1, 54);
+            this.btn_SetVerboseMode.Location = new System.Drawing.Point(1, 53);
             this.btn_SetVerboseMode.Margin = new System.Windows.Forms.Padding(1);
             this.btn_SetVerboseMode.Name = "btn_SetVerboseMode";
-            this.btn_SetVerboseMode.Size = new System.Drawing.Size(275, 51);
+            this.btn_SetVerboseMode.Size = new System.Drawing.Size(275, 50);
             this.btn_SetVerboseMode.TabIndex = 31;
             this.btn_SetVerboseMode.Text = "Set Verbose Mode";
             this.btn_SetVerboseMode.UseVisualStyleBackColor = false;
@@ -1047,7 +1047,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.rdb_ANT4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_ANT4.Location = new System.Drawing.Point(282, 3);
             this.rdb_ANT4.Name = "rdb_ANT4";
-            this.rdb_ANT4.Size = new System.Drawing.Size(63, 23);
+            this.rdb_ANT4.Size = new System.Drawing.Size(88, 24);
             this.rdb_ANT4.TabIndex = 2;
             this.rdb_ANT4.TabStop = true;
             this.rdb_ANT4.Text = "ANT4";
@@ -1059,7 +1059,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.rdb_ANT3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_ANT3.Location = new System.Drawing.Point(189, 3);
             this.rdb_ANT3.Name = "rdb_ANT3";
-            this.rdb_ANT3.Size = new System.Drawing.Size(63, 23);
+            this.rdb_ANT3.Size = new System.Drawing.Size(87, 24);
             this.rdb_ANT3.TabIndex = 1;
             this.rdb_ANT3.TabStop = true;
             this.rdb_ANT3.Text = "ANT3";
@@ -1072,7 +1072,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.rdb_ANT1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_ANT1.Location = new System.Drawing.Point(3, 3);
             this.rdb_ANT1.Name = "rdb_ANT1";
-            this.rdb_ANT1.Size = new System.Drawing.Size(61, 23);
+            this.rdb_ANT1.Size = new System.Drawing.Size(84, 24);
             this.rdb_ANT1.TabIndex = 0;
             this.rdb_ANT1.TabStop = true;
             this.rdb_ANT1.Text = "ANT1";
@@ -1084,7 +1084,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.rdb_ANT2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdb_ANT2.Location = new System.Drawing.Point(96, 3);
             this.rdb_ANT2.Name = "rdb_ANT2";
-            this.rdb_ANT2.Size = new System.Drawing.Size(63, 23);
+            this.rdb_ANT2.Size = new System.Drawing.Size(87, 24);
             this.rdb_ANT2.TabIndex = 0;
             this.rdb_ANT2.TabStop = true;
             this.rdb_ANT2.Text = "ANT2";
@@ -1116,7 +1116,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(831, 161);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(831, 156);
             this.tableLayoutPanel10.TabIndex = 46;
             // 
             // btn_SetVerboseReadTimeout
@@ -1126,10 +1126,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_SetVerboseReadTimeout.FlatAppearance.BorderSize = 0;
             this.btn_SetVerboseReadTimeout.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_SetVerboseReadTimeout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_SetVerboseReadTimeout.Location = new System.Drawing.Point(623, 121);
+            this.btn_SetVerboseReadTimeout.Location = new System.Drawing.Point(623, 118);
             this.btn_SetVerboseReadTimeout.Margin = new System.Windows.Forms.Padding(1);
             this.btn_SetVerboseReadTimeout.Name = "btn_SetVerboseReadTimeout";
-            this.btn_SetVerboseReadTimeout.Size = new System.Drawing.Size(207, 39);
+            this.btn_SetVerboseReadTimeout.Size = new System.Drawing.Size(207, 37);
             this.btn_SetVerboseReadTimeout.TabIndex = 47;
             this.btn_SetVerboseReadTimeout.Text = "Set Timeout";
             this.btn_SetVerboseReadTimeout.UseVisualStyleBackColor = false;
@@ -1139,11 +1139,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             // 
             this.tbx_VerboseTimeout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbx_VerboseTimeout.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.tbx_VerboseTimeout.Location = new System.Drawing.Point(416, 121);
+            this.tbx_VerboseTimeout.Location = new System.Drawing.Point(416, 118);
             this.tbx_VerboseTimeout.Margin = new System.Windows.Forms.Padding(1);
             this.tbx_VerboseTimeout.MaxLength = 3;
             this.tbx_VerboseTimeout.Name = "tbx_VerboseTimeout";
-            this.tbx_VerboseTimeout.Size = new System.Drawing.Size(205, 34);
+            this.tbx_VerboseTimeout.Size = new System.Drawing.Size(205, 47);
             this.tbx_VerboseTimeout.TabIndex = 46;
             this.tbx_VerboseTimeout.Text = "3";
             this.tbx_VerboseTimeout.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1153,9 +1153,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(3, 120);
+            this.label4.Location = new System.Drawing.Point(3, 117);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(409, 41);
+            this.label4.Size = new System.Drawing.Size(409, 39);
             this.label4.TabIndex = 45;
             this.label4.Text = "Verbose Read Time out [sec] :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1165,9 +1165,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(3, 80);
+            this.label3.Location = new System.Drawing.Point(3, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(409, 40);
+            this.label3.Size = new System.Drawing.Size(409, 39);
             this.label3.TabIndex = 40;
             this.label3.Text = "Auto Read Mode Tag Read Size [byte] :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1177,9 +1177,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(3, 40);
+            this.label2.Location = new System.Drawing.Point(3, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(409, 40);
+            this.label2.Size = new System.Drawing.Size(409, 39);
             this.label2.TabIndex = 39;
             this.label2.Text = "Auto Read Mode Tag Start Address [byte] :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1194,7 +1194,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_RFIDTagRead.Location = new System.Drawing.Point(623, 1);
             this.btn_RFIDTagRead.Margin = new System.Windows.Forms.Padding(1);
             this.btn_RFIDTagRead.Name = "btn_RFIDTagRead";
-            this.btn_RFIDTagRead.Size = new System.Drawing.Size(207, 38);
+            this.btn_RFIDTagRead.Size = new System.Drawing.Size(207, 37);
             this.btn_RFIDTagRead.TabIndex = 29;
             this.btn_RFIDTagRead.Text = "Tag Read";
             this.btn_RFIDTagRead.UseVisualStyleBackColor = false;
@@ -1207,7 +1207,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(409, 40);
+            this.label1.Size = new System.Drawing.Size(409, 39);
             this.label1.TabIndex = 33;
             this.label1.Text = "Read Size [byte] :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1220,7 +1220,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tbx_TagReadSize.Margin = new System.Windows.Forms.Padding(1);
             this.tbx_TagReadSize.MaxLength = 3;
             this.tbx_TagReadSize.Name = "tbx_TagReadSize";
-            this.tbx_TagReadSize.Size = new System.Drawing.Size(205, 34);
+            this.tbx_TagReadSize.Size = new System.Drawing.Size(205, 47);
             this.tbx_TagReadSize.TabIndex = 32;
             this.tbx_TagReadSize.Text = "4";
             this.tbx_TagReadSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1230,11 +1230,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             // 
             this.tbx_AutoReadTagStartAddr.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbx_AutoReadTagStartAddr.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.tbx_AutoReadTagStartAddr.Location = new System.Drawing.Point(416, 41);
+            this.tbx_AutoReadTagStartAddr.Location = new System.Drawing.Point(416, 40);
             this.tbx_AutoReadTagStartAddr.Margin = new System.Windows.Forms.Padding(1);
             this.tbx_AutoReadTagStartAddr.MaxLength = 3;
             this.tbx_AutoReadTagStartAddr.Name = "tbx_AutoReadTagStartAddr";
-            this.tbx_AutoReadTagStartAddr.Size = new System.Drawing.Size(205, 34);
+            this.tbx_AutoReadTagStartAddr.Size = new System.Drawing.Size(205, 47);
             this.tbx_AutoReadTagStartAddr.TabIndex = 41;
             this.tbx_AutoReadTagStartAddr.Text = "0";
             this.tbx_AutoReadTagStartAddr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1246,10 +1246,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_SetRTA.FlatAppearance.BorderSize = 0;
             this.btn_SetRTA.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_SetRTA.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_SetRTA.Location = new System.Drawing.Point(623, 41);
+            this.btn_SetRTA.Location = new System.Drawing.Point(623, 40);
             this.btn_SetRTA.Margin = new System.Windows.Forms.Padding(1);
             this.btn_SetRTA.Name = "btn_SetRTA";
-            this.btn_SetRTA.Size = new System.Drawing.Size(207, 38);
+            this.btn_SetRTA.Size = new System.Drawing.Size(207, 37);
             this.btn_SetRTA.TabIndex = 43;
             this.btn_SetRTA.Text = "Set RTA";
             this.btn_SetRTA.UseVisualStyleBackColor = false;
@@ -1262,10 +1262,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_SetRTB.FlatAppearance.BorderSize = 0;
             this.btn_SetRTB.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_SetRTB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_SetRTB.Location = new System.Drawing.Point(623, 81);
+            this.btn_SetRTB.Location = new System.Drawing.Point(623, 79);
             this.btn_SetRTB.Margin = new System.Windows.Forms.Padding(1);
             this.btn_SetRTB.Name = "btn_SetRTB";
-            this.btn_SetRTB.Size = new System.Drawing.Size(207, 38);
+            this.btn_SetRTB.Size = new System.Drawing.Size(207, 37);
             this.btn_SetRTB.TabIndex = 44;
             this.btn_SetRTB.Text = "Set RTB";
             this.btn_SetRTB.UseVisualStyleBackColor = false;
@@ -1275,11 +1275,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             // 
             this.tbx_AutoReadTagSize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbx_AutoReadTagSize.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.tbx_AutoReadTagSize.Location = new System.Drawing.Point(416, 81);
+            this.tbx_AutoReadTagSize.Location = new System.Drawing.Point(416, 79);
             this.tbx_AutoReadTagSize.Margin = new System.Windows.Forms.Padding(1);
             this.tbx_AutoReadTagSize.MaxLength = 3;
             this.tbx_AutoReadTagSize.Name = "tbx_AutoReadTagSize";
-            this.tbx_AutoReadTagSize.Size = new System.Drawing.Size(205, 34);
+            this.tbx_AutoReadTagSize.Size = new System.Drawing.Size(205, 47);
             this.tbx_AutoReadTagSize.TabIndex = 42;
             this.tbx_AutoReadTagSize.Text = "4";
             this.tbx_AutoReadTagSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1331,12 +1331,12 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel_MotionParam, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.tableLayoutPanel20, 1, 0);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 1;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 678F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(1716, 678);
+            this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 668F));
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(1716, 668);
             this.tableLayoutPanel19.TabIndex = 1;
             // 
             // tableLayoutPanel_MotionParam
@@ -1352,7 +1352,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel_MotionParam.RowCount = 2;
             this.tableLayoutPanel_MotionParam.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_MotionParam.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_MotionParam.Size = new System.Drawing.Size(1566, 678);
+            this.tableLayoutPanel_MotionParam.Size = new System.Drawing.Size(1566, 668);
             this.tableLayoutPanel_MotionParam.TabIndex = 46;
             // 
             // tableLayoutPanel20
@@ -1371,7 +1371,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(150, 678);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(150, 668);
             this.tableLayoutPanel20.TabIndex = 37;
             // 
             // btn_DGVMotionParamRefresh
@@ -1467,12 +1467,12 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel_BufferParam, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.tableLayoutPanel21, 1, 0);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 1;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 678F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(1716, 678);
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 668F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(1716, 668);
             this.tableLayoutPanel18.TabIndex = 1;
             // 
             // tableLayoutPanel_BufferParam
@@ -1491,7 +1491,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel_BufferParam.RowCount = 2;
             this.tableLayoutPanel_BufferParam.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_BufferParam.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_BufferParam.Size = new System.Drawing.Size(1566, 678);
+            this.tableLayoutPanel_BufferParam.Size = new System.Drawing.Size(1566, 668);
             this.tableLayoutPanel_BufferParam.TabIndex = 46;
             // 
             // tableLayoutPanel21
@@ -1510,7 +1510,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel21.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel21.Size = new System.Drawing.Size(150, 678);
+            this.tableLayoutPanel21.Size = new System.Drawing.Size(150, 668);
             this.tableLayoutPanel21.TabIndex = 37;
             // 
             // btn_DGVBufferParamRefresh
@@ -1603,9 +1603,9 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.panel4.Controls.Add(this.tableLayoutPanel8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(3, 25);
+            this.panel4.Location = new System.Drawing.Point(3, 35);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1716, 678);
+            this.panel4.Size = new System.Drawing.Size(1716, 668);
             this.panel4.TabIndex = 38;
             // 
             // tableLayoutPanel8
@@ -1620,8 +1620,8 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 678F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1716, 678);
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 668F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1716, 668);
             this.tableLayoutPanel8.TabIndex = 37;
             // 
             // pnl_WMXParamGrid
@@ -1630,7 +1630,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.pnl_WMXParamGrid.Location = new System.Drawing.Point(0, 0);
             this.pnl_WMXParamGrid.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_WMXParamGrid.Name = "pnl_WMXParamGrid";
-            this.pnl_WMXParamGrid.Size = new System.Drawing.Size(1566, 678);
+            this.pnl_WMXParamGrid.Size = new System.Drawing.Size(1566, 668);
             this.pnl_WMXParamGrid.TabIndex = 39;
             // 
             // tableLayoutPanel14
@@ -1651,7 +1651,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(150, 678);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(150, 668);
             this.tableLayoutPanel14.TabIndex = 38;
             // 
             // btn_FileParamRefresh
@@ -1767,12 +1767,12 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel23, 0, 1);
             this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel24, 0, 0);
             this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
             this.tableLayoutPanel22.RowCount = 2;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(1716, 678);
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(1716, 668);
             this.tableLayoutPanel22.TabIndex = 1;
             // 
             // tableLayoutPanel23
@@ -1792,7 +1792,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 1;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(1716, 578);
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(1716, 568);
             this.tableLayoutPanel23.TabIndex = 46;
             // 
             // tableLayoutPanel26
@@ -1805,8 +1805,8 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
             this.tableLayoutPanel26.RowCount = 1;
             this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 572F));
-            this.tableLayoutPanel26.Size = new System.Drawing.Size(852, 572);
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 562F));
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(852, 562);
             this.tableLayoutPanel26.TabIndex = 1;
             // 
             // panel3
@@ -1817,7 +1817,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(852, 572);
+            this.panel3.Size = new System.Drawing.Size(852, 562);
             this.panel3.TabIndex = 38;
             // 
             // DGV_InputMapSettings
@@ -1870,10 +1870,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV_InputMapSettings.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DGV_InputMapSettings.RowHeadersVisible = false;
+            this.DGV_InputMapSettings.RowHeadersWidth = 62;
             this.DGV_InputMapSettings.RowTemplate.Height = 30;
             this.DGV_InputMapSettings.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_InputMapSettings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.DGV_InputMapSettings.Size = new System.Drawing.Size(852, 572);
+            this.DGV_InputMapSettings.Size = new System.Drawing.Size(852, 562);
             this.DGV_InputMapSettings.TabIndex = 35;
             // 
             // dataGridViewTextBoxColumn1
@@ -1883,6 +1884,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn1.FillWeight = 200F;
             this.dataGridViewTextBoxColumn1.HeaderText = "Input Name";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1894,6 +1896,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column10.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column10.HeaderText = "StartAddr [0~7999]";
+            this.Column10.MinimumWidth = 8;
             this.Column10.Name = "Column10";
             this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1904,6 +1907,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn2.HeaderText = "Bit Num [0~7]";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1914,6 +1918,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column8.HeaderText = "Ctrl Status";
+            this.Column8.MinimumWidth = 8;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1926,6 +1931,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn6.HeaderText = "Bit Row Data";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1941,6 +1947,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.Column6.Items.AddRange(new object[] {
             "False",
             "True"});
+            this.Column6.MinimumWidth = 8;
             this.Column6.Name = "Column6";
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column6.Width = 80;
@@ -1955,8 +1962,8 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
             this.tableLayoutPanel25.RowCount = 1;
             this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 572F));
-            this.tableLayoutPanel25.Size = new System.Drawing.Size(852, 572);
+            this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 562F));
+            this.tableLayoutPanel25.Size = new System.Drawing.Size(852, 562);
             this.tableLayoutPanel25.TabIndex = 0;
             // 
             // panel2
@@ -1967,7 +1974,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(852, 572);
+            this.panel2.Size = new System.Drawing.Size(852, 562);
             this.panel2.TabIndex = 37;
             // 
             // DGV_OutputMapSettings
@@ -2020,10 +2027,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV_OutputMapSettings.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.DGV_OutputMapSettings.RowHeadersVisible = false;
+            this.DGV_OutputMapSettings.RowHeadersWidth = 62;
             this.DGV_OutputMapSettings.RowTemplate.Height = 30;
             this.DGV_OutputMapSettings.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_OutputMapSettings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.DGV_OutputMapSettings.Size = new System.Drawing.Size(852, 572);
+            this.DGV_OutputMapSettings.Size = new System.Drawing.Size(852, 562);
             this.DGV_OutputMapSettings.TabIndex = 35;
             // 
             // Column5
@@ -2033,6 +2041,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.Column5.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column5.FillWeight = 200F;
             this.Column5.HeaderText = "Output Name";
+            this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -2044,6 +2053,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column9.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column9.HeaderText = "StartAddr [0~7999]";
+            this.Column9.MinimumWidth = 8;
             this.Column9.Name = "Column9";
             this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -2054,6 +2064,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column4.DefaultCellStyle = dataGridViewCellStyle13;
             this.Column4.HeaderText = "Bit Num [0~7]";
+            this.Column4.MinimumWidth = 8;
             this.Column4.Name = "Column4";
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -2064,6 +2075,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column7.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column7.HeaderText = "Ctrl Status";
+            this.Column7.MinimumWidth = 8;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -2076,6 +2088,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column1.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column1.HeaderText = "Bit Row Data";
+            this.Column1.MinimumWidth = 8;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -2091,6 +2104,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.Column3.Items.AddRange(new object[] {
             "False",
             "True"});
+            this.Column3.MinimumWidth = 8;
             this.Column3.Name = "Column3";
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column3.Width = 80;
@@ -2238,12 +2252,12 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel17.Controls.Add(this.lbl_AutoRunSpeedSetValue, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel16, 0, 1);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 2;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(849, 66);
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(849, 56);
             this.tableLayoutPanel17.TabIndex = 0;
             // 
             // lbl_AutoRunSpeedSetValue
@@ -2277,7 +2291,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(847, 34);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(847, 24);
             this.tableLayoutPanel16.TabIndex = 0;
             // 
             // btn_AutoSpeed1
@@ -2290,7 +2304,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_AutoSpeed1.Location = new System.Drawing.Point(1, 1);
             this.btn_AutoSpeed1.Margin = new System.Windows.Forms.Padding(1);
             this.btn_AutoSpeed1.Name = "btn_AutoSpeed1";
-            this.btn_AutoSpeed1.Size = new System.Drawing.Size(167, 32);
+            this.btn_AutoSpeed1.Size = new System.Drawing.Size(167, 22);
             this.btn_AutoSpeed1.TabIndex = 15;
             this.btn_AutoSpeed1.Text = "10%";
             this.btn_AutoSpeed1.UseVisualStyleBackColor = false;
@@ -2307,7 +2321,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_AutoSpeed5.Location = new System.Drawing.Point(677, 1);
             this.btn_AutoSpeed5.Margin = new System.Windows.Forms.Padding(1);
             this.btn_AutoSpeed5.Name = "btn_AutoSpeed5";
-            this.btn_AutoSpeed5.Size = new System.Drawing.Size(169, 32);
+            this.btn_AutoSpeed5.Size = new System.Drawing.Size(169, 22);
             this.btn_AutoSpeed5.TabIndex = 12;
             this.btn_AutoSpeed5.Text = "100%";
             this.btn_AutoSpeed5.UseVisualStyleBackColor = false;
@@ -2324,7 +2338,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_AutoSpeed4.Location = new System.Drawing.Point(508, 1);
             this.btn_AutoSpeed4.Margin = new System.Windows.Forms.Padding(1);
             this.btn_AutoSpeed4.Name = "btn_AutoSpeed4";
-            this.btn_AutoSpeed4.Size = new System.Drawing.Size(167, 32);
+            this.btn_AutoSpeed4.Size = new System.Drawing.Size(167, 22);
             this.btn_AutoSpeed4.TabIndex = 13;
             this.btn_AutoSpeed4.Text = "70%";
             this.btn_AutoSpeed4.UseVisualStyleBackColor = false;
@@ -2341,7 +2355,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_AutoSpeed3.Location = new System.Drawing.Point(339, 1);
             this.btn_AutoSpeed3.Margin = new System.Windows.Forms.Padding(1);
             this.btn_AutoSpeed3.Name = "btn_AutoSpeed3";
-            this.btn_AutoSpeed3.Size = new System.Drawing.Size(167, 32);
+            this.btn_AutoSpeed3.Size = new System.Drawing.Size(167, 22);
             this.btn_AutoSpeed3.TabIndex = 14;
             this.btn_AutoSpeed3.Text = "50%";
             this.btn_AutoSpeed3.UseVisualStyleBackColor = false;
@@ -2358,7 +2372,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_AutoSpeed2.Location = new System.Drawing.Point(170, 1);
             this.btn_AutoSpeed2.Margin = new System.Windows.Forms.Padding(1);
             this.btn_AutoSpeed2.Name = "btn_AutoSpeed2";
-            this.btn_AutoSpeed2.Size = new System.Drawing.Size(167, 32);
+            this.btn_AutoSpeed2.Size = new System.Drawing.Size(167, 22);
             this.btn_AutoSpeed2.TabIndex = 16;
             this.btn_AutoSpeed2.Text = "30%";
             this.btn_AutoSpeed2.UseVisualStyleBackColor = false;
@@ -2384,12 +2398,12 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel5.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel13, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(849, 572);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(849, 562);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // panel1
@@ -2399,7 +2413,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.panel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(843, 496);
+            this.panel1.Size = new System.Drawing.Size(843, 486);
             this.panel1.TabIndex = 37;
             // 
             // DGV_WatchdogSettings
@@ -2451,11 +2465,70 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV_WatchdogSettings.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.DGV_WatchdogSettings.RowHeadersVisible = false;
+            this.DGV_WatchdogSettings.RowHeadersWidth = 62;
             this.DGV_WatchdogSettings.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV_WatchdogSettings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.DGV_WatchdogSettings.Size = new System.Drawing.Size(843, 496);
+            this.DGV_WatchdogSettings.Size = new System.Drawing.Size(843, 486);
             this.DGV_WatchdogSettings.TabIndex = 36;
             this.DGV_WatchdogSettings.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_WatchdogSettings_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridViewTextBoxColumn3.FillWeight = 155F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Current Value";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle22;
+            this.dataGridViewTextBoxColumn5.HeaderText = "SetValue";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewButtonColumn1.HeaderText = "";
+            this.dataGridViewButtonColumn1.MinimumWidth = 8;
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
+            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewButtonColumn1.Width = 60;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle23;
+            this.Column2.HeaderText = "Progress Time";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // tableLayoutPanel13
             // 
@@ -2466,7 +2539,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel13.Controls.Add(this.btn_WatchdogParamAllSave, 2, 0);
             this.tableLayoutPanel13.Controls.Add(this.btn_WatchdogParamSave, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 505);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 495);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -2562,11 +2635,11 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel31.Controls.Add(this.btn_WorkingContinuous, 1, 0);
             this.tableLayoutPanel31.Controls.Add(this.btn_WorkingErrorStop, 0, 0);
             this.tableLayoutPanel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel31.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel31.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel31.Name = "tableLayoutPanel31";
             this.tableLayoutPanel31.RowCount = 1;
             this.tableLayoutPanel31.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel31.Size = new System.Drawing.Size(1704, 56);
+            this.tableLayoutPanel31.Size = new System.Drawing.Size(1704, 46);
             this.tableLayoutPanel31.TabIndex = 0;
             // 
             // btn_WorkingContinuous
@@ -2579,7 +2652,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_WorkingContinuous.Location = new System.Drawing.Point(301, 1);
             this.btn_WorkingContinuous.Margin = new System.Windows.Forms.Padding(1);
             this.btn_WorkingContinuous.Name = "btn_WorkingContinuous";
-            this.btn_WorkingContinuous.Size = new System.Drawing.Size(298, 54);
+            this.btn_WorkingContinuous.Size = new System.Drawing.Size(298, 44);
             this.btn_WorkingContinuous.TabIndex = 37;
             this.btn_WorkingContinuous.Text = "Working Continuous";
             this.btn_WorkingContinuous.UseVisualStyleBackColor = false;
@@ -2595,7 +2668,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_WorkingErrorStop.Location = new System.Drawing.Point(1, 1);
             this.btn_WorkingErrorStop.Margin = new System.Windows.Forms.Padding(1);
             this.btn_WorkingErrorStop.Name = "btn_WorkingErrorStop";
-            this.btn_WorkingErrorStop.Size = new System.Drawing.Size(298, 54);
+            this.btn_WorkingErrorStop.Size = new System.Drawing.Size(298, 44);
             this.btn_WorkingErrorStop.TabIndex = 36;
             this.btn_WorkingErrorStop.Text = "Working Error Stop";
             this.btn_WorkingErrorStop.UseVisualStyleBackColor = false;
@@ -2645,7 +2718,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel27.Controls.Add(this.lbl_BCRTCPIP, 0, 0);
             this.tableLayoutPanel27.Controls.Add(this.tableLayoutPanel28, 0, 11);
             this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel27.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel27.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel27.Name = "tableLayoutPanel27";
             this.tableLayoutPanel27.RowCount = 12;
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -2661,7 +2734,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel27.Size = new System.Drawing.Size(843, 570);
+            this.tableLayoutPanel27.Size = new System.Drawing.Size(843, 560);
             this.tableLayoutPanel27.TabIndex = 1;
             // 
             // lbl_BCR_EquipmentErrorState
@@ -2799,7 +2872,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel28.RowCount = 1;
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tableLayoutPanel28.Size = new System.Drawing.Size(837, 234);
+            this.tableLayoutPanel28.Size = new System.Drawing.Size(837, 224);
             this.tableLayoutPanel28.TabIndex = 11;
             // 
             // tableLayoutPanel29
@@ -2821,7 +2894,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel29.Size = new System.Drawing.Size(831, 228);
+            this.tableLayoutPanel29.Size = new System.Drawing.Size(831, 218);
             this.tableLayoutPanel29.TabIndex = 47;
             // 
             // btn_BCRAlignModeOn
@@ -2834,7 +2907,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_BCRAlignModeOn.Location = new System.Drawing.Point(555, 1);
             this.btn_BCRAlignModeOn.Margin = new System.Windows.Forms.Padding(1);
             this.btn_BCRAlignModeOn.Name = "btn_BCRAlignModeOn";
-            this.btn_BCRAlignModeOn.Size = new System.Drawing.Size(275, 74);
+            this.btn_BCRAlignModeOn.Size = new System.Drawing.Size(275, 70);
             this.btn_BCRAlignModeOn.TabIndex = 41;
             this.btn_BCRAlignModeOn.Text = "Align Mode On";
             this.btn_BCRAlignModeOn.UseVisualStyleBackColor = false;
@@ -2847,10 +2920,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_BCRAlignModeOff.FlatAppearance.BorderSize = 0;
             this.btn_BCRAlignModeOff.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_BCRAlignModeOff.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_BCRAlignModeOff.Location = new System.Drawing.Point(555, 77);
+            this.btn_BCRAlignModeOff.Location = new System.Drawing.Point(555, 73);
             this.btn_BCRAlignModeOff.Margin = new System.Windows.Forms.Padding(1);
             this.btn_BCRAlignModeOff.Name = "btn_BCRAlignModeOff";
-            this.btn_BCRAlignModeOff.Size = new System.Drawing.Size(275, 74);
+            this.btn_BCRAlignModeOff.Size = new System.Drawing.Size(275, 70);
             this.btn_BCRAlignModeOff.TabIndex = 42;
             this.btn_BCRAlignModeOff.Text = "Align Mode Off";
             this.btn_BCRAlignModeOff.UseVisualStyleBackColor = false;
@@ -2866,7 +2939,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_BCRAutoSettings.Location = new System.Drawing.Point(1, 1);
             this.btn_BCRAutoSettings.Margin = new System.Windows.Forms.Padding(1);
             this.btn_BCRAutoSettings.Name = "btn_BCRAutoSettings";
-            this.btn_BCRAutoSettings.Size = new System.Drawing.Size(275, 74);
+            this.btn_BCRAutoSettings.Size = new System.Drawing.Size(275, 70);
             this.btn_BCRAutoSettings.TabIndex = 43;
             this.btn_BCRAutoSettings.Text = "Auto Settings";
             this.btn_BCRAutoSettings.UseVisualStyleBackColor = false;
@@ -2879,10 +2952,10 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_BCRGetStatus.FlatAppearance.BorderSize = 0;
             this.btn_BCRGetStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_BCRGetStatus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_BCRGetStatus.Location = new System.Drawing.Point(1, 77);
+            this.btn_BCRGetStatus.Location = new System.Drawing.Point(1, 73);
             this.btn_BCRGetStatus.Margin = new System.Windows.Forms.Padding(1);
             this.btn_BCRGetStatus.Name = "btn_BCRGetStatus";
-            this.btn_BCRGetStatus.Size = new System.Drawing.Size(275, 74);
+            this.btn_BCRGetStatus.Size = new System.Drawing.Size(275, 70);
             this.btn_BCRGetStatus.TabIndex = 39;
             this.btn_BCRGetStatus.Text = "Get Status";
             this.btn_BCRGetStatus.UseVisualStyleBackColor = false;
@@ -2898,7 +2971,7 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_BCRTagRead.Location = new System.Drawing.Point(278, 1);
             this.btn_BCRTagRead.Margin = new System.Windows.Forms.Padding(1);
             this.btn_BCRTagRead.Name = "btn_BCRTagRead";
-            this.btn_BCRTagRead.Size = new System.Drawing.Size(275, 74);
+            this.btn_BCRTagRead.Size = new System.Drawing.Size(275, 70);
             this.btn_BCRTagRead.TabIndex = 29;
             this.btn_BCRTagRead.Text = "Tag Read";
             this.btn_BCRTagRead.UseVisualStyleBackColor = false;
@@ -2911,71 +2984,18 @@ namespace Master.SubForm.PortTPForm.PortTPSubForm
             this.btn_BCRTeachIn.FlatAppearance.BorderSize = 0;
             this.btn_BCRTeachIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btn_BCRTeachIn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_BCRTeachIn.Location = new System.Drawing.Point(278, 77);
+            this.btn_BCRTeachIn.Location = new System.Drawing.Point(278, 73);
             this.btn_BCRTeachIn.Margin = new System.Windows.Forms.Padding(1);
             this.btn_BCRTeachIn.Name = "btn_BCRTeachIn";
-            this.btn_BCRTeachIn.Size = new System.Drawing.Size(275, 74);
+            this.btn_BCRTeachIn.Size = new System.Drawing.Size(275, 70);
             this.btn_BCRTeachIn.TabIndex = 40;
             this.btn_BCRTeachIn.Text = "Teach-In";
             this.btn_BCRTeachIn.UseVisualStyleBackColor = false;
             this.btn_BCRTeachIn.Click += new System.EventHandler(this.btn_BCRTeachIn_Click);
             // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridViewTextBoxColumn3.FillWeight = 155F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle21;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Current Value";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle22;
-            this.dataGridViewTextBoxColumn5.HeaderText = "SetValue";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewButtonColumn1.HeaderText = "";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn1.Width = 60;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle23;
-            this.Column2.HeaderText = "Progress Time";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // Frm_PortTPSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1730, 754);

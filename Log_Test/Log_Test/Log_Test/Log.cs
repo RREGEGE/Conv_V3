@@ -719,7 +719,7 @@ namespace Log_Test
             DGV_ColumnHeadersDefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             DGV_ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(60, 64, 85);
             DGV_ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
-            DGV_ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.SystemColors.WindowText;
+            DGV_ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
             DGV_ColumnHeadersDefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             DGV_ColumnHeadersDefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             DGV_ColumnHeadersDefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;

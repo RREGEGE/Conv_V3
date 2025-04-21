@@ -16,23 +16,15 @@ namespace Synustech.BcForm.ucPanel.BcSetting
 {
     public partial class Operation : UserControl
     {
-
-
         public Operation()
         {
-
-
-
             InitializeComponent();
             InitializeDataGridViewHeaders();
-
-
         }                                        
         private void InitializeDataGridViewHeaders()
         {
             // RowHeaderVisible 설정
             dgOperationView.RowHeadersVisible = true;
-
 
             // 설정할 행 머리글 텍스트
             string[] headers = {
@@ -57,15 +49,6 @@ namespace Synustech.BcForm.ucPanel.BcSetting
             dgOperationView.Columns[0].Width = 200;
             dgOperationView.Columns[1].Width = 200;
             dgOperationView.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
-
-
-
-
-        }
-
-        private void tb_Op_Base_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnOperationSave_Click(object sender, EventArgs e)
