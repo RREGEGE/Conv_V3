@@ -55,7 +55,7 @@ namespace Synustech
     }
     internal class G_Var
     {
-        public static AlarmList m_ConveyorAlarmList = new AlarmList();
+        //public static AlarmList m_ConveyorAlarmList = new AlarmList();
 
         // 파일 경로
         public static string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
@@ -94,12 +94,12 @@ namespace Synustech
 
 
         // Thread 선언
-        public static AnyThread iOCheck = new AnyThread();
-        public static LampThread lampThread = new LampThread();
-        public static SafetyThread safetyThread = new SafetyThread();
-        public static RectThread rectThread = new RectThread();
-        public static ConvThread convThread = new ConvThread();
-        public static LineThread lineThread = new LineThread();
+        //public static AnyThread iOCheck = new AnyThread();
+        //public static LampThread lampThread = new LampThread();
+        //public static SafetyThread safetyThread = new SafetyThread();
+        //public static RectThread rectThread = new RectThread();
+        //public static ConvThread convThread = new ConvThread();
+        //public static LineThread lineThread = new LineThread();
 
         public static XMLControl _xml = new XMLControl();
 

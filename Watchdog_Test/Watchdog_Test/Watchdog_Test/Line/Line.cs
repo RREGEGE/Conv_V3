@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Synustech
+namespace Watchdog_Test
 {
     public partial class Line
     {
@@ -19,8 +19,13 @@ namespace Synustech
             Disable
         }
         public MotionParam.LineParam m_LineParameter;
-        public Line()
+        public Line(string id)
         {
+            m_LineParameter = new MotionParam.LineParam(id);
+        }
+        public MotionParam.LineParam GetMotionParam()
+        {
+            return m_LineParameter;
         }
 
     }

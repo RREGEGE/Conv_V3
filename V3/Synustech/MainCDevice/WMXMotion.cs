@@ -870,42 +870,6 @@ namespace Synustech
             ret = m_coreMotion.Motion.StartPos(pos);
             return ret;
         }
-        public void AllServoOn()
-        {
-            foreach (var conveyor in conveyors)
-            {
-                if ((conveyor.servo == ServoOnOff.Off) && (conveyor.Axis != -1))
-                {
-                    if (conveyor.type == "Turn")
-                    {
-                        ServoOn(conveyor.Axis);
-                        ServoOn(conveyor.TurnAxis);
-                    }
-                    else
-                    {
-                        ServoOn(conveyor.Axis);
-                    }
-                }
-            }
-        }
-        public void AllServoOff()
-        {
-            foreach (var conveyor in conveyors)
-            {
-                if ((conveyor.servo == ServoOnOff.On) && (conveyor.Axis != -1))
-                {
-                    if (conveyor.type == "Turn")
-                    {
-                        ServoOff(conveyor.Axis);
-                        ServoOff(conveyor.TurnAxis);
-                    }
-                    else
-                    {
-                        ServoOff(conveyor.Axis);
-                    }
-                }
-            }
-        }
         public int JogMove(AxisProfile jogProfile)
         {
             Motion.JogCommand jog = new Motion.JogCommand();

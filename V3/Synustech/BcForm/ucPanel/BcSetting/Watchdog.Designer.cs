@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlWatchdogBase = new System.Windows.Forms.TableLayoutPanel();
-            this.dgWatchdogView = new System.Windows.Forms.DataGridView();
-            this.Wt_Applied_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Wt_Set_Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblWatchdogName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnWatchdogLoad = new System.Windows.Forms.Button();
             this.btnWatchdogSave = new System.Windows.Forms.Button();
+            this.tPanelLine = new System.Windows.Forms.TableLayoutPanel();
+            this.dgWatchdogView = new System.Windows.Forms.DataGridView();
             this.tlWatchdogBase.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgWatchdogView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgWatchdogView)).BeginInit();
             this.SuspendLayout();
             // 
             // tlWatchdogBase
@@ -49,84 +48,21 @@
             this.tlWatchdogBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
             this.tlWatchdogBase.ColumnCount = 1;
             this.tlWatchdogBase.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlWatchdogBase.Controls.Add(this.dgWatchdogView, 0, 1);
+            this.tlWatchdogBase.Controls.Add(this.dgWatchdogView, 0, 2);
             this.tlWatchdogBase.Controls.Add(this.lblWatchdogName, 0, 0);
-            this.tlWatchdogBase.Controls.Add(this.tableLayoutPanel1, 0, 2);
+            this.tlWatchdogBase.Controls.Add(this.tableLayoutPanel1, 0, 3);
+            this.tlWatchdogBase.Controls.Add(this.tPanelLine, 0, 1);
             this.tlWatchdogBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlWatchdogBase.Location = new System.Drawing.Point(0, 0);
-            this.tlWatchdogBase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlWatchdogBase.Margin = new System.Windows.Forms.Padding(4);
             this.tlWatchdogBase.Name = "tlWatchdogBase";
-            this.tlWatchdogBase.RowCount = 3;
+            this.tlWatchdogBase.RowCount = 4;
             this.tlWatchdogBase.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlWatchdogBase.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tlWatchdogBase.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tlWatchdogBase.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62F));
             this.tlWatchdogBase.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlWatchdogBase.Size = new System.Drawing.Size(1143, 560);
             this.tlWatchdogBase.TabIndex = 0;
-            // 
-            // dgWatchdogView
-            // 
-            this.dgWatchdogView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
-            this.dgWatchdogView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgWatchdogView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgWatchdogView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgWatchdogView.ColumnHeadersHeight = 30;
-            this.dgWatchdogView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgWatchdogView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Wt_Applied_Value,
-            this.Wt_Set_Value});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgWatchdogView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgWatchdogView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgWatchdogView.EnableHeadersVisualStyles = false;
-            this.dgWatchdogView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgWatchdogView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(71)))), ((int)(((byte)(93)))));
-            this.dgWatchdogView.Location = new System.Drawing.Point(0, 56);
-            this.dgWatchdogView.Margin = new System.Windows.Forms.Padding(0);
-            this.dgWatchdogView.Name = "dgWatchdogView";
-            this.dgWatchdogView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgWatchdogView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgWatchdogView.RowHeadersWidth = 200;
-            this.dgWatchdogView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dgWatchdogView.RowTemplate.Height = 40;
-            this.dgWatchdogView.RowTemplate.ReadOnly = true;
-            this.dgWatchdogView.Size = new System.Drawing.Size(1143, 392);
-            this.dgWatchdogView.TabIndex = 11;
-            // 
-            // Wt_Applied_Value
-            // 
-            this.Wt_Applied_Value.HeaderText = "  Applied Value";
-            this.Wt_Applied_Value.MinimumWidth = 8;
-            this.Wt_Applied_Value.Name = "Wt_Applied_Value";
-            this.Wt_Applied_Value.ReadOnly = true;
-            this.Wt_Applied_Value.Width = 116;
-            // 
-            // Wt_Set_Value
-            // 
-            this.Wt_Set_Value.HeaderText = "   Set Value";
-            this.Wt_Set_Value.MinimumWidth = 8;
-            this.Wt_Set_Value.Name = "Wt_Set_Value";
-            this.Wt_Set_Value.ReadOnly = true;
-            this.Wt_Set_Value.Width = 118;
             // 
             // lblWatchdogName
             // 
@@ -150,13 +86,13 @@
             this.tableLayoutPanel1.Controls.Add(this.btnWatchdogLoad, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnWatchdogSave, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 450);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 449);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1141, 108);
-            this.tableLayoutPanel1.TabIndex = 12;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1141, 109);
+            this.tableLayoutPanel1.TabIndex = 11;
             // 
             // btnWatchdogLoad
             // 
@@ -170,7 +106,7 @@
             this.btnWatchdogLoad.ForeColor = System.Drawing.Color.White;
             this.btnWatchdogLoad.Location = new System.Drawing.Point(972, 3);
             this.btnWatchdogLoad.Name = "btnWatchdogLoad";
-            this.btnWatchdogLoad.Size = new System.Drawing.Size(166, 102);
+            this.btnWatchdogLoad.Size = new System.Drawing.Size(166, 103);
             this.btnWatchdogLoad.TabIndex = 8;
             this.btnWatchdogLoad.UseVisualStyleBackColor = false;
             // 
@@ -186,9 +122,81 @@
             this.btnWatchdogSave.ForeColor = System.Drawing.Color.White;
             this.btnWatchdogSave.Location = new System.Drawing.Point(801, 3);
             this.btnWatchdogSave.Name = "btnWatchdogSave";
-            this.btnWatchdogSave.Size = new System.Drawing.Size(165, 102);
+            this.btnWatchdogSave.Size = new System.Drawing.Size(165, 103);
             this.btnWatchdogSave.TabIndex = 7;
             this.btnWatchdogSave.UseVisualStyleBackColor = false;
+            // 
+            // tPanelLine
+            // 
+            this.tPanelLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(60)))));
+            this.tPanelLine.ColumnCount = 10;
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tPanelLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tPanelLine.Location = new System.Drawing.Point(3, 59);
+            this.tPanelLine.Name = "tPanelLine";
+            this.tPanelLine.RowCount = 1;
+            this.tPanelLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tPanelLine.Size = new System.Drawing.Size(1137, 38);
+            this.tPanelLine.TabIndex = 12;
+            // 
+            // dgWatchdogView
+            // 
+            this.dgWatchdogView.AllowUserToAddRows = false;
+            this.dgWatchdogView.AllowUserToDeleteRows = false;
+            this.dgWatchdogView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgWatchdogView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.dgWatchdogView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgWatchdogView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgWatchdogView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgWatchdogView.ColumnHeadersHeight = 30;
+            this.dgWatchdogView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgWatchdogView.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgWatchdogView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgWatchdogView.EnableHeadersVisualStyles = false;
+            this.dgWatchdogView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgWatchdogView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(71)))), ((int)(((byte)(93)))));
+            this.dgWatchdogView.Location = new System.Drawing.Point(0, 100);
+            this.dgWatchdogView.Margin = new System.Windows.Forms.Padding(0);
+            this.dgWatchdogView.Name = "dgWatchdogView";
+            this.dgWatchdogView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgWatchdogView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgWatchdogView.RowHeadersVisible = false;
+            this.dgWatchdogView.RowHeadersWidth = 200;
+            this.dgWatchdogView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dgWatchdogView.RowTemplate.Height = 40;
+            this.dgWatchdogView.RowTemplate.ReadOnly = true;
+            this.dgWatchdogView.Size = new System.Drawing.Size(1143, 347);
+            this.dgWatchdogView.TabIndex = 13;
             // 
             // Watchdog
             // 
@@ -200,8 +208,8 @@
             this.Size = new System.Drawing.Size(1143, 560);
             this.tlWatchdogBase.ResumeLayout(false);
             this.tlWatchdogBase.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgWatchdogView)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgWatchdogView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,11 +218,10 @@
 
         private System.Windows.Forms.TableLayoutPanel tlWatchdogBase;
         private System.Windows.Forms.Label lblWatchdogName;
-        private System.Windows.Forms.DataGridView dgWatchdogView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Wt_Applied_Value;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Wt_Set_Value;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnWatchdogSave;
         private System.Windows.Forms.Button btnWatchdogLoad;
+        private System.Windows.Forms.TableLayoutPanel tPanelLine;
+        private System.Windows.Forms.DataGridView dgWatchdogView;
     }
 }

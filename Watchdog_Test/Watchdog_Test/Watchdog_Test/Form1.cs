@@ -4,28 +4,20 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Watchdog_Test.Port;
+using static Watchdog_Test.Line;
 
 namespace Watchdog_Test
 {
 
     public partial class Form1 : Form
     {
-        public Port_WatchdogParam WatchdogDetectParam = new Port_WatchdogParam();
-        public class Port_WatchdogParam
-        {
-            public int T_Axis_HomingTimer = 1000;
-            public int T_Axis_Move_To_LoadTimer = 1000;
-            public int T_Axis_Move_To_UnLoadTimer = 1000;
-            public int OHT_HoistDetectTimer = 1000;
-            public int AGVorOHT_PIO_Timer = 1000;
-            public int Init_Step_Timer = 1000;
-            public int IN_Step_Timer = 1000;
-            public int OUT_Step_Timer = 1000;
-        }
+        public Line line1 = new Line("synustech");
+        public Line line2 = new Line("상일");
+        public List<Line> lines;
         public enum DGV_WatchdogSettingsColumn
         {
             Name,
@@ -36,12 +28,47 @@ namespace Watchdog_Test
         public Form1()
         {
             InitializeComponent();
-            Init_DGVWatchdog();
-        }
-
-        private void Init_DGVWatchdog()
-        {
             SynusLangPack.LoadFile(ManagedFileInfo.LangPackDirectory, ManagedFileInfo.LangPackFileName);
+            InitLines();
+            Initailize_Line_Menu();
+            InitializeWatchdogDGV(ref dgWatchdogView);
+        }
+        private void InitLines()
+        {
+            lines = new List<Line>();
+            lines.Add(line1);
+            lines.Add(line2);
+        }
+        // Line Label 생성
+        private void Initailize_Line_Menu()
+        {
+            foreach(Line line in lines)
+            {
+                Button btn = new Button();
+                line.Initialize_Watchdog_btn(btn);
+                btn.Click += (sender, e) => 
+                {
+                    SetLabelColor(btn);
+                    line.UpdateWatchdogSettings(dgWatchdogView);
+                };
+                tPanelLine.Controls.Add(btn);
+            }
+        }
+        // Line Label 추가 
+        public void Add_Line_Menu(Line line)
+        {
+            Button btn = new Button();
+            line.Initialize_Watchdog_btn(btn);
+            btn.Click += (sender, e) =>
+            {
+                SetLabelColor(btn);
+                line.UpdateWatchdogSettings(dgWatchdogView);
+            };
+            tPanelLine.Controls.Add(btn);
+        }
+        // Watchdog DataGridView HeaderColums 초기화 
+        public void InitializeWatchdogDGV(ref DataGridView DGV)
+        {
             foreach (DGV_WatchdogSettingsColumn col in Enum.GetValues(typeof(DGV_WatchdogSettingsColumn)))
             {
                 if (col == DGV_WatchdogSettingsColumn.Btn)
@@ -51,88 +78,77 @@ namespace Watchdog_Test
                     btnCol.HeaderText = col.ToString();
                     btnCol.Text = "Set";
                     btnCol.UseColumnTextForButtonValue = true;
-                    dgWatchdogView.Columns.Add(btnCol);
+                    DGV.Columns.Add(btnCol);
                 }
                 else
                 {
-                    dgWatchdogView.Columns.Add(col.ToString(), col.ToString());
+                    var dgvCol = new DataGridViewTextBoxColumn
+                    {
+                        Name = col.ToString(),
+                        HeaderText = col.ToString(),
+                    };
+                    DGV.Columns.Add(dgvCol);
                 }
             }
-            foreach (DataGridViewColumn col in dgWatchdogView.Columns)
+            foreach (DataGridViewColumn col in DGV.Columns)
             {
                 col.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            Update_DGVWatchdog(dgWatchdogView);
+            DGV.Rows.Clear();
+            for (int nRowCount = 0; nRowCount < Enum.GetValues(typeof(WatchdogList)).Length; nRowCount++)
+            {
+                int rowIndex = DGV.Rows.Add();
+                DataGridViewRow row = DGV.Rows[rowIndex];
+                row.ReadOnly = true;
+                WatchdogList eWatchdog = (WatchdogList)nRowCount;
+
+                row.Cells[(int)DGV_WatchdogSettingsColumn.Name].Value = $"{eWatchdog}";
+            }
+                UpdateWatchdogSettings(ref DGV);
         }
-        private void Update_DGVWatchdog(DataGridView dgv)
+        // SynusLangPack에 맞게 HeaderColumns 수정
+        public void UpdateWatchdogSettings(ref DataGridView DGV)
         {
-            var fields = typeof(Port_WatchdogParam).GetFields();
-            for (int nCount = 0; nCount < dgv.Columns.Count; nCount++)
+            for (int nCount = 0; nCount < DGV.Columns.Count; nCount++)
             {
                 switch (nCount)
                 {
                     case (int)DGV_WatchdogSettingsColumn.Name:
-                        if (dgv.Columns[nCount].HeaderText != SynusLangPack.GetLanguage("DGV_WatchdogList"))
-                            dgv.Columns[nCount].HeaderText = SynusLangPack.GetLanguage("DGV_WatchdogList");
+                        if (DGV.Columns[nCount].HeaderText != SynusLangPack.GetLanguage("DGV_WatchdogList"))
+                            DGV.Columns[nCount].HeaderText = SynusLangPack.GetLanguage("DGV_WatchdogList");
                         break;
                     case (int)DGV_WatchdogSettingsColumn.AppliedValue:
-                        if (dgv.Columns[nCount].HeaderText != SynusLangPack.GetLanguage("DGV_AppliedDetectTime"))
-                            dgv.Columns[nCount].HeaderText = SynusLangPack.GetLanguage("DGV_AppliedDetectTime");
+                        if (DGV.Columns[nCount].HeaderText != SynusLangPack.GetLanguage("DGV_AppliedDetectTime"))
+                            DGV.Columns[nCount].HeaderText = SynusLangPack.GetLanguage("DGV_AppliedDetectTime");
                         break;
                     case (int)DGV_WatchdogSettingsColumn.SetValue:
-                        if (dgv.Columns[nCount].HeaderText != SynusLangPack.GetLanguage("DGV_SetDetectTime"))
-                            dgv.Columns[nCount].HeaderText = SynusLangPack.GetLanguage("DGV_SetDetectTime");
+                        if (DGV.Columns[nCount].HeaderText != SynusLangPack.GetLanguage("DGV_SetDetectTime"))
+                            DGV.Columns[nCount].HeaderText = SynusLangPack.GetLanguage("DGV_SetDetectTime");
                         break;
-                }
-            }
-            if (dgv.Rows.Count != Enum.GetValues(typeof(WatchdogList)).Length)
-            {
-                dgv.Rows.Clear();
-                for (int nRowCount = 0; nRowCount < Enum.GetValues(typeof(WatchdogList)).Length; nRowCount++)
-                {
-                    WatchdogList eWatchdog = (WatchdogList)nRowCount;
-                    string fieldName = eWatchdog.ToString();
-                    var fieldInfo = fields.FirstOrDefault(f => f.Name == fieldName);
-                    int value = 0;
-                    if (fieldInfo != null)
-                    {
-                        value = (int)fieldInfo.GetValue(WatchdogDetectParam);
-                    }
-                    dgv.Rows.Add(new string[4]{fieldName,
-                                               value.ToString(), // AppliedValue
-                                               value.ToString(), // SetValue
-                                               "Set"});
-                }
-            }
-            else
-            {
-                for (int nRowCount = 0; nRowCount < dgv.Rows.Count; nRowCount++)
-                {
-                    for (int nColumnCount = 0; nColumnCount < dgv.Columns.Count; nColumnCount++)
-                    {
-                        WatchdogList eWatchdog = (WatchdogList)nRowCount;
-                        DGV_WatchdogSettingsColumn edgv_WatchdogSettingsColumn = (DGV_WatchdogSettingsColumn)nColumnCount;
-                        DataGridViewCell dgv_Cell = dgv.Rows[nRowCount].Cells[nColumnCount];
-                        string Data = string.Empty;
-
-                        if (edgv_WatchdogSettingsColumn == DGV_WatchdogSettingsColumn.Name ||
-                            edgv_WatchdogSettingsColumn == DGV_WatchdogSettingsColumn.SetValue ||
-                            edgv_WatchdogSettingsColumn == DGV_WatchdogSettingsColumn.Btn)
-                            continue;
-
-                        switch (edgv_WatchdogSettingsColumn)
-                        {
-                            //case DGV_WatchdogSettingsColumn.AppliedValue:
-                            //    Data = Watchdog_GetParam_DetectTime(eWatchdog).ToString();
-                            //    break;
-
-                        }
-
-                        if ((string)dgv_Cell.Value != Data)
-                            dgv_Cell.Value = Data;
-                    }
                 }
             }
         }
+        // 클릭한 버튼을 제외한 다른 버튼 색상 초기화
+        public void SetLabelColor(Button btn)
+        {
+            foreach(var control in tPanelLine.Controls)
+            {
+                if (control is Button otherBtn)
+                {
+                    otherBtn.BackColor = Color.FromArgb(24, 30, 54);
+                    otherBtn.ForeColor = Color.White;
+                }
+            }
+            btn.BackColor = Color.FromArgb(37, 41, 64);
+            btn.ForeColor = Color.FromArgb(0, 126, 249);
+        }
+        
+        private void btnWatchdogSave_Click(object sender, EventArgs e)
+        {
+            Line line3 = new Line("123");
+            lines.Add(line3);
+            Add_Line_Menu(line3);
+        }
+
     }
 }

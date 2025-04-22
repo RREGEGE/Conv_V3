@@ -246,7 +246,9 @@
     </Compile>
     <Compile Include="Common\AlarmCheck.cs" />
     <Compile Include="Common\AlarmList.cs" />
-    <Compile Include="Conveyor\Line\LineParam.cs" />
+    <Compile Include="Conveyor\Conveyor\ConveyorWatchdog.cs" />
+    <Compile Include="Conveyor\Line\LineUI.cs" />
+    <Compile Include="Conveyor\MotionParam.cs" />
     <Compile Include="ManagedFile\Log.cs" />
     <Compile Include="Common\Math.cs" />
     <Compile Include="Conveyor\Control\WMX_Motion.cs" />
@@ -257,7 +259,7 @@
     <Compile Include="Conveyor\Rect\LongRect_Horizontal.cs" />
     <Compile Include="Conveyor\Rect\LongRect_Vertical.cs" />
     <Compile Include="Common\Global.cs" />
-    <Compile Include="Common\AnyThread.cs" />
+    <None Include="Common\AnyThread.cs" />
     <Compile Include="Conveyor\Line\Line.cs" />
     <Compile Include="Interface\Form\UIControl.cs" />
     <Compile Include="Interface\Watchdog\Wathchdog.cs" />
@@ -308,18 +310,6 @@
     </Compile>
     <Compile Include="BcForm\ucPanel\BcMain\UserAutoCondition.Designer.cs">
       <DependentUpon>UserAutoCondition.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BcForm\ucPanel\BcMotion\UserConvControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BcForm\ucPanel\BcMotion\UserConvControl.Designer.cs">
-      <DependentUpon>UserConvControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BcForm\ucPanel\BcMotion\UserConvTeaching.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BcForm\ucPanel\BcMotion\UserConvTeaching.Designer.cs">
-      <DependentUpon>UserConvTeaching.cs</DependentUpon>
     </Compile>
     <Compile Include="BcForm\ucPanel\BcMotion\UserCycleStatus.cs">
       <SubType>UserControl</SubType>
@@ -521,14 +511,8 @@
     <EmbeddedResource Include="BcForm\ucPanel\BcMain\UserCVStatusdg.resx">
       <DependentUpon>UserCVStatusdg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BcForm\ucPanel\BcMotion\UserConvControl.resx">
-      <DependentUpon>UserConvControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BcForm\ucPanel\BcMotion\UserConvControl_Re.resx">
       <DependentUpon>UserConvControl_Re.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BcForm\ucPanel\BcMotion\UserConvTeaching.resx">
-      <DependentUpon>UserConvTeaching.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BcForm\ucPanel\BcMotion\UserConvTeaching_Re.resx">
       <DependentUpon>UserConvTeaching_Re.cs</DependentUpon>

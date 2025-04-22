@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Synustech.Interface.Watchdog;
 using System.Drawing;
 
-namespace Watchdog_Test
+namespace Synustech
 {
-    partial class Line
+    public enum DGV_WatchdogSettingsColumn
+    {
+        Name,
+        AppliedValue,
+        SetValue,
+        Btn,
+    }
+    partial class Conveyor
     {
         /// <summary>
         /// 사용하고자 하는 Watchdog List
@@ -23,6 +31,8 @@ namespace Watchdog_Test
             Init_Step_Timer,
             IN_Step_Timer,
             OUT_Step_Timer,
+            Turn_Load_Timer,
+            Turn_UnLoad_Timer,
         }
         Watchdog[] m_Watchdog;
 
@@ -47,36 +57,42 @@ namespace Watchdog_Test
         /// </summary>
         /// <param name="eWatchdogList"></param>
         /// <param name="nWatchdogTime"></param>
-        public void Watchdog_SetParam_DetectTime(WatchdogList eWatchdogList, int nWatchdogTime)
-        {
-            switch (eWatchdogList)
-            {
-                case WatchdogList.T_Axis_HomingTimer:
-                    GetMotionParam().WatchdogDetectParam.T_Axis_HomingTimer = nWatchdogTime;
-                    break;
-                case WatchdogList.T_Axis_Move_To_LoadTimer:
-                    GetMotionParam().WatchdogDetectParam.T_Axis_Move_To_LoadTimer = nWatchdogTime;
-                    break;
-                case WatchdogList.T_Axis_Move_To_UnLoadTimer:
-                    GetMotionParam().WatchdogDetectParam.T_Axis_Move_To_UnLoadTimer = nWatchdogTime;
-                    break;
-                case WatchdogList.OHT_HoistDetectTimer:
-                    GetMotionParam().WatchdogDetectParam.OHT_HoistDetectTimer = nWatchdogTime;
-                    break;
-                case WatchdogList.AGVorOHT_PIO_Timer:
-                    GetMotionParam().WatchdogDetectParam.AGVorOHT_PIO_Timer = nWatchdogTime;
-                    break;
-                case WatchdogList.Init_Step_Timer:
-                    GetMotionParam().WatchdogDetectParam.Init_Step_Timer = nWatchdogTime;
-                    break;
-                case WatchdogList.OUT_Step_Timer:
-                    GetMotionParam().WatchdogDetectParam.OUT_Step_Timer = nWatchdogTime;
-                    break;
-                case WatchdogList.IN_Step_Timer:
-                    GetMotionParam().WatchdogDetectParam.IN_Step_Timer = nWatchdogTime;
-                    break;
-            }
-        }
+        //public void Watchdog_SetParam_DetectTime(WatchdogList eWatchdogList, int nWatchdogTime)
+        //{
+        //    switch (eWatchdogList)
+        //    {
+        //        case WatchdogList.T_Axis_HomingTimer:
+        //            GetMotionParam().WatchdogDetectParam.T_Axis_HomingTimer = nWatchdogTime;
+        //            break;
+        //        case WatchdogList.T_Axis_Move_To_LoadTimer:
+        //            GetMotionParam().WatchdogDetectParam.T_Axis_Move_To_0DegTimer = nWatchdogTime;
+        //            break;
+        //        case WatchdogList.T_Axis_Move_To_UnLoadTimer:
+        //            GetMotionParam().WatchdogDetectParam.T_Axis_Move_To_180DegTimer = nWatchdogTime;
+        //            break;
+        //        case WatchdogList.OHT_HoistDetectTimer:
+        //            GetMotionParam().WatchdogDetectParam.OHT_HoistDetectTimer = nWatchdogTime;
+        //            break;
+        //        case WatchdogList.AGVorOHT_PIO_Timer:
+        //            GetMotionParam().WatchdogDetectParam.LP_PIO_Timer = nWatchdogTime;
+        //            break;
+        //        case WatchdogList.Init_Step_Timer:
+        //            GetMotionParam().WatchdogDetectParam.LP_Step_Timer = nWatchdogTime;
+        //            break;
+        //        case WatchdogList.OUT_Step_Timer:
+        //            GetMotionParam().WatchdogDetectParam.BP_Step_Timer = nWatchdogTime;
+        //            break;
+        //        case WatchdogList.IN_Step_Timer:
+        //            GetMotionParam().WatchdogDetectParam.OP_Step_Timer = nWatchdogTime;
+        //            break;
+        //        case WatchdogList.Turn_Load_Timer:
+        //            GetMotionParam().WatchdogDetectParam.Turn_Load_Timer = nWatchdogTime;
+        //            break;
+        //        case WatchdogList.Turn_UnLoad_Timer:
+        //            GetMotionParam().WatchdogDetectParam.Turn_UnLoad_Timer = nWatchdogTime;
+        //            break;
+        //    }
+        //}
 
 
         /// <summary>
@@ -84,29 +100,33 @@ namespace Watchdog_Test
         /// </summary>
         /// <param name="eWatchdogList"></param>
         /// <returns></returns>
-        public int Watchdog_GetParam_DetectTime(WatchdogList eWatchdogList)
-        {
-            switch (eWatchdogList)
-            {
-                case WatchdogList.T_Axis_HomingTimer:
-                    return GetMotionParam().WatchdogDetectParam.T_Axis_HomingTimer;
-                case WatchdogList.T_Axis_Move_To_LoadTimer:
-                    return GetMotionParam().WatchdogDetectParam.T_Axis_Move_To_LoadTimer;
-                case WatchdogList.T_Axis_Move_To_UnLoadTimer:
-                    return GetMotionParam().WatchdogDetectParam.T_Axis_Move_To_UnLoadTimer;
-                case WatchdogList.OHT_HoistDetectTimer:
-                    return GetMotionParam().WatchdogDetectParam.OHT_HoistDetectTimer;
-                case WatchdogList.AGVorOHT_PIO_Timer:
-                    return GetMotionParam().WatchdogDetectParam.AGVorOHT_PIO_Timer;
-                case WatchdogList.Init_Step_Timer:
-                    return GetMotionParam().WatchdogDetectParam.Init_Step_Timer;
-                case WatchdogList.OUT_Step_Timer:
-                    return GetMotionParam().WatchdogDetectParam.OUT_Step_Timer;
-                case WatchdogList.IN_Step_Timer:
-                    return GetMotionParam().WatchdogDetectParam.IN_Step_Timer;
-            }
-            return 0;
-        }
+        //public int Watchdog_GetParam_DetectTime(WatchdogList eWatchdogList)
+        //{
+        //    switch (eWatchdogList)
+        //    {
+        //        case WatchdogList.T_Axis_HomingTimer:
+        //            return GetMotionParam().WatchdogDetectParam.T_Axis_HomingTimer;
+        //        case WatchdogList.T_Axis_Move_To_LoadTimer:
+        //            return GetMotionParam().WatchdogDetectParam.T_Axis_Move_To_0DegTimer;
+        //        case WatchdogList.T_Axis_Move_To_UnLoadTimer:
+        //            return GetMotionParam().WatchdogDetectParam.T_Axis_Move_To_180DegTimer;
+        //        case WatchdogList.OHT_HoistDetectTimer:
+        //            return GetMotionParam().WatchdogDetectParam.OHT_HoistDetectTimer;
+        //        case WatchdogList.AGVorOHT_PIO_Timer:
+        //            return GetMotionParam().WatchdogDetectParam.LP_PIO_Timer;
+        //        case WatchdogList.Init_Step_Timer:
+        //            return GetMotionParam().WatchdogDetectParam.LP_Step_Timer;
+        //        case WatchdogList.OUT_Step_Timer:
+        //            return GetMotionParam().WatchdogDetectParam.BP_Step_Timer;
+        //        case WatchdogList.IN_Step_Timer:
+        //            return GetMotionParam().WatchdogDetectParam.OP_Step_Timer;
+        //        case WatchdogList.Turn_Load_Timer:
+        //            return GetMotionParam().WatchdogDetectParam.Turn_Load_Timer;
+        //        case WatchdogList.Turn_UnLoad_Timer:
+        //            return GetMotionParam().WatchdogDetectParam.Turn_UnLoad_Timer;
+        //    }
+        //    return 0;
+        //}
 
 
         /// <summary>

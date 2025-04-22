@@ -52,6 +52,9 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="SynusLangPack">
       <HintPath>..\SynusLangPack.dll</HintPath>
@@ -76,6 +79,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <None Include="Port.cs" />
+    <Compile Include="Line\Line.cs" />
+    <Compile Include="Line\LineUI.cs" />
+    <Compile Include="Line\MotionParam.cs" />
     <Compile Include="ManagedFileInfo.cs" />
     <Compile Include="PortWatchdog.cs" />
     <Compile Include="Program.cs" />

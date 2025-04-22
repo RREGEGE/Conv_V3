@@ -146,66 +146,7 @@ namespace Synustech.ucPanel.BcMotion
         }
         public void SetConvDginput()
         {
-            int inScrollRowIndex = dgInput.FirstDisplayedScrollingRowIndex;
-            dgInput.Rows.Clear();
-            int i = 1;
-            Conveyor selectedconveyor = conveyors.FirstOrDefault(c => c.ID == selectedConvID);
-            if (selectedconveyor != null)
-            {
-                if (selectedconveyor.type == "Turn")
-                {
-                    int j = 0;
-                    foreach (var bit in selectedconveyor.bits)
-                    {
-                        MyInput inputType = (MyInput)bit;
-                        string status = (selectedconveyor.SCnvFoupDetect[j++] == SensorOnOff.On) ? "OFF" : "ON";
-                        int rowIndexInput = dgInput.Rows.Add(i++, selectedconveyor.ID, MyInput(inputType), status);
-                        UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
-                    }
-                    int z = 0;
-                    foreach (var bit in selectedconveyor.bitsTurn)
-                    {
-                        TurnInput inputType = (TurnInput)bit;
-                        string status = (selectedconveyor.POS[z++] == SensorOnOff.On) ? "ON" : "OFF";
-                        int rowIndexInput = dgInput.Rows.Add(i++, selectedconveyor.ID, TurnInput(inputType), status);
-                        UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
-                    }
-                    TurnInput2 inputType1 = (TurnInput2)selectedconveyor.bitTurn;
-                    string status1 = (selectedconveyor.POS[z] == SensorOnOff.On) ? "ON" : "OFF";
-                    int rowIndexInput1 = dgInput.Rows.Add(i++, selectedconveyor.ID, TurnInput2(inputType1), status1);
-                    UpdateCellStyle(dgInput.Rows[rowIndexInput1].Cells[3], status1);
-                }
-                else if(selectedconveyor.type == "Long")
-                {
-                    int j = 0;
-                    foreach(var bit in selectedconveyor.bits)
-                    {
-                        LongInput inputType = (LongInput)bit;
-                        string status = (selectedconveyor.LCnvFoupDetect[j++] == SensorOnOff.On) ? "OFF" : "ON";
-                        int rowIndexInput = dgInput.Rows.Add(i++, selectedconveyor.ID, LongInput(inputType), status);
-                        UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
-                    }
-                }
-                else if (selectedconveyor.type == "Normal")
-                {
-                    int j = 0;
-                    foreach (var bit in selectedconveyor.bits)
-                    {
-                        MyInput inputType = (MyInput)bit;
-                        string status = (selectedconveyor.SCnvFoupDetect[j++] == SensorOnOff.On) ? "OFF" : "ON";
-                        int rowIndexInput = dgInput.Rows.Add(i++, selectedconveyor.ID, MyInput(inputType), status);
-                        UpdateCellStyle(dgInput.Rows[rowIndexInput].Cells[3], status);
-                    }
-                }
-                else
-                {
-
-                }
-            }
-            if (inScrollRowIndex >= 0 && inScrollRowIndex < dgInput.Rows.Count)
-            {
-                dgInput.FirstDisplayedScrollingRowIndex = inScrollRowIndex;
-            }
+            
         }
         private void UpdateCellStyle(DataGridViewCell cell, string status)
         {

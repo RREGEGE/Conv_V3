@@ -22,6 +22,7 @@ using System.ComponentModel;
 using System.Threading;
 using Synustech.BcForm;
 using WMX3ApiCLR;
+using Synustech.ManagedFile;
 
 namespace Synustech
 {
@@ -95,6 +96,7 @@ namespace Synustech
         {
  
             InitializeComponent();
+            SynusLangPack.LoadFile(ManagedFileInfo.LangPackDirectory, ManagedFileInfo.LangPackFileName);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             this.UpdateStyles();
 
@@ -160,9 +162,9 @@ namespace Synustech
 
             userCurrentAlarm.SendCode += userSolution.UcCurrentAlarm_SendCode;
 
-            ucConvControl_Re.Jogpos += m_WMXMotion.JogMove;
+            //ucConvControl_Re.Jogpos += m_WMXMotion.JogMove;
             ucConvControl_Re.Jogneg += m_WMXMotion.StartJogNeg;
-            ucConvControl_Re.Jogstop += m_WMXMotion.StopJog;
+            //ucConvControl_Re.Jogstop += m_WMXMotion.StopJog;
 
             _xml.LoadLineFromXml(LineFullPath);
             _xml.LoadConveyorFromXML(ConvFullPath);
@@ -198,12 +200,12 @@ namespace Synustech
         }
         private void ThreadStart()
         {
-            iOCheck.IoThread();
-            safetyThread.SafetyCheckThread();
-            lampThread.LampCheckThread();
-            convThread.ServoCheckThread();
-            rectThread.RectCheckThread();
-            lineThread.LineCheckThread();
+            //iOCheck.IoThread();
+            //safetyThread.SafetyCheckThread();
+            //lampThread.LampCheckThread();
+            //convThread.ServoCheckThread();
+            //rectThread.RectCheckThread();
+            //lineThread.LineCheckThread();
         }
         static public void SetDoubleBuffer(Control control)
         {

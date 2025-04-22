@@ -143,106 +143,25 @@ namespace Synustech.ucPanel.BcMotion
 
         private void btn_PowerOn_Click(object sender, EventArgs e)
         {
-            foreach (var rect in rectangles)
-            {
-                if (rect.borderline == true)
-                {
-                    Conveyor conv = conveyors.FirstOrDefault(c => c.ID == rect.ID);
-                    if (conv.type == "Turn")
-                    {
-                        m_WMXMotion.ServoOn(conv.Axis);
-                        m_WMXMotion.ServoOn(conv.TurnAxis);
-                    }
-                    else
-                    {
-                        m_WMXMotion.ServoOn(conv.Axis);
-                    }
-                }
-            }
+            
         }
 
         private void btn_PowerOff_Click(object sender, EventArgs e)
         {
-            foreach (var rect in rectangles)
-            {
-                if (rect.borderline == true)
-                {
-                    Conveyor conv = conveyors.FirstOrDefault(c => c.ID == rect.ID);
-                    if (conv.type == "Turn")
-                    {
-                        m_WMXMotion.ServoOff(conv.Axis);
-                        m_WMXMotion.ServoOff(conv.TurnAxis);
-                    }
-                    else
-                    {
-                        m_WMXMotion.ServoOff(conv.Axis);
-                    }
-
-                }
-            }
+            
         }
 
         private void btn_Homing_Click(object sender, EventArgs e)
         {
-            Conveyor selectedconveyor = conveyors.FirstOrDefault(c => c.ID == selectedConvID);
-            if (selectedconveyor != null)
-            {
-                if(selectedconveyor.type == "Turn")
-                {
-                    m_WMXMotion.HomeStart(selectedconveyor.TurnAxis);
-                }
-                else
-                {
-                    MessageBox.Show("Please check only Turn conveyor");
-                }
-            }
+            
         }
         private void Conveyor_ID_Update()
         {
-            if (selectedConvID != null)
-            {
-                Conveyor conveyor = conveyors.FirstOrDefault(c => c.ID == selectedConvID);
-                if (conveyor != null)
-                {
-                    lbl_CV_ID_Out.Text = conveyor.ID.ToString();
-                }
-                if (conveyor.IsHomeDone && !IsHomingRun)
-                {
-                    btn_Homing.Text = "Origin OK";
-                    btn_Homing.ForeColor = Color.FromArgb(0, 126, 249);
-                }
-                else if (!conveyor.IsHomeDone && !IsHomingRun)
-                {
-                    btn_Homing.Text = "Origin NG";
-                    btn_Homing.ForeColor = Color.Red;
-                }
-                else if (IsHomingRun)
-                {
-                    btn_Homing.Text = "Homing";
-                    btn_Homing.ForeColor = Color.Lime;
-                }
-            }
+            
         }
         private void Current_POS_Update()
         {
-            if (selectedConvID != null)
-            {
-                Conveyor selectedconveyor = conveyors.FirstOrDefault(c => c.ID == selectedConvID);
-                double dCurPos = 0;
-                if (selectedconveyor != null)
-                {
-                    if (selectedconveyor.type == "Turn")
-                    {
-                        CoreMotionAxisStatus cmAxis = WMX3.m_coreMotionStatus.AxesStatus[selectedconveyor.TurnAxis];
-                        dCurPos = cmAxis.ActualPos;
-                        lbl_Cur_Pos_Out.Text = dCurPos.ToString("F2");
-                    }
-                    else
-                    {
-                        lbl_Cur_Pos_Out.Text = "-";
-                    }
-                }
-            }
+            
         }
         private void CNV_POS_Update_Timer_Tick(object sender, EventArgs e)
         {
@@ -252,67 +171,12 @@ namespace Synustech.ucPanel.BcMotion
 
         private async void btn_Homing_MouseDown(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
-            {
-                IsHomingRun = true;
-                Conveyor selectedconveyor = conveyors.FirstOrDefault(c => c.ID == selectedConvID);
-                if (selectedconveyor != null)
-                {
-                    if (selectedconveyor.type == "Turn")
-                    {
-                        m_WMXMotion.HomeStart(selectedconveyor.TurnAxis);
-                        Console.WriteLine(m_WMXMotion.IsServoRun(selectedconveyor.TurnAxis));
-
-                        await Task.Run(() =>
-                        {
-                            while (IsHomingRun)
-                            {
-                                CoreMotionAxisStatus cmAxis = WMX3.m_coreMotionStatus.AxesStatus[selectedconveyor.TurnAxis];
-
-                                if (!m_WMXMotion.IsServoRun(selectedconveyor.TurnAxis) &&
-                                    cmAxis.ActualPos == 0 &&
-                                    selectedconveyor.POS[0] == SensorOnOff.On)
-                                {
-                                    // UI 스레드에서 실행될 수 있도록 Invoke 호출
-                                    this.Invoke((Action)(() =>
-                                    {
-                                        MessageBox.Show("The homing operation is complete.");
-                                    }));
-
-                                    selectedconveyor.IsHomeDone = true;
-                                    IsHomingRun = false; // 루프 종료
-                                }
-                                Thread.Sleep(10); // 상태 체크 간격
-                            }
-                        });
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please check only Turn conveyor");
-                    }
-                }
-            }
+            
         }
 
         private void btn_Homing_MouseUp(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
-            {
-                IsHomingRun = false;
-                Conveyor selectedconveyor = conveyors.FirstOrDefault(c => c.ID == selectedConvID);
-                if (selectedconveyor != null)
-                {
-                    if (selectedconveyor.type == "Turn")
-                    {
-                        m_WMXMotion.StopJog(selectedconveyor.TurnAxis);
-                        CoreMotionAxisStatus cmAxis = WMX3.m_coreMotionStatus.AxesStatus[selectedconveyor.TurnAxis];
-                        if (cmAxis.ActualPos != 0 || selectedconveyor.POS[0] == SensorOnOff.Off)
-                        {
-                            MessageBox.Show("The homing operation was not completed.");
-                        }
-                    }
-                }
-            }
+            
         }
     }
 }
